@@ -82,7 +82,7 @@ Let’s see how it looks…
 
 See how the ball appears to slide vertically i.e., on *Cross Axis*
 
-Simple, right? Before moving onto *flexDirection: ‘column’* I want you to recall the order we learnt things again. Believe me, that matters.
+Simple, right? Before moving onto *flexDirection: ‘column’* I want you to recall the order in which we learnt things. Believe me, that matters.
 
 *  flexDirection: ‘row’ (horizontal).
 
@@ -92,7 +92,7 @@ Simple, right? Before moving onto *flexDirection: ‘column’* I want you to re
 
 ### **2. flexDirection: ‘column’:-**
 
-Remember how we learnt the order in previous section. We are going to do the same thing here and if you got the previous section right then this will go smooth too.
+Remember how we learnt the order in previous section? We are going to do the same thing here and if you got the previous section right then this will go smooth too.
 
 >*Assume flexDirection: ‘column’ as vice-versa of flexDirection: ‘row’ property and apply everything you learnt so far.*
 
@@ -104,7 +104,7 @@ Remember how we learnt the order in previous section. We are going to do the sam
 
 **1. Justify Content:-**
 
-Remember what was the power of **justifyContent**? 
+Remember the power of **justifyContent**? 
 It lets you move your view along ***Main Axis.***
 
 That thing still works but now the *Main Axis* is *Vertical* and sliding the View will look like this:-
@@ -112,7 +112,7 @@ That thing still works but now the *Main Axis* is *Vertical* and sliding the Vie
 
 **1. Align Items:-**
 
-So, Align Items was moving view along ***Cross Axis*** before, so it should still behave same, right?
+Align Items was moving view along ***Cross Axis*** before so it should still behave same, right?
 
 Yes, it’s the same as before but now ***Cross Axis*** is *Horizontal* and sliding the View will look like this:-
 ![Column Align](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-align.jpg)
@@ -159,7 +159,7 @@ Nothing surprising here. Just remember the basic idea:
 *  The basic idea of *reverse* flex direction is that you have to reverse the order of Start and End and everything else works as usual.
 
 Remembering things in an order helped me clear the confusion and I was able to get the right alignment at the very first try. 
-Inserting USB correctly in the first try is still a problem for me though and may be some things really can’t be helped.
+Although inserting USB correctly in the first try is still a problem for and may be some things can’t really be helped.
 
 Hope that was helpful.
 

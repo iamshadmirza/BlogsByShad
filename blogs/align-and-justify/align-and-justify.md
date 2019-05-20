@@ -3,7 +3,7 @@
 ## **The Idea**
 
 The idea is to choose a topic that you were having difficulty with and you think others might find it a little difficult too. Take a look at this tweet by [@erinfranmc](https://twitter.com/erinfranmc)
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/tweet.png)
+![Tweet](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/tweet.png)
 Hmm, I used to have problems with that too and I figured out the way. Sounds like a valid topic to begin with.
 
 ## **What’s up with the confusion**
@@ -61,7 +61,7 @@ This is the first thing we are going to learn. The power of ***justifyContent***
 ***justifyContent*** lets you move your View along ***Main Axis*** i.e., Horizontally.
 
 Let’s see how it looks…
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/row-justify.jpg)
+![Row Justify](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/row-justify.jpg)
 
 See how the ball appears to slide horizontally i.e., on *Main Axis*
 
@@ -78,7 +78,7 @@ So, the power of ***alignItems*** will be: -
 >****Cross Axis*** is always perpendicular to the ***Main Axis***. Try to remember the position of *Main Axis* only and the *Cross* will already come to its 90 degree.*
 
 Let’s see how it looks…
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/row-align.jpg)
+![Row Align](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/row-align.jpg)
 
 See how the ball appears to slide vertically i.e., on _Cross Axis_
 
@@ -108,14 +108,14 @@ Remember what was the power of **justifyContent**?
 It lets you move your view along ***Main Axis.***
 
 That thing still works but now the *Main Axis* is *Vertical* and sliding the View will look like this:-
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-justify.jpg)
+![Column Justify](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-justify.jpg)
 
 **1. Align Items: -**
 
 So, Align Items was moving view along ***Cross Axis*** before, so it should still behave same, right?
 
 Yes, it’s the same as before but now ***Cross Axis*** is _Horizontal_ and sliding the View will look like this:-
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-align.jpg)
+![Column Align](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-align.jpg)
 See how simple and clear it is.
 
 # **Let’s go even further: -**
@@ -135,18 +135,18 @@ As the name suggests, it’s reverse of row.
 Let’s see how it works.
 
 **1. Justify Content: -**
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/row-justify-reverse.jpg)
+![Row Justify Reverse](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/row-justify-reverse.jpg)
 **2. Align Items: -**
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/row-align-reverse.jpg)
+![Row Align Reverse](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/row-align-reverse.jpg)
 ### **1. flexDirection: ‘column-reverse’: -**
 
 Nothing surprising here. Just remember the basic idea: 
 >*Reverse the order of start and end.*
 
 **1. Justify Content: -**
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-justify-reverse.jpg)
+![Column Justify Reverse](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-justify-reverse.jpg)
 **2. Align Items: -**
-![The Two Axis](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-align-reverse.jpg)
+![Column Align Reverse](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/align-and-justify/column-align-reverse.jpg)
 ## **Conclusion: -**
 
 * Just remember the concept of *Main Axis* and *Cross Axis*.

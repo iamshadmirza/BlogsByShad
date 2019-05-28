@@ -1,9 +1,9 @@
 # Class vs Function based programming simplified
-This question is often asked in interviews that *what do you understand by functional programming or Object Oriented Programming ?* and this blog is going to answer that but in a more simplified and beginner friendly manner.  
+This question is often asked in interviews that *What do you understand by functional programming or Object Oriented Programming?* and this blog is going to answer that but in a more simplified and beginner friendly manner.  
 I'll be sharing links for some in-depth read about these two topics at the end but right now this post will only give you an insight and clear idea to distinguish between these two.
 
 ## Why the debate?
-If you are a developer who is working or going to work on a huge application with few thousands of lines of code, you will instantly realise that you need to manage to code effectively to make it scalable and bug free or you will be lost totally.
+If you are a developer who is working or going to work on a huge application with few thousands of lines of code, you will instantly realise that you need to manage your code effectively to make it scalable and bug free or you will be lost.
 And for that you have to pick one of the programming paradigms.
 > A programming paradigm is a style or “way” of programming to approach a problem and design a solution.  
 
@@ -18,11 +18,12 @@ Let's hear what the Wikipedia says:-
 >Functional programming is a programming paradigm — a style of building the structure and elements of computer programs — that treats computation as the evaluation of mathematical functions and avoids changing-state and mutable data.
 
 ***Wait, you said simplified and beginner friendly?***  
+Yes, I'm getting at it.  
 In simple terms, you can say that  
 >It is programming paradigm which suggests writing program entirely out of function. Pure functions to be specific.
 
 ### What's a Pure function?
-Functions are basically a block of code that takes some input and give some output. The important thing to note here is that ***the output of function will depend on the input served entirely*** i.e., 
+Functions are basically a block of code that takes some input and give some output. The important thing to note here is that ***the output of function will depend on the parameters passed as input entirely*** i.e., 
 >It returns the same result if given the same arguments
 
 A Pure function is a function which uses only those parameter which are passed on to it and calculate result.  
@@ -37,8 +38,8 @@ function areaOfCircle(radius){
 }
 ```
 Why is this an impure function? Simply because it uses a global object *PI* that was not passed as a parameter to the function.  
-Hence, here the output of the function is not dependent on the input served.
->PI is an external variable whose value can change which will give different output upon passing same input.
+Hence, here the output of the function is not dependent on the input served (only).
+>PI is an external variable whose value can change which will give different output upon passing the same input.
 
 If PI = 50, radius = 10 then output is 500.  
 Take the same radius = 10 but now PI = 40 then output is 400.  
@@ -56,7 +57,7 @@ This function is indeed a Pure function because it is not accessing any outside 
 * For the parameters radius = 10 & PI = 3.14, we will always have the same the result: 314.0
 * For the parameters radius = 10 & PI = 42, we will always have the same the result: 4200
 
-Another concept which a functional programming follows is *Immutability*.
+Another concept which functional programming follows is *Immutability*.
 ### What's Immutability?
 
 Definition of **immutable** is  
@@ -74,7 +75,7 @@ Moreover, it is easier to understand and because it does just one thing, it is e
 Sometimes, we have to do some calculations in our application which requires to treat functions as entities.  
 >The idea is to treat functions as values and pass functions like data. This way we can combine different functions to create new functions with new behavior.
 
-Here, comes the concept of Higher-Order Function. I really expect your interviewer to ask what is Hight-Order Function. So,
+Here comes the concept of Higher-Order Function. I really expect your interviewer to ask *What is Hight-Order Function*. So,
 ### What's Higher-Order Function?
 When we talk about higher-order functions, we mean a function that either:
 * takes one or more functions as arguments, or

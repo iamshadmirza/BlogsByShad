@@ -153,6 +153,16 @@ Consider a particular Human now. You, me or anyone else. We can say that we belo
 We are the physical existence, the *Object*.
 >An Object is an instance of a class which has physical existence.
 By Human, we just mean a *type/kind*.
+
+I am Shad and I am an object of class Male. I have a physical existence while class is just a logical definition which defines our *type/kind*. You can say that:-
+>Shad is an object of class Male
+
+There are some other concepts like *abstraction*, *encapsulation* and *polymorphism* which comes under Object Oriented programming.  
+All these features together helps to define the structure of a program.  
+As a result, OOP code is very easy to understand. What is not so easy is deciding how to break an application into these small objects in the first place. Over time, you will gain experience and align more of your code with this theoretical concept.
+
+## Let's dive deeper
+I hope you already have a basic idea about Object Oriented programming or say class based programming. For me, it was a little hard to grasp everything at first. So just to make things crystal clear,  we will discuss one more real world example but now with `code`.
 ## Which one is better?
 Choice is totally yours although I'm going to suggest what I think.
 If something is making your system complex, it's probably not good. Complexity ?
@@ -166,3 +176,5 @@ In simple words, a paradigm is better if it has these features: -
 ## Reference
 * An introduction to the basic principles of Functional Programming - [@leandrotk_](https://twitter.com/LeandroTk_)  
 link: https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-of-functional-programming-a2c2a15c84/
+* Objects and Classes  
+link: https://www.studytonight.com/java/object-and-classes.php

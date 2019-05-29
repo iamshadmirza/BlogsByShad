@@ -162,7 +162,93 @@ All these features together helps to define the structure of a program.
 As a result, OOP code is very easy to understand. What is not so easy is deciding how to break an application into these small objects in the first place. Over time, you will gain experience and align more of your code with this theoretical concept.
 
 ## Let's dive deeper
-I hope you already have a basic idea about Object Oriented programming or say class based programming. For me, it was a little hard to grasp everything at first. So just to make things crystal clear,  we will discuss one more real world example but now with `code`.
+I hope you already have a basic idea about Object Oriented programming or say class based programming. For me, it was a little hard to grasp everything at first. So just to make things crystal clear,  we will discuss one more real world example but now with `code`.  
+
+Consider a shopping use case in which you put products into your basket and then calculate the total price you must pay. If you take your JavaScript knowledge and code the use case without OOP, it would look like this:
+
+```
+const bread = new Product('bread', 1);
+const water = new Product('water', 0.25);
+const basket = new Basket();
+basket.addProduct(2, bread);
+basket.addProduct(3, water);
+basket.printShoppingInfo();
+```
+Let's break the code according to the things we just learned.  
+* product is class which defines the properties of a product. 
+* `new` keyword is used to create objects (actual term is instantiate).
+* bread and water are two objects of Product class. They have all the properties of a *Product*.
+* `Basket()` is another class which returns an object that we store to the variable `basket` (lowercase).
+* With this `basket` object we can use the functions defined in `Basket()` class. `addProduct()` is one of those functions.
+* Fourth and Fifth line of code is adding product into basket by calling the function with quantity and name as parameters.
+* At the end we are printing what's in the basket by calling `printShoppingInfo()` function defined in `Basket()` class.
+
+The benefit here is you can almost read the code like real English sentences and you can easily tell what’s going on.  
+Let's take a better look at classes we just used:-  
+1. Product class
+```
+class Product {
+    constructor(_name, _price) {  
+        this.name = _name;  
+        this.price = _price;
+    }
+    getName() {    
+        return this.name;  
+    }
+    getPrice() {    
+        return this.price;  
+    }
+}
+```
+2. Basket class
+```
+class Basket {
+    constructor() {
+        this.products = [];
+    }
+    addProduct(amount, product) {
+        this.products.push(...Array(amount).fill(product)); 
+    }
+    calculateTotal() {
+        return products.map(function(product){
+            return product.getPrice();
+            })
+            .reduce(function(a, b){ 
+            return a + b;
+        }, 0);  
+    }
+    printShoppingInfo() {    
+        let total = this.calculateTotal();
+        console.log('one has to pay in total: ' + total);  
+    }
+}
+```
+>The `constructor` inside each class is a function which executes each time an object is instantiated.
+
+**Product** has the parameters _name and _price. Each new object stores these values inside it.  
+Class **Basket** doesn’t require any arguments to create a new object. Instantiating a new Basket object simply generates an empty list of products that the program can fill afterwards.  
+Let's move on to the other concepts we left earlier.
+### Encapsulation
+In simple words, Encapsulation prevents access to data except through the object’s functions.
+>It is a protective shield that prevents the data from being accessed by the code outside this shield.
+
+The code we wrote earlier has one drawback (I wrote like that on purpose). By adding the *this* keyword, we have given full access to the properties from the outside. So everybody could access and modify it:
+```
+const bread = new Product('bread', 1);
+bread.price = -10;
+```
+This is something you would want to avoid because prices less than zero doesn't make sense, does it?  
+Objects should have exclusive control over their data. In other words, the objects “encapsulate” their data and prevent other objects from accessing the data directly. The only way to access the data is indirect via the functions written into the objects.
+The code will look like this now:- 
+```
+function Product(_name, _price) {  
+    const name = _name;  const price = _price;
+    this.getName = function() { return name;  };
+    this.getPrice = function() { return price;  };
+}
+```
+
+
 ## Which one is better?
 Choice is totally yours although I'm going to suggest what I think.
 If something is making your system complex, it's probably not good. Complexity ?
@@ -176,5 +262,7 @@ In simple words, a paradigm is better if it has these features: -
 ## Reference
 * An introduction to the basic principles of Functional Programming - [@leandrotk_](https://twitter.com/LeandroTk_)  
 link: https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-of-functional-programming-a2c2a15c84/
-* Objects and Classes  
+* Objects and Classes - studytonight.com  
 link: https://www.studytonight.com/java/object-and-classes.php
+* Introduction to object oriented programming - freeCodeCamp.org  
+link: https://www.freecodecamp.org/news/an-introduction-to-object-oriented-programming-in-javascript-8900124e316a/

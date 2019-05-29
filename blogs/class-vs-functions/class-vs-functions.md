@@ -119,6 +119,40 @@ let sum = numbers.reduce(function(accumulator, currentValue) {
 console.log(sum);
 // expected output: 10
 ```
+
+## What is Object Oriented programming?
+It is class based programming paradigm in which everything revolves around classes and its properties.
+### What is a Class?
+It is a design of an entity which defines the core properties and functions
+>A class is just a **DESIGN** where everything is defined, that's it.
+
+Let's look at a real life example of a class.
+#### Humans
+If we take an example of a Human, we can say that it contains:-
+* Body Parts: eyes, mouth, ears, hands, legs, etc.
+* Body functions: walk, talk, eat, see, etc.
+
+Now assume Human as a class/type (i am using type to make the use of classes clear).  
+We can be categorised as a **type** of *Human*.
+Human class has a design in which all the body parts and functions are defined. It means that all who belong to this *Human* class will have these properties (body parts and functions). Let's hear it again.
+> Class is just a **DESIGN** to define its properties.
+
+Now, let's move on to subcategory of Humans - Male and Female.
+Here comes the concept of Inheritence.
+### What is Inheritance?
+Consider the *Human* class, it has all body parts and functions already defined which is common to Male and Female. But we need the design of Male and Female class anyway. 
+What we can do is create two new classes as Male and Female and as Male and Female are also classes, they can inherite everything from the Human class using the concept of *Inheritence*.  
+>Male and Female are classes which can contain its own properties i.e., properties specific to Male and Female.
+
+In this way, we now have two new classes Male and Female, that contains all the properties of Human class and the properties specific to them.  
+>Classes are just design/blueprint, nothing else. They don't have a physical existence.
+
+Then how do we use these classes? The answer is *Objects*
+### What is a Object?
+Consider a particular Human now. You, me or anyone else. We can say that we belong to a Male or Female class. Hence, we are the Objects in this reference. We possess all the properties of Male or Female class and that of Human class (because of inheritence).
+We are the physical existence, the *Object*.
+>An Object is an instance of a class which has physical existence.
+By Human, we just mean a *type/kind*.
 ## Which one is better?
 Choice is totally yours although I'm going to suggest what I think.
 If something is making your system complex, it's probably not good. Complexity ?

@@ -247,6 +247,27 @@ function Product(_name, _price) {
     this.getPrice = function() { return price;  };
 }
 ```
+>Note: Classes in JavaScript is facade, it was added later in the development. JavaScript was originally a prototype-based language. You can prevent the same issue by defining price as final in a static object oriented language like Java.
+
+In JavaScript, one way to prevent this is to freeze the object.
+```
+const bread = new Product('bread', 10);
+Object.freeze(bread)
+bread.price = 20; // this will not change the price of bread to 20
+```
+> Note: It is not recommended in production.
+
+### Abstraction
+Abstraction is a process of hiding the implementation details from the user. Оnly the functionality will be provided to the user.  
+Another way, it shows only essential things to the user and hides the internal details, for example, sending SMS where you type the text and send the message. You don't know the internal processing about the message delivery.
+Let's see example in our code:-
+```
+basket.printShoppingInfo();
+```
+This code is printing total amount of the products added. The user who is calling this function doesn't know about the details how the total value is calculated. This is a form of *abstraction*. The inner details are completely hidden from the user.
+
+### Polymorphirm
+
 
 
 ## Which one is better?

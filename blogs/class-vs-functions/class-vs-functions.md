@@ -266,8 +266,42 @@ basket.printShoppingInfo();
 ```
 This code is printing total amount of the products added. The user who is calling this function doesn't know about the details how the total value is calculated. This is a form of *abstraction*. The inner details are completely hidden from the user.
 
-### Polymorphirm
+### Polymorphism
+It is defined as
+>the condition of occurring in several different forms
 
+*JavaScript is a dynamically-typed language and this feature is more suitable to illustrate on a statically-type language like Java.*  
+In simple terms, we can say that one function can take multiple forms. Let's look at an example:-  
+```
+function Dog(name) {
+  this.name = name;
+}
+
+var dog1 = new Dog('Gabby');
+console.log(dog1.toString()); //// returns [object Object]
+```
+By default, the *toString()* method is inherited by every object descended from Object.
+>The toString() returns "[object type]", where type is the object type.
+
+Now, let's try to give one more form to this *toString()* function to acheive polymorphism.
+```
+function Dog(name) {
+  this.name = name;
+}
+
+var dog1 = new Dog('Gabby');
+Dog.prototype.toString = function dogToString() {
+  return 'Name of your doggo is ' + this.name;
+}
+console.log(dog1.toString()); //// returns "Name of your doggo is Gabby"
+```
+See, now implementation of *toString()* method is changed, we have overridden this method basically.
+
+We have covered all the four pillers of Object Oriented Programming namely:-
+* Inheritance
+* Encapsulation
+* Abstraction
+* Polymorphism
 
 
 ## Which one is better?

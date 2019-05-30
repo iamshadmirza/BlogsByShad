@@ -314,6 +314,26 @@ In simple words, a paradigm is better if it has these features: -
 * Easier to maintain
 * Easier to modify
 * Reduces the chances of occuring bugs
+
+Some Pros and Cons of Object Oriented Programming are:-
+1. Teams can work on different classes at the same time hence it provided parallel development.
+2. Classes are reusable.
+3. Easier to read and maintain.
+4. Too scalable, massive amount of bloated, unnecessary code.
+5. It can cause duplication. 
+
+Some Pros and Cons of Functional Programming are:-
+1. Allows you to write more compressed and predictable code.
+2. Programmers avoid any shared state or side-effects, which eliminates bugs caused by multiple functions competing for the same resources. 
+3. One function does one thing which leads to fewer bugs.
+4. It is easier to test.
+5. Lesser boilerplate, unnecessary code is easily avoidable.
+6. Reduced readability because resulting code is often more abstracted.
+7. Steeper learning curve, learning from scratch is not easy.
+
+It's a choice of developers afterall. Choose what suits you best.  
+Hope it was helpful.  
+Shad
 ## Reference
 * An introduction to the basic principles of Functional Programming - [@leandrotk_](https://twitter.com/LeandroTk_)  
 link: https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-of-functional-programming-a2c2a15c84/
@@ -321,3 +341,5 @@ link: https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-
 link: https://www.studytonight.com/java/object-and-classes.php
 * Introduction to object oriented programming - freeCodeCamp.org  
 link: https://www.freecodecamp.org/news/an-introduction-to-object-oriented-programming-in-javascript-8900124e316a/
+* MDN Web Docs Glossary 
+link: https://developer.mozilla.org/en-US/docs/Glossary

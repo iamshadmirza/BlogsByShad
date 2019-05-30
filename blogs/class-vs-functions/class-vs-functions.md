@@ -83,7 +83,7 @@ When we talk about higher-order functions, we mean a function that either:
 
 You’ve probably already heard about filter, map, and reduce. Let's take a look at these:-
 #### Filter
-Given a collection, we want to filter by an attribute. The filter function expects a true or false value to determine if the element should or should not be included in the result collection.
+Given a collection, we want to filter by an attribute. The filter function expects a true or false value to determine if the element should or should not be included in the result collection.  
 **Return value:** new array consisting only of items that passed a condition.
 Let's take an example of filtering even numbers:-  
 ```

@@ -4,7 +4,7 @@ This question is often asked in interviews that *What do you understand by funct
 I'll be sharing links for some in-depth read about these two topics at the end but right now this post will only give you an insight and clear idea to distinguish between these two.
 
 ## Why the debate?
-If you are a developer who is working or going to work on a huge application with a few thousand linew of code, you will instantly realize that you need to manage your code effectively to make it scalable and bug-free or you will be lost.
+If you are a developer who is working or going to work on a huge application with a few thousand lines of code, you will instantly realize that you need to manage your code effectively to make it scalable and bug-free or you will be lost.
 And for that, you have to pick one of the programming paradigms.
 > A programming paradigm is a style or “way” of programming to approach a problem and design a solution.  
 
@@ -337,10 +337,10 @@ Hope it was helpful.
 Shad
 ## Reference
 * An introduction to the basic principles of Functional Programming - [@leandrotk_](https://twitter.com/LeandroTk_)  
-link: https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-of-functional-programming-a2c2a15c84/
+link: [https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-of-functional-programming-a2c2a15c84/](https://www.freecodecamp.org/news/an-introduction-to-the-basic-principles-of-functional-programming-a2c2a15c84/)
 * Objects and Classes - studytonight.com  
-link: https://www.studytonight.com/java/object-and-classes.php
+link: [https://www.studytonight.com/java/object-and-classes.php](https://www.studytonight.com/java/object-and-classes.php)
 * Introduction to object oriented programming - freeCodeCamp.org  
-link: https://www.freecodecamp.org/news/an-introduction-to-object-oriented-programming-in-javascript-8900124e316a/
+link: [https://www.freecodecamp.org/news/an-introduction-to-object-oriented-programming-in-javascript-8900124e316a/](https://www.freecodecamp.org/news/an-introduction-to-object-oriented-programming-in-javascript-8900124e316a/)
 * MDN Web Docs Glossary 
-link: https://developer.mozilla.org/en-US/docs/Glossary
+link: [https://developer.mozilla.org/en-US/docs/Glossary](https://developer.mozilla.org/en-US/docs/Glossary)

@@ -1,3 +1,4 @@
+![cover](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/class-vs-functions/cover.jpg)
 # Class vs Function based programming simplified
 This question is often asked in interviews that *What do you understand by functional programming or Object Oriented Programming?* and this blog is going to answer that but in a more simplified and beginner friendly manner.  
 I'll be sharing links for some in-depth read about these two topics at the end but right now this post will only give you an insight and clear idea to distinguish between these two.

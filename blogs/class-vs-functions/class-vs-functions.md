@@ -3,15 +3,15 @@ This question is often asked in interviews that *What do you understand by funct
 I'll be sharing links for some in-depth read about these two topics at the end but right now this post will only give you an insight and clear idea to distinguish between these two.
 
 ## Why the debate?
-If you are a developer who is working or going to work on a huge application with few thousands of lines of code, you will instantly realize that you need to manage your code effectively to make it scalable and bug-free or you will be lost.
+If you are a developer who is working or going to work on a huge application with a few thousand linew of code, you will instantly realize that you need to manage your code effectively to make it scalable and bug-free or you will be lost.
 And for that, you have to pick one of the programming paradigms.
 > A programming paradigm is a style or “way” of programming to approach a problem and design a solution.  
 
-We will be talking about the two most talked paradigm in JavaScript.
+We will be talking about the two most talked paradigms in JavaScript.
 * Object Oriented Programming / Class based Programming.
 * Functional Programming / Function based Programming. 
 
-Some languages support multiple paradigms but different developers have a different mindset and they usually prefer some particular kind to work with.
+Some languages support multiple paradigms but different developers have a different mindsets and they usually prefer a particular kind to work with.
 
 ## What is functional programming?
 Let's hear what Wikipedia says:-
@@ -26,7 +26,7 @@ In simple terms, you can say that
 Functions are basically a block of code that takes some input and gives some output. The important thing to note here is that ***the output of the function will depend on the parameters passed as input entirely*** i.e., 
 >It returns the same result if given the same arguments
 
-A Pure function is a function which uses only those parameters which are passed on to it and calculate the result.  
+A Pure function is a function which uses only those parameters which are passed on to it and calculates the result.  
 If the function is using any other parameter that is outside the function then the function is not pure.
 
 #### Example of Impure function
@@ -72,7 +72,7 @@ So, our function is totally dependent on parameters and the data passed as param
 
 The code’s definitely easier to test and thus it is better protected against bugs.
 Moreover, it is easier to understand and because it does just one thing, it is easier to maintain.  
-Sometimes, we have to do some calculations in our application which requires to treat functions as entities.  
+Sometimes, we have to do some calculations in our application which require us to treat functions as entities.  
 >The idea is to treat functions as values and pass functions like data. This way we can combine different functions to create new functions with new behavior.
 
 Here comes the concept of Higher-Order Function. I really expect your interviewer to ask *What is Hight-Order Function*. So,
@@ -94,7 +94,7 @@ let even = numbers.filter(function(num) {
 console.log(even);
 // expected output: [0, 2, 4, 6, 8, 10]
 ```
-Here, we can see that `Array.filter` function is accepting array of numbers and a function as arguments and returning array of even numbers.
+Here, we can see that `Array.filter` function is accepting array of numbers and a function as arguments and is returning array of even numbers.
 #### Map
 The map method transforms a collection by applying a function to all of its elements and building a new collection from the returned values.  
 **Return value:** a copy of original array with modified values (if any)
@@ -107,7 +107,7 @@ let incremented = numbers.map(function(num) {
 console.log(incremented);
 // expected output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 ```
-Here, we can see that `Array.map` function is accepting array of numbers and a function as arguments and returning array with each number incremented by 1.
+Here, we can see that `Array.map` function is accepting array of numbers and a function as arguments and is returning array with each number incremented by 1.
 #### Reduce
 The idea of reduce is to receive a function and a collection, and return a value created by combining the items.  
 **Return value:** accumulator
@@ -132,7 +132,7 @@ If we take an example of a Human, we can say that it contains:-
 * Body Parts: eyes, mouth, ears, hands, legs, etc.
 * Body functions: walk, talk, eat, see, etc.
 
-Now assume Human as a class/type (i am using type to make the use of classes clear).  
+Now assume Human as a class/type (I am using type to make the use of classes clearer).  
 We can be categorized as a **type** of *Human*.
 The human class has a design in which all the body parts and functions are defined. It means that all who belong to this *Human* class will have these properties (body parts and functions). Let's hear it again.
 > Class is just a **DESIGN** to define its properties.
@@ -174,7 +174,7 @@ basket.addProduct(2, bread);
 basket.addProduct(3, water);
 basket.printShoppingInfo();
 ```
-Let's break the code according to the things we just learned.  
+Let's break the code according to the things we have just learnt.  
 * product is class which defines the properties of a product. 
 * `new` keyword is used to create objects (the actual term is instantiated).
 * bread and water are two objects of the Product class. They have all the properties of a *Product*.
@@ -305,7 +305,7 @@ We have covered all the four pillars of Object Oriented Programming namely:-
 
 
 ## Which one is better?
-The choice is totally yours although I'm going to suggest what I think.
+The choice is totally yours though I'm going to suggest what I think.
 If something is making your system complex, it's probably not good. Complexity?
 > "Complexity is anything that makes software hard to understand or to modify." — John Outerhout  
 
@@ -313,7 +313,7 @@ In simple words, a paradigm is better if it has these features: -
 * Reduces the complexity of the code
 * Easier to maintain
 * Easier to modify
-* Reduces the chances of occurring bugs
+* Reduces the chances of the bugs occurring.
 
 Some Pros and Cons of Object-Oriented Programming are:-
 1. Teams can work on different classes at the same time hence it provided parallel development.

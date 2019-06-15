@@ -1,3 +1,5 @@
+# WebSocket Simplified
+![Cover Image](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/websocket-basics/cover.jpg)
 This is a series blog post consisting of two blogs.
 First we will learn about the native WebSocket and then Socket.io. Both blogs will detailed and beginner friendly. Let's start.
 # What is a Websocket?
@@ -59,15 +61,15 @@ WebSockets don’t need you to send a request in order to respond. They allow *b
 Let's look at the performance side of the WebSocket.
 ### Resource Consumption
 The chart below shows the bandwidth consumption differences between WebSockets vs Long Polling in a relatively common use case:  
-![Add a chart here]()  
+![Resource graph](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/websocket-basics/resource_graph.png)  
 The difference is huge (for relatively higher number of requests).
 ### Speed
 Here are the results for 1, 10 and 50 requests served per connection in one second:  
-![Add a chart here]()  
+![Speed Graph 1](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/websocket-basics/speed_graph.png)  
 As you can see, making a single request per connection is about 50% slower using Socket.io since the connection has to be established first. This overhead is smaller but still noticeable for ten requests. At 50 requests from the same connection, Socket.io is already 50% faster. To get a better idea of the peak throughput let's look at the benchmark with a larger number (500, 1000 and 2000) of requests per connection:  
-![Add a chart here]()  
+![Speed Graph 2](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/websocket-basics/speed_graph2.png)  
 
-Here we can see that the HTTP benchmark peaks at about~950 requests per second while Socket.io serves about ~3900 requests per second. Effective, right?
+Here you can see that the HTTP benchmark peaks at about~950 requests per second while Socket.io serves about ~3900 requests per second. Effective, right?
 >Note: Socket.io is a JavaScript library for realtime web applications. It implements WebSocket internally and provide a better **//Write about this** *(Next Blog post of this series explains Socket.io in detail)*.
 
 ## How does WebSocket work?

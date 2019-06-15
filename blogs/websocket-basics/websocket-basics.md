@@ -1,5 +1,5 @@
 # WebSocket Simplified
-![Cover Image](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/websocket-basics/cover.jpg)
+![Cover Image](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/websocket-basics/cover.jpg)  
 This is a series blog post consisting of two blogs.
 First we will learn about the native WebSocket and then Socket.io. Both blogs will detailed and beginner friendly. Let's start.
 # What is a Websocket?

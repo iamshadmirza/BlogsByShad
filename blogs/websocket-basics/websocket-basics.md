@@ -176,7 +176,7 @@ wss.on('headers', (headers, req) => {
 server.listen(8000);
 ```
 The method `on` expects two arguments: Event name and callback. Event name to recognize which Event to listen/emit and callback specifies what to do with it. Here, we are just logging the `headers` Event. Let's see what we got:-  
-![header log]()  
+![header log](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/websocket-basics/header.png)  
 This is our HTTP header and this is exactly what's going on behind the scenes. Let's break it down to better understand this.  
 * First things you will notice is that we got the status code `101`. You may have seen `200`, `201`, `404`, etc but this is different. `101` is actually the Switching Protocols status code. It says **"Hey, I waana upgarde"**.
 * Second line shows the Upgrade information. It specifies that it wants to upgrade to `websocket`.
@@ -232,13 +232,20 @@ We are also listening for the event `message` coming from Client. Let's create t
 </html>
 ```
 This is how it looks in browser:-  
-!['browser screenshot]()  
+!['browser screenshot](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/websocket-basics/client.png)  
 The first log is `WebSocket` listing all the properties on websocket object and the second log is `MessageEvent` which has `data` property if you look closely and there we got our message from server.  
 The server part will look something like this:-  
-!['server log']()  
+!['server log'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/websocket-basics/server.png)  
 We got the client's message correctly. Looks like our connection has established successfully. Cheers!  
 
-This is the basics of WebSockets and how they work. I will be covering `socket.io` and the working in more details in the next post in this series. We will also see why exactly we need `socket.io` when things are working just fine with only native `WebSocket()`. Why use a heavy bloated library when we can successfully send and recieve messages just fine?  
+## Conclusion
+Let's get through what we learnt in this post:-
+* We have covered how HTTP server works, what is Polling, Long Polling.
+* What are WebSockets and why we need them. 
+* We covered how they work behind the scene and understood the header a little better. 
+* We created our own Client and Server and successfully established the connection between them.
+
+This is the basics of WebSockets and how they work. The next post in series will be cover `socket.io` and the working in more detail. We will also see why exactly we need `socket.io` when things are working just fine with only native `WebSocket()`. Why use a heavy bloated library when we can successfully send and recieve messages just fine?  
 Stay tuned for the next post. Do share the post if you find it helpful.  
 Shad.
 

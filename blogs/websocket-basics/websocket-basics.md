@@ -79,3 +79,171 @@ These are the steps involved in  establishing a WebSocket connection.
 3. If the server supports the WebSocket protocol, it agrees to upgrade the connection. *This is called handshake.*
 4. Now that the handshake is complete the initial HTTP connection is replaced by a WebSocket connection that uses the same underlying TCP/IP protocol.
 5. At this point, data can flow back and forth freely between Client and Server.
+
+# Let's code
+We are going to create two files: one server and one client.  
+First create a simple `<html>` document named as `client.html` containing a `<script>` tag. Let's see how it looks:-  
+```html
+<html>
+
+<script>
+    // Our code goes here
+</script>
+
+<body>
+    <h1>This is a client page</h1>
+</body>
+
+</html>
+```
+Now create another another file `server.js`. Now import http module and create a server. Make it listen to `port 8000`.  
+This will work as a simple `http` server listening to `port 8000`. Let's look at that too:-  
+```javascript
+//importing http module
+const http = require('http');
+
+//creating a http server
+const server = http.createServer((req, res) => {
+    res.end("I am connected");
+});
+
+//making it listen to port 8000
+server.listen(8000);
+```
+> run command `node server.js` to start the listening to `port 8000`.  
+*Note:- You can choose any port as you like, I just chose 8000 for no specific reason.*
+
+Our basic setup of client and server is done now. That was simple, right? Let's get to the good stuff now.
+
+### Client setup
+To construct a **WebSocket**, use the `WebSocket()` constructor which returns the websocket object. This object provides the API for creating and managing a WebSocket connection to the **Server**.  
+In simple words, this websocket object will help us establish the connection with server and send & receive data. Let us see how:- 
+```html
+<html>
+
+<script>
+    //calling the constructor which gives us the websocket object: ws
+    let ws = new WebSocket('url'); 
+</script>
+
+<body>
+    <h1>This is a client page</h1>
+</body>
+
+</html>
+```
+The `WebSocket` constructor expects a url to listen to. Which in our case, is `'ws://localhost:8000'` because that's where our server is running.  
+Now this is something different from what you are used to see. We are not using `HTTP` protocal, we are using `WebSocket` protocol. This will tell the client that 'Hey, we are using websocket protocol'. Simple enough? Now let's actually create a WebSocket server in `server.js`.
+### Server setup
+We are gonna need a third party module `ws` in our node server to use the setup the `WebSocket` server.  
+First we will import the `ws` module. Then we will create a websocket server and hand it the `http` server listening to `port 8000`.
+>HTTP server is listening to port 8000 and WebSocket server is listening to this HTTP server. Basically, it is listening the listener.
+
+Now our websocket is watching for traffic on `port 8000`. It means that it will try to establish the connection as soon as the client is available. Our `server.js` file will look like this: -
+```javascript
+const http = require('http');
+//importing ws module
+const websocket = require('ws');
+
+const server = http.createServer((req, res) => {
+    res.end("I am connected");
+});
+//creating websocket server
+const wss = new websocket.Server({ server });
+
+server.listen(8000);
+```
+
+As we have discussed before:
+> `WebSocket()` constructor returns a websocket object provides the API for creating and managing a WebSocket connection to the **Server**.
+
+Here, the `wss` object will help us listen to the `Event` emitted when the certain thing happens. Like the connection is established or handshake is complete or connection is closed.  
+Let's see how to listen to the messages:-
+```javascript
+const http = require('http');
+const websocket = require('ws');
+
+const server = http.createServer((req, res) => {
+    res.end("I am connected");
+});
+const wss = new websocket.Server({ server });
+//calling a method on which is available on websocket object
+wss.on('headers', (headers, req) => {
+    //logging the header
+    console.log(headers);
+});
+
+server.listen(8000);
+```
+The method `on` expects two arguments: Event name and callback. Event name to recognize which Event to listen/emit and callback specifies what to do with it. Here, we are just logging the `headers` Event. Let's see what we got:-  
+![header log]()  
+This is our HTTP header and this is exactly what's going on behind the scenes. Let's break it down to better understand this.  
+* First things you will notice is that we got the status code `101`. You may have seen `200`, `201`, `404`, etc but this is different. `101` is actually the Switching Protocols status code. It says **"Hey, I waana upgarde"**.
+* Second line shows the Upgrade information. It specifies that it wants to upgrade to `websocket`.
+* This is actually what happens during the handshake. Browser uses the `HTTP` connection to establish the connection using `HTTP/1.1` protocol and then it `Upgrade` it to `websocket` protocol.
+
+Now this will make more sense.
+> `Headers` Event is emitted before the response headers are written to the socket as part of the handshake. This allows you to inspect/modify the headers before they are sent.
+
+
+Similarly we can add one more event `connection` which is emitted when the handshake is complete. We will send a message to Client upon successfully establishing a connection. Let's see how :-
+```javascript
+const http = require('http');
+const websocket = require('ws');
+
+const server = http.createServer((req, res) => {
+    res.end("I am connected");
+});
+const wss = new websocket.Server({ server });
+
+wss.on('headers', (headers, req) => {
+    //console.log(headers); Not logging the header anymore
+});
+
+//Event: 'connection'
+wss.on('connection', (ws, req) => {
+    ws.send('This is a message from server, connection is established');
+    //receive the message from client on Event: 'message'
+    ws.on('message', (msg) => {
+        console.log(msg);
+    });
+});
+
+server.listen(8000);
+```
+We are also listening for the event `message` coming from Client. Let's create that: -
+```html
+<html>
+
+<script>
+    let ws = new WebSocket('url'); 
+    //logging the websocket property properties
+    console.log(ws);
+    //sending a message when connection opens
+    ws.onopen = (event) => ws.send("This is a message from client");
+    //receiving the message from server
+    ws.onmessage = (message) => console.log(message);
+</script>
+
+<body>
+    <h1>This is a client page</h1>
+</body>
+
+</html>
+```
+This is how it looks in browser:-  
+!['browser screenshot]()  
+The first log is `WebSocket` listing all the properties on websocket object and the second log is `MessageEvent` which has `data` property if you look closely and there we got our message from server.  
+The server part will look something like this:-  
+!['server log']()  
+We got the client's message correctly. Looks like our connection has established successfully. Cheers!  
+
+This is the basics of WebSockets and how they work. I will be covering `socket.io` and the working in more details in the next post in this series. We will also see why exactly we need `socket.io` when things are working just fine with only native `WebSocket()`. Why use a heavy bloated library when we can successfully send and recieve messages just fine?  
+Stay tuned for the next post. Do share the post if you find it helpful.  
+Shad.
+
+## Reference
+* `ws` module for Node server | Docs: https://github.com/websockets/ws/blob/HEAD/doc/ws.md#event-headers
+* WebSocket - Web APIs | MDN: https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
+
+

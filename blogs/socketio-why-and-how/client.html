@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js'></script>
+<script>
+    let socket = io('http://localhost:8000');
+    console.log(socket);
+    socket.on('connect', (data) => {
+        socket.on('welcome', (message) => {
+            console.log(message);
+        });
+        socket.emit('message', { data: 'This is a message from client' });
+    });
+</script>
+
+<body>
+    <h1>This is client page</h1>
+</body>
+
+</html>

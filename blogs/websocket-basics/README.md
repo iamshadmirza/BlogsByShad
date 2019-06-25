@@ -1,7 +1,6 @@
 # WebSocket Simplified
 ![Cover Image](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/websocket-basics/cover.jpg)  
-This is a series blog post consisting of two blogs.
-First we will learn about the native WebSocket and then Socket.io. Both blogs will detailed and beginner friendly. Let's start.
+
 # What is a Websocket?
 WebSocket allows a user to send and receive messages to a server.
 So basically, this is a way of communication between Client and Server.
@@ -178,13 +177,14 @@ server.listen(8000);
 The method `on` expects two arguments: Event name and callback. Event name to recognize which Event to listen/emit and callback specifies what to do with it. Here, we are just logging the `headers` Event. Let's see what we got:-  
 ![header log](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/websocket-basics/header.png)  
 This is our HTTP header and this is exactly what's going on behind the scenes. Let's break it down to better understand this.  
-* First things you will notice is that we got the status code `101`. You may have seen `200`, `201`, `404`, etc but this is different. `101` is actually the Switching Protocols status code. It says **"Hey, I waana upgarde"**.
-* Second line shows the Upgrade information. It specifies that it wants to upgrade to `websocket`.
+* First things you will notice is that we got the status code `101`. You may have seen `200`, `201`, `404` status code but this is looks different. `101` is actually the Switching Protocols status code. It says **"Hey, I wanna upgarde"**.
+* Second line shows the Upgrade information. It specifies that it wants to upgrade to `websocket` protocol.
 * This is actually what happens during the handshake. Browser uses the `HTTP` connection to establish the connection using `HTTP/1.1` protocol and then it `Upgrade` it to `websocket` protocol.
 
 Now this will make more sense.
 > `Headers` Event is emitted before the response headers are written to the socket as part of the handshake. This allows you to inspect/modify the headers before they are sent.
 
+>Which means you can modify the Header to accept, reject or anything else as you like. By default, it accepts the request.  
 
 Similarly we can add one more event `connection` which is emitted when the handshake is complete. We will send a message to Client upon successfully establishing a connection. Let's see how :-
 ```javascript

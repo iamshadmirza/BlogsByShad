@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+    input {
+        width: 100%;
+        height: 35px;
+    }
+</style>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js'></script>
+<script>
+    let socket = io('http://localhost:8000');
+    socket.on('connect', (data) => {
+        socket.on('messageFromServer', (message) => {
+            console.log(message);
+        });
+        socket.emit('messageFromClient', { data: 'This is a message from client' });
+        document.querySelector('#message-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            let message = document.querySelector('#user-message').value;
+            socket.emit('newMessageToServer', { text: message });
+        });
+        socket.on('newMessageToClient', (msg) => {
+            console.log(msg);
+            document.querySelector('#messages').innerHTML += `<li>${msg.text}</li>`;
+        })
+    });
+</script>
+
+<body>
+    <div class='container'>
+        <div class='row'>
+            <div class='col-sm-12'>
+                <form id='message-form'>
+                    <div class='col-sm-10'>
+                        <input id='user-message' type='text' placeholder='Enter your message' />
+                    </div>
+                    <div class='col-sm-2'>
+                        <input class='btn btn-primary' type='submit' value='Send' />
+                    </div>
+                </form>
+                <ul id='messages'>
+                    <!-- This will be populated by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

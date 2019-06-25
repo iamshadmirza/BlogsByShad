@@ -7,8 +7,8 @@ const server = http.createServer((req, res) => {
 const io = new socketio(server);
 
 io.on('connection', (socket, req) => {
-    socket.emit('welcome', 'This is a message from server');
-    socket.on('message', (msg) => {
+    socket.emit('messageFromServer', 'This is a message from server');
+    socket.on('messageFromClient', (msg) => {
         console.log(msg);
     });
 });

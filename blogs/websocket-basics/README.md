@@ -4,7 +4,7 @@
 # What is a Websocket?
 WebSocket allows a user to send and receive messages to a server.
 So basically, this is a way of communication between **Client** and **Server**.
-Let's understand this communication first, we will come back to WebSocket in a little while.
+Let's understand this communication first, we will return to WebSocket in a while.
 ## Client and Server
 Web browsers (Client) and servers communicate via TCP/IP. Hypertext Transfer Protocol (HTTP) is the standard application protocol *on top of* TCP/IP supporting requests (from the web browser) and their responses (from server).  
 ### How does this work?
@@ -15,7 +15,7 @@ Let's go through these simple steps:-
 4. A client receives the response.
 5. The connection is closed.
 
-This is basically how the communication between Client and Server works. Now get a closer look on step no. 5.  
+This is basically how the communication between Client and Server works. Now get a closer look at step no. 5.  
 > Connection is closed.  
 
 The HTTP request has served its purpose and it is no longer needed, hence the connection is closed.
@@ -25,7 +25,7 @@ The connection must be established successfully to start communicating. The solu
 
 #### How will the client know that the server wants to send a message?
 Consider this example:-  
-*Client is really hungry and has ordered some food online. He is making one request per second to check if the order is ready.*
+*Client is starving and has ordered some food online. He is making one request per second to check if the order is ready.*
 > 0 sec: Is the food ready?  (Client)  
 0 sec: No, wait.  (Server)  
 1 sec: Is the food ready?  (Client)  
@@ -40,7 +40,7 @@ This is what you call **HTTP Polling**.
 
 As you can see, this not very efficient. We are using unnecessary resources and the number of failed requests is also troublesome.  
 #### Is there any way to overcome this issue?
-Yup, there is a variation of polling technique which is used to overcome this deficiency and it is called as ***Long-Polling***.
+Yup, there is a variation of polling technique that is used to overcome this deficiency and it is called as ***Long-Polling***.
 >Long Polling basically involves making an HTTP request to a server and then holding the connection open to allow the server to respond at a later time (as determined by the server).
 
 Consider the **Long-Polling** version of the above example:-
@@ -49,7 +49,7 @@ Consider the **Long-Polling** version of the above example:-
 
 Yay, problem solved.   
 Not exactly. Although Long Polling works, it is very expensive in terms of CPU, memory, and bandwidth (*as we are blocking resources in holding the connection open*).  
-It looks like things are getting out of hand now. Let's get back to the main topic: **WebSocket**.
+What to do now? It looks like things are getting out of hand. Let's reach back to our savior: **WebSocket**.
 ## Why WebSocket?
 As you can see, Polling and Long-Polling are both quite expensive options in order to emulate real-time communication between Client and Server. 
 >This performance bottleneck is the reason why you would want to use WebSocket instead.   
@@ -69,11 +69,11 @@ As you can see, making a single request per connection is about 50% slower using
 ![Speed Graph 2](https://raw.githubusercontent.com/iamshadmirza/Blogs-by-Shad/master/blogs/websocket-basics/speed_graph2.png)  
 
 Here you can see that the HTTP benchmark peaks at about~950 requests per second while Socket.io serves about ~3900 requests per second. Effective, right?
->Note: Socket.io is a JavaScript library for realtime web applications. It implements WebSocket internally and provides a better **//Write about this** *(Next Blog post of this series explains Socket.io in detail)*.
+>Note: Socket.io is a JavaScript library for real-time web applications. It implements WebSocket internally. Consider this as a wrapper for WebSocket which provides many more features *(Next Blog post of this series explains Socket.io in detail)*.
 
 ## How does WebSocket work?
 These are the steps involved in establishing a WebSocket connection.
-1. Client (browser) sends an HTTP request to the Server.
+1. The client (browser) sends an HTTP request to the Server.
 2. A connection is established via the HTTP protocol.
 3. If the server supports the WebSocket protocol, it agrees to upgrade the connection. *This is called handshake.*
 4. Now that the handshake is complete the initial HTTP connection is replaced by a WebSocket connection that uses the same underlying TCP/IP protocol.
@@ -82,6 +82,7 @@ These are the steps involved in establishing a WebSocket connection.
 # Let's code
 We are going to create two files: one server and one client.  
 First create a simple `<html>` document named as `client.html` containing a `<script>` tag. Let's see how it looks:-  
+### Client.html
 ```html
 <html>
 
@@ -97,6 +98,7 @@ First create a simple `<html>` document named as `client.html` containing a `<sc
 ```
 Now create another file `server.js`. Now import HTTP module and create a server. Make it listen to `port 8000`.  
 This will work as a simple `http` server listening to `port 8000`. Let's look at that too:-  
+### Server.js
 ```javascript
 //importing http module
 const http = require('http');
@@ -116,7 +118,8 @@ Our basic setup of the client and server is done now. That was simple, right? Le
 
 ### Client setup
 To construct a **WebSocket**, use the `WebSocket()` constructor which returns the websocket object. This object provides the API for creating and managing a WebSocket connection to the **Server**.  
-In simple words, this websocket object will help us establish a connection with the server and send & receive data. Let us see how:- 
+In simple words, this websocket object will help us establish a connection with the server and create a bi-directional data flow i.e. *send and receive data from both ends*.  
+Let us see how:- 
 ```html
 <html>
 
@@ -132,7 +135,7 @@ In simple words, this websocket object will help us establish a connection with 
 </html>
 ```
 The `WebSocket` constructor expects a URL to listen to. Which in our case, is `'ws://localhost:8000'` because that's where our server is running.  
-Now, this is something different from what you are used to. We are not using the `HTTP` protocol, we are using `WebSocket` protocol. This will tell the client that 'Hey, we are using websocket protocol'. Simple enough? Now let's actually create a WebSocket server in `server.js`.
+Now, this is might be a little different from what you are used to. We are not using the `HTTP` protocol, we are using `WebSocket` protocol. This will tell the client that **'Hey, we are using websocket protocol'** hence `'ws://'` instead of `'http://'`. Simple enough? Now let's actually create a WebSocket server in `server.js`.
 ### Server setup
 We are gonna need a third-party module `ws` in our node server to use the setup the `WebSocket` server.  
 First, we will import the `ws` module. Then we will create a websocket server and hand it the `HTTP` server listening to `port 8000`.
@@ -156,7 +159,7 @@ server.listen(8000);
 As we have discussed before:
 > `WebSocket()` constructor returns a websocket object provides the API for creating and managing a WebSocket connection to the **Server**.
 
-Here, the `wss` object will help us listen to the `Event` emitted when a certain thing happens. Like the connection is established or handshake is complete or the connection is closed.  
+Here, the `wss` object will help us listen to the `Event` emitted when a certain thing happens. Like the connection is established or handshake is complete or the connection is closed, etc.  
 Let's see how to listen to the messages:-
 ```javascript
 const http = require('http');
@@ -166,7 +169,7 @@ const server = http.createServer((req, res) => {
     res.end("I am connected");
 });
 const wss = new websocket.Server({ server });
-//calling a method on which is available on websocket object
+//calling a method 'on' which is available on websocket object
 wss.on('headers', (headers, req) => {
     //logging the header
     console.log(headers);
@@ -174,9 +177,9 @@ wss.on('headers', (headers, req) => {
 
 server.listen(8000);
 ```
-The method `on` expects two arguments: Event name and callback. Event name to recognize which Event to listen/emit and callback specifies what to do with it. Here, we are just logging the `headers` Event. Let's see what we got:-  
+The method `'on'` expects two arguments: Event name and callback. Event name to recognize which Event to listen/emit and callback specifies what to do with it. Here, we are just logging the `headers` Event. Let's see what we got:-  
 ![header log](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/websocket-basics/header.png)  
-This is our HTTP header and I want you to be inquisitive about it because this is exactly what's going on behind the scenes. Let's break it down to better understand this.  
+This is our HTTP header and I want you to be inquisitive about it because this is exactly what's going on behind the scenes. Let's break it down to understand better.  
 * First things you will notice is that we got the status code `101`. You may have seen `200`, `201`, `404` status code but this looks different. `101` is actually the Switching Protocols status code. It says **"Hey, I wanna upgrade"**.
 * Second line shows the Upgrade information. It specifies that it wants to upgrade to `websocket` protocol.
 * This is actually what happens during the handshake. The browser uses the `HTTP` connection to establish the connection using `HTTP/1.1` protocol and then it `Upgrade` it to `websocket` protocol.
@@ -184,7 +187,7 @@ This is our HTTP header and I want you to be inquisitive about it because this i
 Now this will make more sense.
 > `Headers` Event is emitted before the response headers are written to the socket as part of the handshake. This allows you to inspect/modify the headers before they are sent.
 
->Which means you can modify the Header to accept, reject or anything else as you like. By default, it accepts the request.  
+> This means you can modify the Header to accept, reject or anything else as you like. By default, it accepts the request.  
 
 Similarly, we can add one more event `connection` which is emitted when the handshake is complete. We will send a message to the Client upon successfully establishing a connection. Let's see how:-
 ```javascript
@@ -211,7 +214,7 @@ wss.on('connection', (ws, req) => {
 
 server.listen(8000);
 ```
-We are also listening for the event `message` coming from Client. Let's create that: -
+We are also listening for the event `message` coming from Client. Let's create that:-
 ```html
 <html>
 
@@ -232,26 +235,24 @@ We are also listening for the event `message` coming from Client. Let's create t
 </html>
 ```
 This is how it looks in the browser:-  
-!['browser screenshot](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/websocket-basics/client.png)  
-The first log is `WebSocket` listing all the properties on websocket object and the second log is `MessageEvent` which has `data` property if you look closely and there we got our message from the server.  
-The server part will look something like this:-  
+![browser screenshot](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/websocket-basics/client.png)  
+The first log is `WebSocket` listing all the properties on websocket object and the second log is `MessageEvent` which has `data` property. If you look closely, you will see that we got our message from the server.  
+The server log will look something like this:-  
 !['server log'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/websocket-basics/server.png)  
-We got the client's message correctly. It looks like our connection was established successfully. Cheers!  
+We got the client's message correctly. This marks that our connection was established successfully. Cheers!  
 
 ## Conclusion
-Let's get through what we learned in this post:-
+To sum up, let's go through what we learned:-
 * We have covered how HTTP server works, what is Polling, Long Polling.
 * What are WebSockets and why we need them. 
-* We covered how they work behind the scene and understood the header a little better. 
+* We covered how they work behind the scene and got a better understanding of the header. 
 * We created our own Client and Server and successfully established the connection between them.
 
-This is the basics of WebSockets and how they work. The next post in series will be cover `socket.io` and the working in more detail. We will also see why exactly we need `socket.io` when things are working just fine with only native `WebSocket()`. Why use a heavy bloated library when we can successfully send and receive messages just fine?  
-Stay tuned for the next post. Do share the post if you find it helpful.  
+This is the basics of WebSockets and how they work. The next post in the series will cover `socket.io` and the working in more detail. We will also see why exactly we need `socket.io` when things are working just fine with only native `WebSocket()`. Why use a heavy bloated library when we can successfully send and receive messages just fine?  
+Do share the post if you find it helpful and stay tuned for the next one.  
 Shad.
 
 ## Reference
 
 * WebSocket - Web APIs | MDN: https://developer.mozilla.org/en-US/docs/Web/API/WebSocket
 * `ws` module for Node server | Docs: https://github.com/websockets/ws/blob/HEAD/doc/ws.md#event-headers
-
-

@@ -1,9 +1,9 @@
 # Socket<span>.io: What, Why and How?
-
+!['cover'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/socketio-why-and-how/cover.jpg)
 This is second blog post in continuation of the series **WebSocket Simplified**. If you haven't read the first part, check it out here. I insist that you go through the first part to understand this one better. Again, the goal is to keep things as simple as possible. So I'm going to approach this topic a little differently. Let's start.
 
 ## Why Socket<span>.io
-In previous post, we successfully built over basic WebSocket server and client and it was working pretty fine. So, you might be wondering why use socket.io ? why use a heavy bloated library when things are working just fine without it? Let's consider this scenario:-  
+In previous post, we successfully built our basic WebSocket server and client and it was working pretty fine. So, you might be wondering why use socket.io ? why use a heavy bloated library when things are working just fine without it? Let's consider this scenario:-  
 
 Suppose your boss tells you to add real-time communication in the website and you decided to use native WebSocket and not any library whatsoever.  
 You coded the WebSockets correctly and it's working fine *EXCEPT* the testing reveals that there are some issues. It's not working properly everytime for some reason.  

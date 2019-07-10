@@ -29,7 +29,8 @@ This seems like a lot now, doesn't it?
 !['please save me'](https://media.giphy.com/media/3o7TKEP6YngkCKFofC/giphy.gif)  
 With some more code and hard work, you tackeled these too. Now your WebSocket implementation looks something like this:-  
 !['demo2'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/socketio-why-and-how/demo2.jpg)
-Guess what, this all collectively is actually Socket.io.  
+>Guess what, this all collectively is actually Socket.io.  Check out the image below just to make things crystal clear.
+
 !['demo3'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/socketio-why-and-how/demo3.jpg)
 
 Socket.io uses WebSocket behind the scenes and takes care of all these problems so that we don't have to deal with them ourselves. It's actually just a wrapper over native WebSocket which provides bunch of other cool features which makes our job easy as a developer.  

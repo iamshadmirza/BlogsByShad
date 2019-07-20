@@ -42,13 +42,14 @@ Guess what, this whole collection is actually what you call Socket.io. Check out
 
 Socket<span>.IO primarily uses the WebSocket protocol with ***polling as a fallback option***, while providing the same interface. Although it can be used as ***simply a wrapper for WebSocket***, it ***provides many more features***, including broadcasting to multiple sockets, storing data associated with each client, and asynchronous I/O.
 
->Note: Read that again and give extra attention on the text in bold. We've been talking just that in the Why section. Now it makes sense right?
+>Note: Read that again and give extra attention to the text in bold. We've been talking just that in the Why section. Now it makes sense right?
 
 We'll learn about the core features of Socket<span>.IO in the third part of this series. Let's convert our WebSocket client and server files (created in the [first part](https://iamshadmirza.hashnode.dev/websocket-simplified-cjxjzcu0m002i3hs1eewt2p80)) to use Socket<span>.IO quickly.
 
 ## How?
 I'm assuming you've read the [first part](https://iamshadmirza.hashnode.dev/websocket-simplified-cjxjzcu0m002i3hs1eewt2p80) and know the working of native WebSockets. Let's quickly upgrade that to Socket<span>.io.  
 > Commented code is WebSocket usage. I've added it for comparison.
+
 ### Server
 
 !['server'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/socketio-why-and-how/server.png)  

@@ -29,7 +29,8 @@ This seems like a lot now, doesn't it?
 !['please save me'](https://media.giphy.com/media/3o7TKEP6YngkCKFofC/giphy.gif)  
 With some more code and hard work, you tackled these too. Now your WebSocket implementation looks something like this:-  
 !['demo2'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/socketio-why-and-how/demo2.jpg)
->Guess what, this whole collection is actually what you call Socket.io. Check out the image below just to make things crystal clear.
+
+Guess what, this whole collection is actually what you call Socket.io. Check out the image below just to make things crystal clear.
 
 !['demo3'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/socketio-why-and-how/demo3.jpg)
 

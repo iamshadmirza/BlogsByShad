@@ -1,11 +1,11 @@
-# Reward Referrals in React Native
+# Handling incoming Dynamic Links
 
-This is Part 2 of the series Deep Linking and we will make a Reward Referral system by implementing Dynamic Links using `react-native-firebase`.  
+This is Part 2 of the series React Native Deep Linking Simplified and in Part 1 we learned How to add Deep Link to awe will make a Reward Referral system by implementing Dynamic Links using `react-native-firebase`.  
 Our main goal was to handle incoming links and Reward Referral System looks like a good topic to illustrate this.
 We will see how to route the user to a particular screen based on the link he is coming from.  
 Let's get started.
 ### Steps involved:-  
-1. Create react-native project
+1. Create a React Native project
 2. Create an application on firebase console
 3. Add react-native-firebase 
 4. Add Firebase Dynamic Links

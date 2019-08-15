@@ -1,13 +1,13 @@
 # React Native Deep Linking Simplified
 Before we go through the **HOW** part of this blog where we will be adding *Deep Linking* in our React Native app, Let's first go through the **WHAT** and **WHY** to better grasp the concept. Let's begin.
 # What is Deep Linking?
-A *Deep Link* is simply an *intent filter system* that allows the user to access a certain activity in an Android app with a URL. 
-Let us suppose that we saw a certain product (for example a shoe) on an e-commerce website (example: Amazon) and we want to share it with a friend. So a Deep Link will allow us to share a URL that will enable the receiver to open that exact shoe product page in just one click. 
+A *Deep Link* is simply an *intent filter system* that allows the user to access a certain activity in an Android app with a URL.  
+Let us suppose that we saw a certain product (for example a shoe) on an e-commerce website (example: Amazon) and we want to share it with a friend. So a Deep Link will allow us to share a URL that will enable the receiver to open that exact shoe product page in just one click.  
 Now this definition will be clearer:
 >Deep linking consists of using a uniform resource identifier (URI) that links to a specific location within a mobile app rather than simply launching the app. Deferred deep linking allows users to deep link to content even if the app is not already installed.
 
 # Why Deep Linking?
-Well, we already went through one example in *What* part above but there can be many use cases where a *Deep Link* can come very handy. Think of marketing strategies, referral links, sharing a certain product, etc. 
+Well, we already went through one example in *What* part above but there can be many use cases where a *Deep Link* can come very handy. Think of marketing strategies, referral links, sharing a certain product, etc.  
 The greatest benefit of mobile deep linking is the ability for marketers and app developers to bring users directly into the specific location within their app with a dedicated link. Just as deep links made the web more usable, mobile deep links do the same for mobile apps.
 # How to add Deep Linking?
 Finally, how to create one. There are just 3 simple steps involved. Which are:
@@ -104,7 +104,7 @@ You can also create a HTML file with these two links like this and *test*:
 <a href="https://www.deeplinkdemo.com">DeepLink with https scheme</a>
 </html>
 ```
-Access the file via localhost or place it on device. Click the link and this will hopefully launch your app. 
-This was the first part of the Deep Link series and in Part 2 we will learn **How to handle incoming links upon app launch and redirect user**. 
-Do share this article if you find it helpful. 
+Access the file via localhost or place it on device. Click the link and this will hopefully launch your app.  
+This was the first part of the Deep Link series and in Part 2 we will learn **How to handle incoming links upon app launch and redirect user**.  
+Do share this article if you find it helpful.  
 Shad

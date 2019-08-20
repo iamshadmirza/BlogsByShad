@@ -1,4 +1,5 @@
-# Reward Referrals in React Native
+# React Native Reward Referrals
+!['cover'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/RNRR-cover.png)
 This is the third article of series *React Native Deep Linking Simplified* and in the first two blogs, we learned how to add Deep Link in our app and how to handle it gracefully.  
 In this article, we will setup a referral system and get the most out this amazing feature. 
 >Offering in-app rewards for successful referrals to both the referrer and the recipient is an effective way to encourage users to use your app. 

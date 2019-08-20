@@ -1,5 +1,5 @@
 # Handling Incoming Dynamic Links
-
+!['cover'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/HIDL-cover.png)
 This is Part 2 of the series React Native Deep Linking Simplified and in Part 1 we learned *How to add Deep Links*.  
 In this article, our goal is to learn how to handle incoming links like a pro.  
 We will also see how to route the user to a particular screen based on the incoming link.

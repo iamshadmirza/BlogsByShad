@@ -1,5 +1,6 @@
 # React Native Deep Linking Simplified
-Before we go through the **HOW** part of this blog where we will be adding *Deep Linking* in our React Native app, Let's first go through the **WHAT** and **WHY** to better grasp the concept. Let's begin.
+!['cover'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/RNDL-cover.png)
+Before we go through the **HOW** part of this blog where we will be adding *Deep Linking* in our React Native app, Let's first go through the **WHAT** and **WHY** to better grasp the concept. Let's start.
 # What is Deep Linking?
 A *Deep Link* is simply an *intent filter system* that allows the user to access a certain activity in an Android app with a URL.  
 Let us suppose that we saw a certain product (for example a shoe) on an e-commerce website (example: Amazon) and we want to share it with a friend. So a Deep Link will allow us to share a URL that will enable the receiver to open that exact shoe product page in just one click.  
@@ -74,7 +75,7 @@ $ adb shell am start -W -a android.intent.action.VIEW -d <URI> <PACKAGE>
 
 >*Note: Take a closer look at `app://deeplink`. This is our link added inside `intent-filter` to specify our app.* 
 
-If your App opened successfully then our Deep Linking is working as expected. Yay! 
+If your App opened successfully then our Deep Linking is working as expected. Yay!  
 !['yay'](https://media.giphy.com/media/hZj44bR9FVI3K/giphy.gif)
 
 # How to open with URL
@@ -90,7 +91,7 @@ Run this command:
 Cheers if your app appears right in front of you.
 
 ## Note:
-You can use multiple `<data />` tags inside `intent-filter` so something like this is totally okay.
+You can use multiple `<data>` tags inside `intent-filter` so something like this is totally okay.
 ```xml
 <data android:scheme="app" android:host="deeplink" />
 <data android:scheme="https" android:host="www.deeplinkdemo.com" />
@@ -105,6 +106,6 @@ You can also create a HTML file with these two links like this and *test*:
 </html>
 ```
 Access the file via localhost or place it on device. Click the link and this will hopefully launch your app.  
-This was the first part of the Deep Link series and in Part 2 we will learn **How to handle incoming links upon app launch and redirect user**.  
+This was the first part of the series *React Native Deep Linking Simplified* and in Part 2 we will learn **How to handle incoming links upon app launch and redirect user**.  
 Do share this article if you find it helpful.  
 Shad

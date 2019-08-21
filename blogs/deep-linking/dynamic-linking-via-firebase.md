@@ -1,6 +1,6 @@
 # Handling Incoming Dynamic Links
 !['cover'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/HIDL-cover.png)
-This is Part 2 of the series React Native Deep Linking Simplified and in Part 1 we learned *How to add Deep Links*.  
+This is Part 2 of the series React Native Deep Linking Simplified and in [Part 1](https://iamshadmirza.hashnode.dev/react-native-deep-linking-simplified-cjzj6qf8900003ss1zv178dm9) we learned *How to add Deep Links*.  
 In this article, our goal is to learn how to handle incoming links like a pro.  
 We will also see how to route the user to a particular screen based on the incoming link.
 >The term **Deep Link** is used for the `https` scheme and **Dynamic Link** is used for the `app` scheme. We can use both to navigate our user so don't get confused between these two terms.
@@ -20,7 +20,7 @@ We will use the `react-native-firebase` module to configure Dynamic Links in our
 4. Add Firebase Dynamic Link module
 
 ## Step 1. Create a React Native Project
-Follow the steps in Part 1 of this series and add Deep Link as described. We will be adding `firebase-invites` support via the same Dynamic/Deep Link we created earlier.
+Follow the steps in [Part 1](https://iamshadmirza.hashnode.dev/react-native-deep-linking-simplified-cjzj6qf8900003ss1zv178dm9) of this series and add Deep Link as described. We will be adding `firebase-invites` support via the same Dynamic/Deep Link we created earlier.
 
 ## Step 2. Create an application on firebase console
 Let's create an application on the firebase console to use the Firebase SDK. Follow this [link](https://console.firebase.google.com/) and create an application. 
@@ -47,9 +47,11 @@ Let's create an application on the firebase console to use the Firebase SDK. Fol
  //Add to the bottom of the file
  apply plugin: 'com.google.gms.google-services'
  ```
+
  >Please use the latest firebase dependency available. 
  You can add it from Android Studio also by going to:  
  File -> Project Structure -> Dependencies
+
 ## Step 3. Add react-native-firebase
 Go to your project root directory and run this command:
 ```shell
@@ -79,7 +81,7 @@ dependencies {
 include ':react-native-firebase'
 project(':react-native-firebase').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-firebase/android')
 ```
-* Edit `MainApplication.java`
+* Edit `MainApplication.java`  
 ```java
  ...
  import io.invertase.firebase.RNFirebasePackage; // import this
@@ -109,7 +111,8 @@ dependencies {
  implementation "com.google.firebase:firebase-dynamic-links:19.0.0"
 }
 ```
-* Edit `MainApplication.java`:
+
+* Edit `MainApplication.java`:  
 ```java
 import ...
 //import this package
@@ -124,6 +127,7 @@ protected List<ReactPackage> getPackages() {
  );
 }
 ```
+
 * Sync Project and we are done. Let's move on to section 2.
 
 If you're running into some dependency issues then `Migrate to AndroidX`. Check **How to solve dependency issues** at the end of this article.

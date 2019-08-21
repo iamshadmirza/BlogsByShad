@@ -27,8 +27,8 @@ Let's create an application on the firebase console to use the Firebase SDK. Fol
 * Create a project by clicking on **Add Project**. 
 
 * Follow the steps to add Android/iOS app. Make sure the project name in **Register app** section matches with your react-native project (`com.deeplinkdemo` in our case). 
-!['Register App'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/image%20(2).png) 
-* Download `google-services.json` and paste it inside `/deeplinkdemo/android/app/`. Make sure the location is correct. 
+!['Register App'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/create-application.png) 
+* Download `google-services.json` and paste it inside `/deeplinkdemo/android/app/`. Make sure the location is correct.  
 !['Project structure'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/image.png)
 * Add libraries as instructed and Sync Project. It will look something like this:- 
  * Project-level build.gradle 
@@ -105,6 +105,7 @@ If you go to the [Firebase Invites Docs](https://firebase.google.com/docs/invite
 It means we are eventually be using [Firebase Dynamic Links](https://firebase.google.com/docs/dynamic-links/) module in our project.
 
 * Add the dependency to `android/app/build.gradle` file:
+
 ```java
 dependencies {
  // ...
@@ -112,12 +113,12 @@ dependencies {
 }
 ```
 
-* Edit `MainApplication.java`:  
+* Edit `MainApplication.java`: 
+
 ```java
 import ...
 //import this package
 import io.invertase.firebase.links.RNFirebaseLinksPackage;
-
 @Override
 protected List<ReactPackage> getPackages() {
  return Arrays.<ReactPackage>asList(
@@ -132,6 +133,7 @@ protected List<ReactPackage> getPackages() {
 
 If you're running into some dependency issues then `Migrate to AndroidX`. Check **How to solve dependency issues** at the end of this article.
 > See [official docs](https://rnfirebase.io/docs/v5.x.x/links/android#Configure-Android-Project) for updated method.
+
 # Test Dynamic Link on the device
 
 There are two steps involved in this section: -
@@ -141,11 +143,11 @@ There are two steps involved in this section: -
 ## Step 1. Create a Dynamic Link
 Let's generate a link on the Firebase Console and update our intent filter. This link must be unique and provided by *firebase* itself. Follow these simple steps: 
 * Select your app on Firebase Console and click on **Get Started** 
-!['get started'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/image%20(7).png)
+!['get started'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/get-started.png)
 
 * Add a **Domain**. It will probably take a couple of tries to find a unique domain. Note it down when you find one.
 *(example: `https://deeplinkblogdemo.page.link` in my case)* 
-!['add domain'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/image%20(1).png)
+!['add domain'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/add-domain.png)
 
 * Edit `AndroidManifest.xml` and update the `<data>` tag in `intent-filter` with the *Domain* you just created: 
 ```xml
@@ -153,7 +155,7 @@ Let's generate a link on the Firebase Console and update our intent filter. This
  android:host="deeplinkblogdemo.page.link" />
 ```
 * Click on **New Dynamic Link** and follow the steps. Provide both *Deep Link URL* and *Dynamic Link name* under *Setup your Dynamic Link* section.
-!['add domain'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/image%20(5).png) 
+!['add domain'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/deep-linking/new-link.png) 
 
 Now that we have created our Dynamic Link, we can move on to the next step.
 

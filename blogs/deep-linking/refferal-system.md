@@ -22,21 +22,19 @@ https://www.deeplinkdemo.com?invitedby=SENDER_UID
 ```
 I will using a random SENDER_UID just for this article. You can call `getUid()` on Firebase user or generate the ID as you like.
 ```javascript
+HOW it actually works
 //import firebase
-import { firebase } from '@react-native-firebase/dynamic-links';
+import firebase from 'react-native-firebase';
 //Generate unique user ID here
 const SENDER_UID = 'USER1234';
 //build the link
-const link = await firebase.dynamicLinks().buildLink({
-  link: `https://www.deeplinkdemo.com?invitedby=${SENDER_UID}`,
-  domainUriPrefix: 'https://deeplinkblogdemo.page.link',
-  analytics: {
-    campaign: 'banner',
-  }
-});
-
+const link = `https://www.deeplinkdemo.com?invitedBy=${SENDER_UID}`;
+const dynamicLinkDomain = 'https://deeplinkblogdemo.page.link';
+const DynamicLink = new firebase.links.DynamicLink(link, dynamicLinkDomain);
+const generatedLink = await firebase.links().createDynamicLink(DynamicLink);
+console.log('created link', generatedLink);
+// console.log: https://deeplinkblogdemo.page.link?link=https%3A%2F%2Fwww.deeplinkdemo.com%3FinvitedBy%3DUSER1234
 ```
-Visit this [link](https://invertase.io/oss/react-native-firebase/v6/dynamic-links/reference/dynamiclink) to read more about the *parameters* available.
 
 ## Step 3. Send the invitation link
 Now that we have created the link, we can include it in an invitation. This invitation can be an email, SMS message, or any other medium, depending on what is most appropriate for your app and audience. Example: 
@@ -52,32 +50,26 @@ There are mainly use cases that can happen when the recipient open the app with 
 Remember when we added `SENDER_UID` as a payload in our invitation link? We are going to retrive that info to specify the user and grant reward. We want to check that the app has been launched from a Dynamic Link or not.
 ```javascript
     //add the code to the root file of your app
-    componentDidMount(){
-        const initialLink = await firebase.dynamicLinks().getInitialLink();
-
-        if (initialLink) {
-            // Handle dynamic link inside your own application
-
-        //Assuming "?post=1234&action=edit"
-        // var urlParams = new URLSearchParams(window.location.search);
-        // console.log(urlParams.has('post')); // true
-        // console.log(urlParams.get('action')); // "edit"
-
-            if (initialLink.url.includes('https://www.deeplinkdemo.com')){
-                //app opened from Dynamic Link
-                //retreive the SENDER_UID
-                //Set the reward point and update values in database
-            } else {
-                //app not opened from Dynamic Link
-                //No reward is granted
-            }
+    async componentDidMount() {
+        let url = await firebase.links().getInitialLink();
+        console.log('incoming url', url); //incoming url https://www.deeplinkdemo.com?invitedby=USER1234
+        if (url) {
+        const ID = this.getParmFromUrl(url, "invitedBy");
+        console.log('ID', ID); //ID USER1234
         }
-}
+    }
+
+    getParmFromUrl(url, parm) {
+        var re = new RegExp(".*[?&]" + parm + "=([^&]+)(&|$)");
+        var match = url.match(re);
+        return (match ? match[1] : "");
+    }
+
 ```
 > `getInitialLink()` returns the Dynamic Link that the app has been launched from. If the app was not launched from a Dynamic Link the value will be null.
 
 ## Step 5. Grant reward
 Now that we have retrieved the payload data from the Dynamic Link, we can specify the user who shared the link and grant the referral rewards to the referrer and the recipient whenever the criteria we want to require have been met.
 
-## TODO
-Test the code and check the blogs for punctuation errors
+I hope you had fun learning about the Dynamic Links, Handling them and the Reward Referral systems. Do share if you find this helpful.  
+Shad

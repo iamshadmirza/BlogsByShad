@@ -106,7 +106,7 @@ It means we are eventually be using [Firebase Dynamic Links](https://firebase.go
 ```java
 dependencies {
  // ...
- implementation "com.google.firebase:firebase-dynamic-links:18.0.0"
+ implementation "com.google.firebase:firebase-dynamic-links:19.0.0"
 }
 ```
 * Edit `MainApplication.java`:
@@ -125,6 +125,8 @@ protected List<ReactPackage> getPackages() {
 }
 ```
 * Sync Project and we are done. Let's move on to section 2.
+
+If you're running into some dependency issues then `Migrate to AndroidX`. Check **How to solve dependency issues** at the end of this article.
 > See [official docs](https://rnfirebase.io/docs/v5.x.x/links/android#Configure-Android-Project) for updated method.
 # Test Dynamic Link on the device
 
@@ -178,5 +180,14 @@ async componentDidMount() {
 ```
 Add navigation path or anything as per your need and you're good to go.  
 We will build a referral system in our React Native App using this logic because that will a perfect use case to demonstrate Dynamic Links. So don't miss the third and final part of this series.  
+## How to solve dependency issue
+You might run into some dependency issues because of the recent changes that happened to the `AndroidX` library (because I did) and here is how I solved them:
+1. Open your *Project* with Android Studio and select `app` folder.
+2. Go to *Refractor -> Migrate to AndroidX -> Do refractor*.
+3. Sync Project. If the issues persist follow step 4 and 5. 
+4. You will probably see a *list of build issues* in *Build Output* below. Go through each one them and find the conflicting variable.
+5. Press `ALT + ENTER` and import the dependency. Remove the old one already present and we are done.
+
+I hope you're able to resolve the issues and successfully implement the Dynamic Links from firebase.  
 Share this article if you find it helpful.  
-See you soon. Shad
+See you in the next article. Shad

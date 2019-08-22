@@ -190,7 +190,7 @@ We will build a referral system in our React Native App using this logic because
 You might run into some dependency issues because of the recent changes that happened to the `AndroidX` library (because I did) and here is how I solved them:
 1. Open your *Project* with Android Studio and select `app` folder.
 2. Go to *Refractor -> Migrate to AndroidX -> Do refractor*.
-3. Sync Project. If the issues persist follow step 4 and 5. 
+3. Sync Project. If the issues persist follow steps 4 and 5. 
 4. You will probably see a *list of build issues* in *Build Output* below. Go through each one them and find the conflicting variable.
 5. Press `ALT + ENTER` and import the dependency. Remove the old one already present and we are done.
 

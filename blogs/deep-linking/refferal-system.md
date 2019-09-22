@@ -22,7 +22,6 @@ https://www.deeplinkdemo.com?invitedby=SENDER_UID
 ```
 I will be using a random SENDER_UID just for this article. You can call `getUid()` on Firebase user or generate the ID as you like.
 ```javascript
-HOW it actually works
 //import firebase
 import firebase from 'react-native-firebase';
 //Generate unique user ID here
@@ -45,7 +44,7 @@ const INVITATION = 'Shad has invited you to try this app. Use this referral link
 //send this String as you link
 ```
 ## Step 4. Retrieve the link
-There are mainly use cases that can happen when the recipient opens the app with the invitation link:  
+There are many use cases that can happen when the recipient opens the app with the invitation link:  
 1. If the app isn't already installed, they will be directed to Play Store or App Store to install the app.
 2. If the app is installed, they will open our app for the first time and we can retrieve the referral information included in the Dynamic Link.
 

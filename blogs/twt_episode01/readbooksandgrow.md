@@ -33,7 +33,7 @@ Elon Musk is a truly fascinating character. "Elon Musk got bullied as a child an
 ## 7. The $100 Startup by Chris Guillebeau
 The $100 Startup shows you how to break free from the shackles of 9 to 5 by combining your passion and skills into your own microbusiness, which you can start for $100 or less, yet still turn into a full-time income, thanks to the power of the internet. Chris pulled out a step-by-step framework you can use to find where your passion meets your skills and turn those into an income from your couch. Using nothing but a laptop and some wifi in most cases, you can build a thriving software, freelance or education business and scale it as far as you want. "It's short, quick and really good to read while you're starting up," Priyadeep said.
 
-## 8. Factfulness Summary by Hans Rosling
+## 8. Factfulness by Hans Rosling
 Factfulness explains how our worldview has been distorted with the rise of new media, in which ten human instincts cause erroneous thinking, and how we can learn to separate fact from fiction when forming our opinions. Priyadeep describes how this book enables you to see the reality overshadowed by the fiction which is created by the media advertising and modern internet era and "You should not romanticize the problem and think that you're a hero trying to save the world but you are working towards making incremental gains to make this world a better place."
 
 ### *"What books would you like to suggest which will help you with anyone who reads and improve as a person? Tanay continues the conversation with his next question"*

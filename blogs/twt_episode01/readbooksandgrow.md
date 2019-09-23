@@ -1,5 +1,5 @@
 # Books that will help you launch your entrepreneurship journey
-Tanay starts the [first episode](https://teawithtanay.com/how-books-shape-our-life-ft-priyadeep-sinha-episode-1/) of [#teawithtanay](https://teawithtanay.com/) podcast by introducing Priyadeep Sinha who also goes by the name PD.  
+Tanay starts the [first episode](https://teawithtanay.com/how-books-shape-our-life-ft-priyadeep-sinha-episode-1/) of [#teawithtanay](https://teawithtanay.com/) podcast by introducing [Priyadeep Sinha](https://www.linkedin.com/in/priyadeep-sinha/) who also goes by the name PD.  
 About PD, as Tanay said that he is the most well-read person he knows and he has been running startups for 8+ years.   
 He is the director of **Global Alliance of Mass Entrepreneurship (GAME)**, working toward entrepreneurs' growth.
 PD started managing a business at a very small age of 21, and he said that books played an important role in teaching him a lot of concepts that helped him along his entrepreneurial journey.  

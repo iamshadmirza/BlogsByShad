@@ -1,13 +1,15 @@
 # How books shape our life ft. Priyadeep Sinha | Episode 1
 ![cover](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/twt_episode01/episode01-cover.png)  
 
-In episode 1 [Priyadeep Sinha](https://www.linkedin.com/in/priyadeep-sinha/) , Director at Global Alliance for Mass Entrepreneurship (GAME) joins Tanay to talk about how books can guide as well as provide transformative experiences.
+[Listen to How books shape our life ft. Priyadeep Sinha | Episode 1 from Podcast: teawithtanay.com](https://teawithtanay.com/how-books-shape-our-life-ft-priyadeep-sinha-episode-1/)  
+
+In episode 1 [Priyadeep Sinha](https://www.linkedin.com/in/priyadeep-sinha/), Director at Global Alliance for Mass Entrepreneurship (GAME) joins [Tanay](https://twitter.com/tanaypratap) to talk about how books can guide as well as provide transformative experiences.
 
 The show begins with Tanay explaining why he has chosen Teacher’s day (5th September) as the day of the launch of his podcast as well as the topic of books for the first episode.
 
-He follows by introducing Priyadeep Sinha as the most well read person he knows and how Priyadeep has inspired a generation of entrepreneurs in Manipal.
+He follows by introducing Priyadeep Sinha as the most well-read person he knows and how Priyadeep has inspired a generation of entrepreneurs in Manipal.
 
-Priyadeep introduces himself and what he is currently involved with. He then shares an exciting story of how he picked up the love for books. In the show Priyadeep touches upon his favorite books and the main lessons he drew from each one of them.
+Priyadeep introduces himself and what he is currently involved with. He then shares an exciting story of how he picked up the love for books. In the show, Priyadeep touches upon his favorite books and the main lessons he drew from each one of them.
 
 ### *"Tanay starts the conversation by asking Priyadeep's favorite book."*
 
@@ -20,12 +22,12 @@ Priyadeep describes "The GodFather" as his favorite book of all time. The Godfat
 The central theme of the book is the business of literally delivering happiness while living a life of passion and purpose. Delivering Happiness (2013) tells the story of Tony Hsieh and his company Zappos, demonstrating how thinking long-term and following your passions can not only lead to profits but also a happy life for your employees, your customers, and yourself. The book describes an alternative approach to the corporate culture that focuses on the simple concept of making people around you happy, and by doing so increase your own happiness. "Delivering happiness describes how Zappos built a complete customer-centric organization and that stayed strongly with me" - Priyadeep said.
 
 ## 3. Hard things about Hard things by Ben Horowitz
-The Hard Thing About Hard Things is an inside-look at the tough decisions and lonely times all CEOs face, before showing you what it takes to build a great organization and become a world-class leader. Priyadeep tells us how as a startup founder, he went through a lot of hardships and this book stayed as a ray of motivation and confidence in all those times. This book talks about how Ben Horowitz survived through all the hard times. It states that the startup CEOs are "Wartime CEOs" and they have to be focused all the time. It also states how you can't put all the burden on your shoulders alone, and you have to learn to share the burden with more brains to successfully run a company. Few more important lesson that Priyadeep describes how the book describes that "What happens inside you when you're about to sell your company?" and "A good CEO always know when to layoff people and how to talk to them?" which PD himself have experienced in his life earlier.
+The Hard Thing About Hard Things is an inside look at the tough decisions and lonely times all CEOs face, before showing you what it takes to build a great organization and become a world-class leader. Priyadeep tells us how as a startup founder, he went through a lot of hardships and this book stayed as a ray of motivation and confidence in all those times. This book talks about how Ben Horowitz survived through all the hard times. It states that the startup CEOs are "Wartime CEOs" and they have to be focused all the time. It also states how you can't put all the burden on your shoulders alone, and you have to learn to share the burden with more brains to successfully run a company. Few more important lesson that Priyadeep describes how the book describes that "What happens inside you when you're about to sell your company?" and "A good CEO always know when to layoff people and how to talk to them?" which PD himself have experienced in his life earlier.
 
 ### *"What books would you recommend to someone who wants to start a startup?"*
 
 ## 4. Hooked by Nir Eyal
-Hooked describes how to build a habit-forming product that people want to use. A habit-forming product is a winning product, and the ultimate goal of habit-forming products is to solve a customer's problem (pain) by creating an association, so the customer sees the product as relief or a solution. The book talks about how extrinsic motivation leads you to seek a reward from a product and then extends that reward further. This forms an intrinsic motivation and this spiral continues. "Every product that has scaled to extremely large number has been able to do that and create a rewarding experience,'' Priyadeep added.
+Hooked describes how to build a habit-forming product that people want to use. A habit-forming product is a winning product, and the ultimate goal of habit-forming products is to solve a customer's problem (pain) by creating an association, so the customer sees the product as relief or a solution. The book talks about how extrinsic motivation leads you to seek a reward from a product and then extends that reward further. This forms an intrinsic motivation and this spiral continues. "Every product that has scaled to extremely large numbers has been able to do that and create a rewarding experience,'' Priyadeep added.
 "Not all entrepreneurs come with a large amount of Intrinsic Motivation, there is some of it but it needs an unlocking mechanism and you need and Extrinsic Motivation to do that." - Priyadeep said. These two books are great in these terms.
 
 ## 5. Steve Jobs by Walter Isaacson
@@ -53,7 +55,7 @@ Journey to the Center of the Earth tells the story of three adventurers who unde
 In I, Robot, Asimov chronicles the development of the robot through a series of interlinked stories: from its primitive origins in the present to its ultimate perfection in the not-so-distant future--a future in which humanity itself may be rendered obsolete. Here are stories of robots gone mad, of mind-read robots, and robots with a sense of humor. Of robot politicians and robots who secretly run the world--all told with the dramatic blend of science fact and science fiction that has become Asimov's trademark.
 
 ## 12. Murder in Mesopotamia by Agartha Cristie
-Murder in Mesopotamia is a work of detective fiction by British writer Agatha Christie. The story revolves around someone who is mysteriously murdered. There are a number of possible suspects. Hercule Poirot who is a great detective  figures out who the murderer is. The best part about this book is that it is unpredictable, sparking the reader’s curiosity, and you can not guess who is actually guilty.
+Murder in Mesopotamia is a work of detective fiction by British writer Agatha Christie. The story revolves around someone who is mysteriously murdered. There are several possible suspects. Hercule Poirot who is a great detective figure out who the murderer is. The best part about this book is that it is unpredictable, sparking the reader’s curiosity, and you can not guess who is actually guilty.
 
 ## 13. Lord of the Rings by J.R.R. Tolkien
 The Lord of the Rings by J.R.R. Tolkien tells the story of the War of the Ring in the fictional world of Middle-earth. The long novel, commonly published as three volumes and mistakenly called a trilogy, centers around the magical One Ring, which was discovered by Bilbo Baggins in the earlier novel The Hobbit. Now, the free peoples of Middle-earth, such as Men, Elves, Dwarves, and Hobbits, must overcome the dark power of Sauron by destroying the Ring. As Priyadeep said, fiction stories teach us important life lessons. This book teaches the importance of “Unity, Persistence, Purposeful Life, Counting your Blessings, Watching before Saying, and Loyalty.” 
@@ -92,4 +94,4 @@ You can never read enough books so here are some more books for startup enthusia
 *  Zero to One [[Buy Paperback](https://amzn.to/34sbSBt)]
 *  Start With Why [[Buy Paperback](https://amzn.to/2ZBVU92)]
 
-*Originally published at https://teawithtanay.com on September 5, 2019*
+*Originally published at https://teawithtanay.com on September 5, 2019.*

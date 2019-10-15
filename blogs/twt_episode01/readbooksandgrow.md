@@ -1,8 +1,13 @@
 # How books shape our life ft. Priyadeep Sinha | Episode 1
-Tanay starts the [first episode](https://teawithtanay.com/how-books-shape-our-life-ft-priyadeep-sinha-episode-1/) of [#teawithtanay](https://teawithtanay.com/) podcast by introducing [Priyadeep Sinha](https://www.linkedin.com/in/priyadeep-sinha/) who also goes by the name PD.  
-About PD, as Tanay said that he is the most well-read person he knows and he has been running startups for 8+ years.   
-He is the director of **Global Alliance of Mass Entrepreneurship (GAME)**, working toward entrepreneurs' growth.
-PD started managing a business at a very small age of 21, and he said that books played an important role in teaching him a lot of concepts that helped him along his entrepreneurial journey.  
+![cover](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/twt_episode01/episode01-cover.png)  
+
+In episode 1 [Priyadeep Sinha](https://www.linkedin.com/in/priyadeep-sinha/) , Director at Global Alliance for Mass Entrepreneurship (GAME) joins Tanay to talk about how books can guide as well as provide transformative experiences.
+
+The show begins with Tanay explaining why he has chosen Teacher’s day (5th September) as the day of the launch of his podcast as well as the topic of books for the first episode.
+
+He follows by introducing Priyadeep Sinha as the most well read person he knows and how Priyadeep has inspired a generation of entrepreneurs in Manipal.
+
+Priyadeep introduces himself and what he is currently involved with. He then shares an exciting story of how he picked up the love for books. In the show Priyadeep touches upon his favorite books and the main lessons he drew from each one of them.
 
 ### *"Tanay starts the conversation by asking Priyadeep's favorite book."*
 
@@ -57,3 +62,34 @@ So these were the books that will help you grow as a person, teach you about lif
 
 > *“A great book should leave you with many experiences, and slightly exhausted at the end. You live several lives while reading.”
 ― William Styron*
+
+## Priyadeep’s Recommended Books
+
+*  The Godfather [[Buy Paperback](https://amzn.to/2ZuRaCb)]
+*  Delivering Happiness [[Buy Paperback](https://www.amazon.in/Delivering-Happiness-Tony-Hsieh/dp/145550890X/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1567678426&sr=8-1)]
+*  The Hard Thing about Hard Thing [[Buy Paperback](https://amzn.to/2POom34)]
+*  Hooked [[Buy Paperback](https://amzn.to/34pH4kL)]
+*  The $100 Startup [[Buy Paperback](https://amzn.to/34pH4kL)]
+*  Factfulness [[Buy Paperback](https://amzn.to/34l4SWZ)]
+*  20,000 Leagues Under the Sea [[Buy Paperback](https://www.amazon.in/Journey-Centre-Earth-Jules-Verne/dp/8176936227/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1567679970&sr=8-5)]
+*  Journey to the Centre of the Earth [[Buy Paperback](https://amzn.to/2LlGxJ7)]
+*  I, Robot [[Buy Paperback](https://amzn.to/2LlGxJ7)]
+*  Murder in Mesopotamia [[Buy Paperback](https://amzn.to/2LnsUZG)]
+*  The Firm [[Buy Paperback](https://amzn.to/2NS4ppa)]
+*  The Pelican Brief [[Buy Paperback](https://amzn.to/2ZTwAXv)]
+*  The Hobbit and the Lord of the Rings [[Buy Paperback](https://amzn.to/2LueDcC)]
+*  The Count of Monte Cristo [[Buy Paperback](https://www.amazon.in/Count-Monte-Cristo-Alexandre-Dumas/dp/8193387627/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1567680414&sr=8-3)]
+
+You can never read enough books so here are some more books for startup enthusiasts that you will help you in your journey.
+
+## Editor’s Picks
+
+*  The Startup Owner’s Manual [[Buy Paperback](https://amzn.to/2Lqj2NF)]
+*  The Lean Startup [[Buy Paperback](https://amzn.to/2ZyrnJl)]
+*  Elon Musk [[Buy Paperback](https://amzn.to/2LvKtpD)]
+*  Blue Ocean Strategy [[Buy Paperback](https://www.amazon.in/Blue-Ocean-Strategy-Uncontested-Competition/dp/1625274491/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=&sr=)]
+*  Business Model Generation [[Buy Paperback](https://amzn.to/34l678B)]
+*  Zero to One [[Buy Paperback](https://amzn.to/34sbSBt)]
+*  Start With Why [[Buy Paperback](https://amzn.to/2ZBVU92)]
+
+*Originally published at https://teawithtanay.com on September 5, 2019*

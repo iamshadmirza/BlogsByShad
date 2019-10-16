@@ -1,5 +1,10 @@
 # Strategy around Hobby Projects
-The guest of today's podcast is [Rachit Gulati](https://www.linkedin.com/in/rachitgulati26/) who works at Microsoft. Rachit says that he has a lot of problems that motivate him to work on side projects. He likes going on a trek or hang out with friends when he is not coding.
+![cover](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/twt_episode02/ep02-cover.png)  
+
+[Listen to Hobby Projects ft. Rachit Gulati | Episode 2 from Podcast: teawithtanay.com](https://teawithtanay.com/hobby-projects-ft-rachit-gulati-episode-2/)  
+
+In episode 2, [Rachit Gulati](https://www.linkedin.com/in/rachitgulati26/) from Microsoft joins Tanay to talk about how he got started with hobby projects and how they helped him in cracking interviews. Rachit goes on to explain how one can go about doing hobby projects and benefit from them.
+Rachit says that he has a lot of problems that motivate him to work on side projects. He likes going on treks or hanging out with friends when he is not coding.
 
 ## *"Tanay starts the conversation by Rachit's interview experience at Microsoft and how doing hobby projects landed him a job"*
 Rachit tells us about the time when he was interviewing for Microsoft and one of the rounds didn't go well. But Microsoft decided to give him another chance because of the side projects he has made. This shows how hobby projects enhance the credibility of your profile and provide you a cutting edge in technical interviews.

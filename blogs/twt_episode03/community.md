@@ -2,14 +2,13 @@
 ![cover](./ep03cover.png)  
 
 In episode 3, [Anubha Maneshwar](https://www.linkedin.com/in/anubhamane/), founder of GirlScript project which helps beginners get started with coding, joins Tanay to share her journey of building a community and growing it. In the episode, she talks about how she got stated and how she got people excited about her vision for GirlScript.  
-Anubha Maneshwar is the founder of GirlScript, Mozilla Web Group, Dev Rally in Hasura, and has won the Indian Women Leadership Award for Education. Anubha Maneshwar is the winner of 35 Under 35 Awards in Best Startup for Education Category and India’s Top 100 Young Leaders Award.
+[Anubha Maneshwar](https://www.linkedin.com/in/anubhamane/) is the founder of GirlScript, Mozilla Web Group, Dev Rally in Hasura, and have won the Indian Women Leadership Award for Education. Anubha Maneshwar is the winner of 35 Under 35 Awards in Best Startup for Education Category and India’s Top 100 Young Leaders Award.
 
 ## *Anubha and GirlScript*
-GirlScript right now is in 52 cities of India, in Chicago, China, and Africa and it's about to come to the UK in two years.
-to help beginners learn and get the correct exposure
-started as a student in a small college in Nagpur, got a break in women tech maker Hyderabad.  
+GirlScript right now is in 52 cities of India, in Chicago, China, Africa, and it's about to come to the UK in two years.
+GirlScript aims to help beginners learn and get suitable exposure.
 Anubha's journey starts from a small college in Nagpur and goes all the way to Google Women Tech Makers in Hyderabad.  
-She got a chance to attend Google Tech Maker International women's day celebration which made her realize how far the community is lagging. It then led her to be a part of the Mozilla Web Community along with a few other communities as well. After being a part of more than 10 communities she realized that there is a gap which she can fill and that's how GirlScript came into existence.
+She got a chance to attend Google Tech Maker International women's day celebration which made her realize how far the community is lagging. It then led her to become a part of the Mozilla Web Community along with a few other communities as well. After being a part of more than 10 communities she realized that there is a gap she can fill and that's how GirlScript came into existence.
 
 ## *How did you come up with the name GirlScript ?*
 Anubha talks about an event when she with her classmates were interviewing for a company. When it came to the programming round, others started to step back. That's where she realized that women in tech are taking a set back themselves and they need support.  
@@ -50,4 +49,4 @@ GirlScript also has only two fundraising events in which they charge. Apart from
 Anubha gives a nice message that "if you see a fellow mate lagging for some reason then you should always try to help." The second thing she mentions is that you can always ask for help if you feel like you're lagging. GirlScript is there to help you and you can reach out to Anubha or GirlScript in case you need any help.  
 Anubha advises the listener to go to events, interact with other people and learn new things. You should focus on learning mainly and not on materialistic swags, t-shirts, etc.   
 
->On the ending note, one should always remember that ***Community means giving back.***
+>On ending note, one should always remember that ***Community means giving back.***

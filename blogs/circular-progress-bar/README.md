@@ -18,15 +18,17 @@ The first circle (purple) is initialized with a rotation of 180 degrees and comp
 ![first circle](./cpb2.png)
 
 ### 2. Second Circle
-The second circle is rendered on top of the first circle (purple) with the same rotation and backgroundColor equal to the outer base circle (grey). It makes the first circle disappear as grey color completely overshadows the inner purple circle. *I have reduced the opacity of upper (grey) circle to show what's happening*  
+The second circle is rendered on top of the first circle (purple) with the same rotation and backgroundColor equal to the outer base circle (grey). It makes the first circle disappear as grey color completely overshadows the inner purple circle.  
 
 ![first circle](./cpb3.png)   
 
-When the user clicks to animate, we are rotating the upper (grey)circle which is slowly revealing the inner (purple) circle from behind.  
+> I have reduced the opacity of upper (grey) circle to show what's happening.
+
+When the user clicks to animate, we are rotating the upper (grey) circle which is slowly revealing the inner (purple) circle from behind.  
 
 ![first circle](./cpb4.gif)  
 
-Note: Inner circle (purple) is not moving at all. We are rotating the upper circle (semi-transparent here) to show the inner circle from behind.  
+> Note: Inner circle (purple) is not moving at all. We are rotating the upper circle (semi-transparent here) to show the inner circle from behind.  
 
 ### 3. Third Circle
 The third semicircle is initialed with 0-degree rotation thus covers the left half of the base outer circle. Its background color is grey (same as the base circle).  
@@ -39,7 +41,7 @@ Hence, the third (left grey) circle has a higher elevation which enables it to o
 ![overlap-gif](./cpb6.gif)
 
 
-## Case 1. If progress percentage > 50
+## Case 2. If progress percentage > 50
 Initially, all three semicircles are initialed with 0-degree rotation and cover the left half of the outer base circle (grey). The first circle is at the bottom then second on top it and third on top of second as it has the highest elevation. This leaves the right half of the base circle empty.  
 
 ### 1. First Circle
@@ -51,24 +53,24 @@ Now first circle stops and second circle takes over to complete the remaining ro
 
 ### 2. Second circle
 The first circle's job is to take up to 50% of progress and then the second circle will rotate some more to cover the remaining percentage.
-I have made the second circle semi-transparent to show you how it's working. (the third circle is removed for simplicity)  
+I have made the second circle semi-transparent to show you how it's working. (the third circle is removed for simplicity). This is typically the case for `percent={70}`:  
 
 ![more than half](./cpb8.gif)
 
-So 50% area covered by first circle and 20% area covered by the second circle adds up to complete the animation. But wait, what about the third one? It is still on top of the second one and we can't see the second circle which is hidden. Let's see what our third circle is doing.
+So 50% area covered by first circle and 20% area covered by the second circle adds up to complete the animation. But wait, what about the third circle? It is still on top of the second one and we can't see the second circle which is behind. Let's see what our third circle is doing.
 
 ## 3. Third circle.
-We will rotate the third and second circle for the same degrees clockwise. It will leave space so that the second circle becomes visible. To show clearly, the third circle is yellow right now and first & second are removed.  
+We will rotate the third and second circle for the same degrees clockwise (extra 20% in current example). It will leave space so that the second circle becomes visible. To show clearly, the third circle is yellow right now and first & second are removed.  
 
 ![third](./cpb9.gif)   
 
-You see the problem here? As our third circle rotates clockwise, it takes some portion of the right half and overlays the first circle (third has higher elevation, remember?).   
+**Do you see the problem here?** As our third circle rotates clockwise, it takes some portion of the right half and overlays the first circle *(third has higher elevation, remember?)*.   
 The solution is simple and you might have guessed it already. Toggle the elevation value so the third circle goes inside the first circle.   
-**First Circle** is semi-transparent right now so you can see how the third (yellow) circle is going behind the first circle (semitransparent). After toggling elevation:  
+**First Circle** is semi-transparent right now so you can see how the third (yellow) circle is going behind the first one (semitransparent). After toggling elevation:  
 
 ![third overlap](./cpb10.gif)  
 
-I hope it is clear what's happening. Let's correct the colors and see our final animation.  
+I hope it is clear what's happening. Let's correct the colors and see our final animation!  
 
 ![color corrected](./cpb11.gif)
 
@@ -85,7 +87,7 @@ There are 5 steps involved:
 1. Render base circle
 2. Initialize default animation values
 3. Render three semicircles
-4. Add animations to semicircles.
+4. Add animation to semicircles.
 5. Render inner circle
 
 ## Step 1: Render base circle
@@ -103,7 +105,7 @@ Render the base container circle with a grey color background. It is going to co
   ]}
 />
 ```
-## Step 2: Initialise default animation values
+## Step 2: Initialize default animation values
 Initialize default values for all the three semicircles.
 
 ```js
@@ -153,7 +155,7 @@ const renderHalf = (color, transforms = [], otherStyles = {}) => (
     </Animated.View>
   );
 ```
-It takes a color prop and a transform prop to rotate the semicircles clockwise. Let's not worry about the logic right now and call this function to render our first semicircle.
+It takes a `color` prop and a `transform` prop to `rotate` the semicircles clockwise. Let's not worry about the logic right now and call this function to render our first semicircle.
 ```javascript
 {renderHalf(firstCircleColor, [{ rotate: rotate1 }])}
 ```
@@ -189,7 +191,7 @@ Our third color is grey (passiveColor) in both the cases and receives a rotation
 })}
 ```
 
-`rotate3` and `elevation3` values can be interpolated with:
+`rotate3` and `elevation3` values can be interpolated as:
 
 ```js
 const rotate3 = thirdCircleAnimatedValue.interpolate({
@@ -202,11 +204,11 @@ const rotate3 = thirdCircleAnimatedValue.interpolate({
     outputRange: [0, -1],
   });
 ```
-> `Elevation logic:` the third circle is only rotating in the second case from left half to right half. As soon as it starts moving, it takes up some portion of the right half and that's exactly when we want to toggle elevation.
+> `Elevation toggle logic:` the third circle is only rotating in the second case from left half to right half. As soon as it starts moving, it takes up some portion of the right half and that's exactly when we want to toggle elevation.
 
 
-## Step 4: Add animations to semicircles.
-Now we will write animation functions for both cases. We want to start animating whenever we receive a new `percent` value. We can use a simple `useEffect` hook for this purpose: 
+## Step 4: Add animation to semicircles.
+Now we will write animation function for both cases. We want to start animating whenever we receive a new `percent` value. We can use a simple `useEffect` hook for this purpose: 
 
 ```js
 useEffect(() => {
@@ -217,7 +219,7 @@ useEffect(() => {
   }
   });
 ```
-Above function simply chooses the animation to execute based on `percent`. Let's write our animation for function for `first case (<50)`: 
+Above function simply chooses the animation to execute based on value of `percent`. Let's write our animation function for `first-case (<50)`: 
 ```js
 const firstAnimation = () => {
   Animated.timing(secondCircleAnimatedValue, {
@@ -228,7 +230,7 @@ const firstAnimation = () => {
   }).start();
 };
 ```
-`percent * 3.6` is just to convert percentage to degrees. This function will animate second circle (grey) in clockwise direction to reveal first circle (purple) from behind. Now, let's see animation for our `second case (>50)`:
+`percent * 3.6` is just to convert percentage to degrees. This function will animate second circle (grey) in clockwise direction to reveal first circle (purple) from behind. Now, let's see animation for our `second-case (>50)`:
 
 ```js
 const secondAnimation = () => {
@@ -262,7 +264,7 @@ const secondAnimation = () => {
   };
 ```
 
-That's it, we are done with our animation. Let's add that inner circle to make this look like a progress bar.
+That's it, we are done with our animation. Let's add one inner circle to make this look like a progress bar.
 
 ## Step 5: Render inner circle
 ```js
@@ -305,7 +307,7 @@ return (
   );
 
 ```
-And we are done. I hope you had fun learning animation with react native. For full repo with typescript, head over to : https://github.com/ankeetmaini/rn-animation-circular-progress. Happy coding!
+And we are done! I hope you had fun learning animation with react native. For full repo with typescript, head over to : https://github.com/ankeetmaini/rn-animation-circular-progress. Happy coding!
 
 >//ADD PROPER CREDIT BELOW (correct below text)  
 This component was created by Ankeet Maini...

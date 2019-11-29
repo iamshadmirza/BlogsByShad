@@ -307,7 +307,7 @@ return (
   );
 
 ```
-And we are done! I hope you had fun learning animation with react native. For full repo with typescript, head over to : https://github.com/ankeetmaini/rn-animation-circular-progress. Happy coding!
-
->//ADD PROPER CREDIT BELOW (correct below text)  
-This component was created by Ankeet Maini...
+And we are done! Click [here](https://github.com/iamshadmirza/react-native-design-system/blob/master/src/CircularProgressBar/CircularProgressBar.js) to view source code used in this tutorial.   
+I hope you had fun learning animation with react native. Happy coding!
+ 
+> This component was created by [Ankeet Maini](https://twitter.com/ankeetmaini). For full repo with typescript, head over to: https://github.com/ankeetmaini/rn-animation-circular-progress.

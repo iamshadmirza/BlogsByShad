@@ -2,7 +2,7 @@
 
 ![cover](./soshace07.png)
 
-Today we're going to learn Redux but we will complete the homework from the last lesson. We are going to add a calendar. Remember when we learned how to take help from the amazing world of Open-Source? This is one of those times. We are going to add the day picker module built and tested by the react community. Let's get started.
+Today we're going to learn Redux but first, we will complete the homework from the last lesson. Remember when we learned how to take help from the amazing world of Open-Source? This is one of those times. We are going to add the day picker module built and tested by the react community. Let's get started.
 
 ## Install react-day-picker
 You can use either yarn or npm as convenient:

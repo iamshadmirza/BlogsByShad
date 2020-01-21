@@ -22,7 +22,7 @@ export default Root;
 ```
 Now, change our index file to import the root container
 ```js
-//app.js
+//index.js
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -31,7 +31,7 @@ import Root from "./container/Root"; //import Root
 const rootElement = document.getElementById("root");
 ReactDOM.render(<Root />, rootElement);
 ```
-That's good enough. Let's move on to React Redux in our main application.
+That's good enough. Let's move on to React-Redux in our main application.
 
 ## Use Redux to serve our articles
 Redux divides objects into “containers” and “components.” “Smart” components are those connected with “Store” – such as Counter, for example. And some components simply receive data and render them. Now we’ll have two containers – `Counter` and `ArticleList`.
@@ -65,6 +65,21 @@ export default (state = INITIAL_STATE, action) => {
 };
 ```
 Let's recall reducers from the previous lesson, "Reducers are just pure functions that return a new state every time we dispatch an action which in turn re-render the View."
+
+Previously we had just a single reducer "index.js" which we split into two separate reducers "articles.js" and "counter.js". We will "combineReducers" from the "redux" library to combine and export them to the store.
+
+```js
+//reducers/index.js
+
+import { combineReducers } from "redux";
+import article from "./articles";
+import counter from "./counter";
+export default combineReducers({
+  article,
+  counter
+});
+
+```
 
 ## 2. Connect ArticleList to store which will render the article list.
 Components that are connected to the store are called containers. We are going to create an "Articles" component inside the "container" folder and connect it with the store.
@@ -120,6 +135,11 @@ export const deleteArticle = id => {
 };
 ```
 Let's recall actions from the previous lesson, "Actions are a piece of code that tells how to change state.". Here, our `deleteArticle` action is getting "id" and passing it to the reducer to filter out the article with that particular "id".  
+Previously we had only one action creator as "actions/index.js" which we split them into two separate action creators "articles.js" and "counter.js". They can be exported as:
+```js
+export * from "./counter";
+export * from "./articles";
+```
 Then the reducer will be updated like this:
 ```js
 //reducers/articles.js

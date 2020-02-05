@@ -1,9 +1,9 @@
 In this lesson, we will learn about middlewares in Redux. We will understand what are they, how we can create one and how to use it in our app.
 
-## What is a middleware?
+## What is middleware?
 Middleware provides a way to interact with actions that have been dispatched to the store before they reach the store's reducer. Examples of different uses for middleware include logging actions, reporting errors, making asynchronous requests, and dispatching new actions.
 
-We talked about `side-effect` in the previous lesson and the simplest example of side-effects is Logging.
+We talked about `side-effects` in the previous lesson and the simplest example of side-effects is Logging.
 
 We will create a logger middleware that logs before, after and when an action is dispatched. Let's get started:
 
@@ -17,7 +17,7 @@ export default store => next => action => {
   console.log("---", "after", store.getState());
 };
 ```
-A `middleware` is function that receives `store` and returns a new function. This new function receives `next` (the function for further control delivery) which, in its turn, returns the function accepting action that does something.  
+A `middleware` is a function that receives a `store` and returns a new function. This new function receives `next` (the function for further control delivery) which, in its turn, returns the function accepting action that does something.  
 This scheme enables you to have access to the current value of your store, to next and action.  Our store will show immutable.js structures. (it is happening with the help of our `recordsFromArray` from `reducer/utils.js`). And what is more important is that the state of our store can change throughout the lifecycle of this middleware. We will see it right here, in our `logger.js`.
 
 First, we will do **dispatch** of the “before” state and then we'll call next – the delivery of control further. Generally, the whole chain of middlewares exists, and it goes from one to another which means we've handled our action in this middleware and then we deliver management using next to the next one, and whenever middlewares are over, it gets to reducers for being handled there and go to store. Once we are done with the dispatch of this action, we return to our middleware and can get the current state of the store after it has been handled in reducers.

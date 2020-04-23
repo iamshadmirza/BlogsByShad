@@ -1,6 +1,6 @@
 # How I set up Notion for Productive Sanity
 
-!['cover'](./cover.png)
+!['cover'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/cover.png)
 
 ## Introduction
 
@@ -32,7 +32,7 @@ This is pretty straight forward. We are just laying the ground for all of our im
 3. Delete everything on the page
 4. Rename your page as per your preference, add a nice icon and a background. It will look something like this now.
 
-!['desk'](./image-1.png)
+!['desk'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-1.png)
 
 >This is going to be the container for everything we want to add.
 
@@ -40,13 +40,13 @@ This is pretty straight forward. We are just laying the ground for all of our im
 
 1. Press the **"+"** button. Select **Heading 2** from the options that appear. We are going to divide our Home Page into small sections.
 
-!['heading'](./image-2.png)
+!['heading'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-2.png)
 
 2. After adding a heading, go to the next line and **add a page.**
 
 3. I arrange my ideas on a Kanban board and move them to different stages as I progress. Go ahead, select **Board** from **Database** section. Here is the outcome:
 
-!['heading'](./image-3.png)
+!['heading'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-3.png)
 
 > Tip: Add icon and cover to make things pretty. I have moved **No status view** to end. I'll add items in **Not started** section and move those cards to **Completed** as I proceed.
 
@@ -54,11 +54,11 @@ This is pretty straight forward. We are just laying the ground for all of our im
 
 5. Click on the right-most three dots on your page and select **Duplicate**.
 
-!['duplicate'](./image-4.png)
+!['duplicate'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-4.png)
 
 This will create an exactly similar page. When the page is created, edit title, icon, cover, and remove the irrelevant cards and you are done. Repeat this for all the ideas you want to manage, here is the outcome:
 
-!['ideas'](./image-5.png)
+!['ideas'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-5.png)
 
 Let's move on to the next section.
 
@@ -66,7 +66,7 @@ Let's move on to the next section.
 
 Go to the next line, add H2 heading **Productivity** and rearrange the position according to your choice 
 
-!['productivity'](./image-6.png)
+!['productivity'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-6.png)
 
 My productivity section has 2 pages
 1. Daily Tasks
@@ -77,15 +77,15 @@ My productivity section has 2 pages
 1. Add a new page in the productivity section.
 2. Select **Calendar** from **Database** and add the title, icon, and cover. It will look something like this:
 
-!['daily-task'](./image-7.png)
+!['daily-task'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-7.png)
 
 4. Click on **"New"** and select **"+ New template"**. This will create a template that we can use each time we add a task to a new day.  
 
-!['new-template'](./image-8.png)
+!['new-template'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-8.png)
 
 I've created my template something like this, you can customize based on your preference.
 
-!['template'](./image-9.png)
+!['template'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-9.png)
 
 Go back and click on "New" when you're done creating the template. You will see your template below. It will auto-populate everything for you which you can edit.
 
@@ -97,12 +97,12 @@ Go back and click on "New" when you're done creating the template. You will see 
 > Here is the [link](https://www.notion.so/Habit-Tracker-aba86e2b65fd46b89808194784d50484) to the template I'm using.
 
 Our desk progress so far:
-!['progress'](./image-10.png)
+!['progress'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-10.png)
 
 ## Project Section Setup
 
 This is similar to how we created the "Ideas" section. Just create a new "Project" heading and add the page below. I will be using Boards, feel free to experiment, and see what suits you.
-!['project'](./image-11.png)
+!['project'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-11.png)
 
 > It will be a good idea to add separate pages for separate projects.
 
@@ -110,13 +110,13 @@ This is similar to how we created the "Ideas" section. Just create a new "Projec
 
 When I'm learning something, I list out the things that I need to cover and create a todo list. This list will be in the order that I'm going to visit them. Our Board database can come handy in such use-cases.
 
-!['project'](./image-13.png)
+!['project'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-13.png)
 
 ## Using Relations in Databases
 
 We are using Databases here, and just like our relational databases, these pages can also have relations among them. You can refer to a different page inside a page. Go to **Add property** and select **Relation** inside the **Advanced** section.
 
-!['relation'](./image-12.png)
+!['relation'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-12.png)
 
 ### When this is useful?
 
@@ -127,4 +127,4 @@ Suppose you're working for a bunch of clients and you have a database with there
 I hope this is enough to get you started. You can explore the template gallery to see what's useful for you. There is no right or wrong here. What works for you is perfect so choose your preference and organize stuff.
 This is how my complete setup looks: 
 
-!['full-setup'](./image-14.png)
+!['full-setup'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-14.png)

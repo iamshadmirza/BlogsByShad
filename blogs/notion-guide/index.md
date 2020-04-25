@@ -23,46 +23,46 @@ Our Notion workspace will have a homepage that serves as a roadmap for all the p
 
 These sections will vary upon your needs so you don't have to add everything I'm listing here. Let's start with Home Page.
 
-## Home Page Setup
+## 1. Home Page Setup
 
 This is pretty straight forward. We are just laying the ground for all of our important stuff. Follow the steps below:
 
-1. Create a new workspace
-2. Start without a template.
-3. Delete everything on the page
-4. Rename your page as per your preference, add a nice icon and a background. It will look something like this now.
+* Create a new workspace
+* Start without a template.
+* Delete everything on the page
+* Rename your page as per your preference, add a nice icon and a background. It will look something like this now.
 
 !['desk'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-1.png)
 
 >This is going to be the container for everything we want to add.
 
-## Ideas Section Setup
+## 2. Ideas Section Setup
 
-1. Press the **"+"** button. Select **Heading 2** from the options that appear. We are going to divide our Home Page into small sections.
+* Press the **"+"** button. Select **Heading 2** from the options that appear. We are going to divide our Home Page into small sections.  
 
 !['heading'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-2.png)
 
-2. After adding a heading, go to the next line and **add a page.**
+* After adding a heading, go to the next line and **add a page.**
 
-3. I arrange my ideas on a Kanban board and move them to different stages as I progress. Go ahead, select **Board** from **Database** section. Here is the outcome:
+* I arrange my ideas on a Kanban board and move them to different stages as I progress. Go ahead, select **Board** from **Database** section. Here is the outcome:  
 
 !['heading'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-3.png)
 
-> Tip: Add icon and cover to make things pretty. I have moved **No status view** to end. I'll add items in **Not started** section and move those cards to **Completed** as I proceed.
+* I'll do the same thing for Talk ideas, Drawing ideas, and Generic ideas. Time for a trick: **Create Duplicate is your friend.**
 
-4. I'll do the same thing for Talk ideas, Drawing ideas, and Generic ideas. Time for a trick: **Create Duplicate is your friend.**
-
-5. Click on the right-most three dots on your page and select **Duplicate**.
+* Click on the right-most three dots on your page and select **Duplicate**.  
 
 !['duplicate'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-4.png)
 
-This will create an exactly similar page. When the page is created, edit title, icon, cover, and remove the irrelevant cards and you are done. Repeat this for all the ideas you want to manage, here is the outcome:
-
+This will create an exactly similar page. When the page is created, edit title, icon, cover, and remove the irrelevant cards and you are done. Repeat this for all the ideas you want to manage, here is the outcome: 
+ 
 !['ideas'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-5.png)
+
+> Tip: Add icon and cover to make things pretty. I have moved **No status view** to end. I'll add items in **Not started** section and move those cards to **Completed** as I proceed.
 
 Let's move on to the next section.
 
-## Productivity Section Setup
+## 3. Productivity Section Setup
 
 Go to the next line, add H2 heading **Productivity** and rearrange the position according to your choice 
 
@@ -74,12 +74,12 @@ My productivity section has 2 pages
 
 ### 1. Daily Tasks
 
-1. Add a new page in the productivity section.
-2. Select **Calendar** from **Database** and add the title, icon, and cover. It will look something like this:
+* Add a new page in the productivity section.
+* Select **Calendar** from **Database** and add the title, icon, and cover. It will look something like this:
 
 !['daily-task'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-7.png)
 
-4. Click on **"New"** and select **"+ New template"**. This will create a template that we can use each time we add a task to a new day.  
+* Click on **"New"** and select **"+ New template"**. This will create a template that we can use each time we add a task to a new day.  
 
 !['new-template'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-8.png)
 
@@ -91,28 +91,30 @@ Go back and click on "New" when you're done creating the template. You will see 
 
 ### 2. Habit tracker
 
-1. Add a new page in the productivity section.
-2. Click on the **Template** and browse the template gallery. You will find a Habit Tracker template which you can import by clicking **Duplicate**.
+* Add a new page in the productivity section.
+* Click on the **Template** and browse the template gallery. You will find a Habit Tracker template which you can import by clicking **Duplicate**.
 
 > Here is the [link](https://www.notion.so/Habit-Tracker-aba86e2b65fd46b89808194784d50484) to the template I'm using.
 
 Our desk progress so far:
+
 !['progress'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-10.png)
 
-## Project Section Setup
+## 4. Project Section Setup
 
 This is similar to how we created the "Ideas" section. Just create a new "Project" heading and add the page below. I will be using Boards, feel free to experiment, and see what suits you.
+
 !['project'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-11.png)
 
 > It will be a good idea to add separate pages for separate projects.
 
-## Learning Path Setup
+## 5. Learning Path Setup
 
 When I'm learning something, I list out the things that I need to cover and create a todo list. This list will be in the order that I'm going to visit them. Our Board database can come handy in such use-cases.
 
 !['project'](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/notion-guide/image-13.png)
 
-## Using Relations in Databases
+## 6. Using Relations in Databases
 
 We are using Databases here, and just like our relational databases, these pages can also have relations among them. You can refer to a different page inside a page. Go to **Add property** and select **Relation** inside the **Advanced** section.
 

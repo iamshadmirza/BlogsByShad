@@ -24,18 +24,18 @@ A document is a data structure composed of field and value pairs. A MongoDB docu
 It means that records are not restricted to have the same number of columns (which is a must in RDBMS).  
 Example: A collection of `Employees` can have multiple documents of each `employee` with different number of `key-value` pairs i.e. one employee can have one phone number while other can have two phone numbers and that is totally fine.
 
-```bson
-    {
-        "id: "101",
-        "name": "Ramesh",
-        "personalNumber": "9123456789"
-    },
-    {
-        "id: "102",
-        "name": "Suresh",
-        "personalNumber": "9123456789",
-        "workNumber": "8123456789
-    }
+```json
+{
+    "id": "101",
+    "name": "Ramesh",
+    "personalNumber": "9123456789"
+},
+{
+    "id": "102",
+    "name": "Suresh",
+    "personalNumber": "9123456788",
+    "workNumber": "8123456789",
+}
 ```
 
 Now suppose we are using relational database, then we are bound to use same number of columns for each data. What it means in current example is that we would have to add a `workNumber` column for all the employees regardless of whether they need this field or not. This will result in "Ramesh" having empty value in `workNumber` column.  
@@ -62,11 +62,26 @@ Let's get to the basics. What's the specific purpose of a database? **"Storing D
 
 ### Example
 
-//Image  
+**Employee Table:**
+
+| employee_id | employee_name | number     | work_number | address |
+|-------------|---------------|------------|-------------|---------|
+| 1           | Shad          | 9988776655 | 9876543210  | 121     |
+| 2           | Vamsi         | 8877665544 | null        | 122     |
+| 3           | Girish        | 7766554433 | null        | 123     |
+
+**Address Table:**
+
+| address_id | city     | country | pincode |
+|------------|----------|---------|---------|
+| 121        | Varanasi | India   | 221000  |
+| 122        | Delhi    | India   | 212345  |
+| 123        | Hubli    | India   | 564635  |
+
 Few things to notice in this example:
 
-1. The two tables are interconnected with the FOREIGN KEY in address column. 
-2. SQL follows a certain structure, hence the column `workNumber` is required whether we need it (for a particular row) or not (look at the null value for first row).
+1. The two tables are interconnected with the `FOREIGN KEY` in `address` column. This key can be used as id to reference address table.
+2. SQL follows a certain structure, hence the column `work_number` is required whether we need it (for a particular row) or not (look at the null value for second and third row).
 3. To read the information about an employee, we have to query the `employee` table and then `address` table or we have to JOIN these two first and the get the data.
 
 ## NoSQL
@@ -80,12 +95,45 @@ Few things to notice in this example:
 
 ### Example
 
-//Image  
+```json
+{
+    "_id": "1",
+    "employeeName": "Shad",
+    "number": "9988776655",
+    "workNumber": "9876543210",
+    "address": {
+        "city": "Varanasi",
+        "country": "India",
+        "pincode": "221000"
+    },
+},
+{
+    "_id": "2",
+    "employeeName": "Vamsi",
+    "number": "8877665544",
+    "address": {
+        "city": "Delhi",
+        "country": "India",
+        "pincode": "212345"
+    },
+},
+{
+    "_id": "3",
+    "employeeName": "Girish",
+    "number": "7766554433",
+    "address": {
+        "city": "hubli",
+        "country": "India",
+        "pincode": "564635"
+    },
+}
+```
+
 Few things to notice in this example:
 
 1. There is no relation between different objects in a collection. We can start adding new `key-value` pairs as we want. (On adding a new column in SQL, we have to deal with all the rows previously added which will be assigned null values for the new column).
-2. Collection don't need to contain specific number of values. We don't need `workNumber` in first object so we don't save it.  
-3. We are eventually going to need all the user info at once and we can easily get it in a single call by saving them together.
+2. Collection don't need to contain specific number of values. We don't need `workNumber` in second and third object so we no need to save null values.  
+3. We are eventually going to need all the user info at once (including `address`) and we can easily get it in a single call by *saving them together*.
 
 ## Pros and Cons
 

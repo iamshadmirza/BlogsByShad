@@ -1,6 +1,6 @@
 # Podcast - Raw Talent - Episode 1 | Ft. Mohd Shad Mirza = Hashnode, Tech Industry & Full Stack Development
 
-Hey everyone, I got invited to a podcast by [Developer Student Club of Thapar Institute of Engineering and Technology](https://twitter.com/dsctiet) and it's been an amazing opportunity for me to share my experience. After the podcast session got over, I wished that I could have added more value to it and provided clearer detailed answers which I couldn't because of the time and the fact that it was my first podcast. This article is an effort to fill up the gaps. Let's start.
+Hey everyone, I got invited to a podcast by [Developer Student Club of Thapar Institute of Engineering and Technology](https://twitter.com/dsctiet) and it's been an amazing opportunity for me to share my experience. Here is the [link](https://www.youtube.com/watch?v=uD3aCJ0D2rA&feature=youtu.be) for that. After the podcast session got over, I wished that I could have added more value to it and provided clearer detailed answers which I couldn't because of the time and the fact that it was my first podcast. This article is an effort to fill up the gaps. Let's start.
 
 ## Topics of discussion
 

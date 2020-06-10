@@ -1,6 +1,6 @@
 # MongoDB Simplified: Part 1
 
-![cover-image](./mongodb-part1.png)
+![cover-image](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/mongodb-simplified/MongoDB-Part1.png)
 
 This is first article of series **MongoDB Simplified** covering all the basics of MongoDB. I will try to keep things as simple as possible. We will go from understanding What is MongoDB?, How does it work?, Pros and Cons? How to setup on your machine all the way to learning how to perform basic CRUD operations. CRUD is short for Create, Read, Update and Delete if you're wondering. So let's start.
 

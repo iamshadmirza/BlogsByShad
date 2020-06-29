@@ -1,11 +1,11 @@
 # Lesson 13.1: Asynchronous Actions
 
-Hey everyone, we are going to learn asynchronous actions in this lesson. Up until now we were using `fixtures.js` to get the articles and comments and our actions were pure functions, which worked fine. But now we will get our data from an API endpoint just like what happens in the real world.  
-API calls are asynchronous, it means that there will be a small delay followed by success or failure of an API request. We are going to learn how to handle all these cases. Let's start. 
+Hey everyone, we are going to learn asynchronous actions in this lesson. Up until now, we were using `fixtures.js` to get the articles and comments and our actions were pure functions, which worked fine. But now we will get our data from an API endpoint just like what happens in the real world.  
+API calls are asynchronous, it means that there will be a small delay followed by success or failure of an API request. We are going to learn how to handle all these cases. Let's start.
 
 ## Setup
 
-If you go the repo, you will see a simple API already setup. Go into `simple_api` directory and run:
+If you go to the repo, you will see a simple API already setup. Go into `simple_api` directory and run:
 
 ```shell
 yarn
@@ -18,15 +18,15 @@ npm install
 ```
 
 This will install all the required packages and you will see a `node_modules` folder created for you.  
-Now, we have run the server and development server simultaneausly as one will serve the requests `yarn run api` and the other one launches dev server for our app `yarn start`.  
-API and dev server both are running on different ports. We have to setup redirection in order to avoid any сrossdomain requests. Everything that goes to /api will be proxied to your API. It is now localhost:3001, but later it can be some remote address. You set up redirection and will have an access to article from both addresses:
+Now, we have run the server and development server simultaneously as one will serve the requests `yarn run API` and the other one launches dev server for our app `yarn start`.  
+API and dev server both are running on different ports. We have to set up redirection to avoid any сrossdomain requests. Everything that goes to /API will be proxied to your API. It is now localhost:3001, but later it can be some remote address. You set up redirection and will have access to the article from both addresses:
 
 `http://localhost:3001/api/article`
 
 `http://localhost:8080/api/article`
 
 Let's start working on the implementation of API, we don't want to keep using `fixtures.js` with static data.  
-At the moment, `api/article` is returning all the articles. We need to limit the number of articles returned in one request as the number can be huge and we might not need everything at first. Moreover, we will make additional requests to get comments seperately.  
+At the moment, `API/article` is returning all the articles. We need to limit the number of articles returned in one request as the number can be huge and we might not need everything at first. Moreover, we will make additional requests to get comments separately.  
 
 ## The Concept: How it works?
 
@@ -34,21 +34,21 @@ First, let us get a list of articles from API and get them displayed at our trad
 
 `http://localhost:8080`
 
-We will use `fetch` to call request API for articles. Any asynchronous API call can includes three important phases that we need to address. We will see what are those and how to handle them using plain old synchronous action creators:
+We will use `fetch` to call request API for articles. Any asynchronous API call can include three important phases that we need to address. We will see what are those and how to handle them using plain old synchronous action creators:
 
 * ### Start of request
 
-    First phase is when we start fetching data. We need to tell UI that data fetching has been started. We can do this by dispatching an action with a flag `isFetching: true` and then showing a loader/spinner based on this state.
+    The first phase is when we start fetching data. We need to tell UI that data fetching has been started. We can do this by dispatching an action with a flag `isFetching: true` and then showing a loader/spinner based on this state.
 
-* ### Request finished succcessfully
+* ### Request finished successfully
 
-    Second phase occurs when the request is completed successfully and we have the desired data in API response. We can then dispatch an action with data as payload and reset the flag `isFetching` to `false`. This will hide the spinner and render the data.
+    The second phase occurs when the request is completed successfully and we have the desired data in API response. We can then dispatch an action with data as payload and reset the flag `isFetching` to `false`. This will hide the spinner and render the data.
 
 * ### Request failed
 
-    Third phase occurs when the request is failed and we don't have the data to render to render. In this case, we have to inform user that something bad has happened and we have met an error. We can dispatch an action with `error` message and reset the flag `isFetching` to `false`. This will hide the spinner and show the error message.
+    The third phase occurs when the request is failed and we don't have the data to render. In this case, we have to inform the user that something bad has happened and we have met an error. We can dispatch an action with an `error` message and reset the flag `isFetching` to `false`. This will hide the spinner and show the error message.
 
-> Note: Only one the phase 2 or 3 happens in any API call. Request will either be successful or failed.
+> Note: Only one phase from phase 2 or 3 happens in any API call. Requests will either be successful or failed.
 
 ## Let's code
 
@@ -75,14 +75,12 @@ import fetch from 'cross-fetch';
 const requestStart = () => {
   return {
     type: FETCH_ARTICLE_REQUEST,
-    isFetching: true,
   };
 };
 
 const requestSuccess = (data) => {
   return {
     type: FETCH_ARTICLE_SUCCESS,
-    isFetching: false,
     payload: data,
   };
 };
@@ -90,7 +88,6 @@ const requestSuccess = (data) => {
 const requestFailed = (err) => {
   return {
     type: FETCH_ARTICLE_FAILURE,
-    isFetching: false,
     err: err,
   };
 };
@@ -122,6 +119,8 @@ export const fetchArticleRequest = () => {
 };
 ```
 
-We can dispatch as many times as we want.
+We can dispatch as many times as we want. As you can see from the code above, we are sending flags in the form of `types`. We will update the `isFetching` state as `true` or `false` based on the type we receive at reducer which will inform the view about the three phases on API call discussed earlier.
 
-Finally let's handle these actions on reducer side:
+Finally, we have to handle these actions on the reducer side and then dispatch actions from the view. We will continue with that in the next lesson.
+
+We are looking forward to meeting you on our website soshace.com.

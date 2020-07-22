@@ -14,7 +14,7 @@ Let's start 🤩
 As you may recall from Lesson 13, we need 3 types of action creator to handle 3 phases of request: start, fail and success. Let's create then:
 
 ```js
-// srd/types.js
+// src/types.js
 export const FETCH_COMMENT_REQUEST = "fetch_comment_request";
 export const FETCH_COMMENT_SUCCESS = "fetch_comment_success";
 export const FETCH_COMMENT_FAILURE = "fetch_comment_failure";
@@ -105,11 +105,11 @@ export default (state = INITIAL_STATE, action) => {
 }
 ```
 
-Now, we just to call the action and get comments from API
+Now, we just have to call the action and get comments from API
 
 ## Step 4: Update View to render the comments
 
-`CommentList.js` component is responsible to render all the comments. We are going to add `fetchCommentRequest` action creator in that component and wire it with the "SHOW COMMENTS" button.
+`CommentList.js` component is responsible to render all the comments. We are going to dispatch `fetchCommentRequest` action creator from this component and wire it with the "SHOW COMMENTS" button.
 
 ```js
 import { addComment, fetchCommentRequest } from "../actions"; //import action
@@ -177,7 +177,7 @@ export default connect(
 
 ```
 
-We are showing a `loading...` text while the request in is progress. It's a good practice to let the user know that we are fetcthing something. Once the request is complete, the `isFetching` flag will be false and comments will be rendered. At last, go to `src/components/Article/index.js` and update `CommentList.js` usage:
+We are showing a `loading...` text while the request is in progress. It's a good practice to let the user know that we are fetching something. Once the request is complete, the `isFetching` flag will be false and comments will be rendered. At last, go to `src/components/Article/index.js` and update `CommentList.js` usage:
 
 ```js
 //...above code
@@ -193,7 +193,7 @@ We are showing a `loading...` text while the request in is progress. It's a good
 </CSSTransition>
 ```
 
-Here, we removed props `comments` in `CommentList` as it will be fetched directly when the component mounts per article.
+Here, we removed props `comments` in `CommentList` as it will be fetched directly when the component mounts for a given article.
 
 Run the app and see if everything is working as expected.  
-This is the end of this lesson and this course. I hope you had fun while building this app and learning the react concepts. We can't wait to see you on [sochace.com](https://soshace.com). Goodbye until we meet again 🙂.
+This is the end of this lesson as well as this course. I hope you had fun while building this app and learning the react concepts. We can't wait to see you on [sochace.com](https://soshace.com). Goodbye until we meet again 🙂.

@@ -1,5 +1,7 @@
 # React course
 
+![cover](./Group-2.png)
+
 Hey everyone, I have been writing a React course for soshace.com for a while and it's finally finished. There are 15 lessons in total and my contributions begins from Lesson 4 all the way to Lesson 15. Here is the list 14 articles that consist of it:
 
 ## [React Lesson 4: Decorators and Mixins](https://blog.soshace.com/react-lessons-lesson-4-homework/)

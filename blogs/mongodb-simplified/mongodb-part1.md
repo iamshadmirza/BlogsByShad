@@ -2,14 +2,19 @@
 
 ![cover-image](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/mongodb-simplified/MongoDB-Part1.png)
 
-This is first article of series **MongoDB Simplified** covering all the basics of MongoDB. I will try to keep things as simple as possible. We will go from understanding What is MongoDB?, How does it work?, Pros and Cons? How to setup on your machine all the way to learning how to perform basic CRUD operations. CRUD is short for Create, Read, Update and Delete if you're wondering. So let's start.
+This is first article of series **MongoDB Simplified** which will cover all the basics of MongoDB. I will try to keep things as simple as possible.
+
+We will start from understanding **What is MongoDB?**, **How does it work?**, **Pros and Cons?**, **How to setup on your machine** going all the way to learning **how to perform basic CRUD operations**. CRUD is short for Create, Read, Update and Delete if you're wondering. So let's start.
 
 ## What is MongoDB?
 
-MongoDB is a database that is based on document model. It is a non-relational type database.  
+MongoDB is a database that is **based on document model**. It is a non-relational type database.  
+
 Now what is relational and non-relational databases?  
-Assume RDBMS (Relational Database Management System) like a "Excel Sheet" with `Rows` and `Columns` to save data in form of tables. This table will have unique ID to identify each row and where multiple fields are distributed along the column. These types of databases usually have relationships between them, hence the name "Relational Database".  
-Whereas `MongoDB` (DBMS) saves data in JSON-like documents inside a collection having no relationships with other documents hence they are called "Non-Relationship Database" types. Example of JSON like object is shown below 👇🏼:
+
+Assume RDBMS (Relational Database Management System) **like an "Excel Sheet"** with **Rows** and **Columns** to save data in the form of tables. This table will have unique ID to identify each row and where multiple fields are distributed along the column. These types of databases usually have relationships between them, **hence the name "Relational Database"**.  
+
+Whereas `MongoDB` (DBMS) saves data in **JSON-like documents** inside a collection having no relationships with other documents hence they are called "Non-Relationship Database" types. **Example** of JSON like object is shown below 👇🏼:
 
 ```json
 {
@@ -21,10 +26,13 @@ Whereas `MongoDB` (DBMS) saves data in JSON-like documents inside a collection h
 
 ## How does it work?
 
-A record in `MongoDB` is a document. Now what's a document? 🤔  
-A document is a data structure composed of field and value pairs. A MongoDB document is similar to `JSON object` *(see above example)* but uses a variant called `BSON (Binary JSON)` that accomodates more data types. These documents are inserted seperately which are unaware of other documents. (Non-Relational type, remember?)  
-It means that records are not restricted to have the same number of columns (which is a must in RDBMS).  
-Example: A collection of `Employees` can have multiple documents of each `employee` with different number of `key-value` pairs i.e. one employee can have one phone number while other can have two phone numbers and that is totally fine.
+**A record in MongoDB is a document.** Now what's a document? 🤔
+
+A document is a data structure composed of field and value pairs. A MongoDB document is similar to `JSON object` *(see above example)* but uses a variant called `BSON (Binary JSON)` that accomodates more data types. These documents are inserted seperately which are unaware of other documents. (Non-Relational type, remember?)
+
+It means that **records are not restricted to have the same number of columns** (which is a must in RDBMS).
+
+**Example:** A collection of `Employees` can have multiple documents of each `employee` with different number of `key-value` pairs i.e. one employee can have one phone number while other can have two phone numbers and that is totally fine.
 
 ```json
 {
@@ -40,10 +48,15 @@ Example: A collection of `Employees` can have multiple documents of each `employ
 }
 ```
 
-Now suppose we are using relational database, then we are bound to use same number of columns for each data. What it means in current example is that we would have to add a `workNumber` column for all the employees regardless of whether they need this field or not. This will result in "Ramesh" having empty value in `workNumber` column.  
-Without the restrictions of columns, developer can add documents however they need without worrying that a little change will break everything.  
-`MongoDB` allows you to structure data in a way that is efficient for computers to process and easily readable for humans providing a natural way of storing and processing data accross the application.  
-`MongoDB` is a distributed database, which means it provides three fundamental features which developers have to implement themselves otherwise. That's why it is so loved by the developers community. Those 3 features are:  
+Now suppose we are using relational database, then we are bound to use same number of columns for each data.
+
+What it means in current example is that we would have to add a `workNumber` column for all the employees **regardless of whether they need this field or not**. This will result in "Ramesh" having empty value in `workNumber` column 😓.  
+
+Without the restrictions of columns, developer can add documents however they need without worrying that a little change will break everything 🤩.
+
+`MongoDB` allows you to structure data in a way that is **efficient for computers to process** and **easily readable for humans** providing a natural way of storing and processing data accross the application.  
+
+**`MongoDB` is a distributed database**, which means it provides three fundamental features which developers have to implement themselves otherwise. That's why it is so loved by the developers community. Those 3 features are:  
 
 * **Fault tolerance:** This allows `MongoDB` to have multiple copies of data, so if somehow one server fails, you will have the other one to serve the data. Single server failure doesn't affect the application as you always have multiple copies in which you can rely on. It uses a single master architecture for data consistency, with secondary databases which maintain copies of the primary database.
 * **Scalabilty:** MongoDB scales accross multiple servers to store and process data. So, you can just add more servers as the data volumes and performance grows instead of upgrading the mainframe.
@@ -51,7 +64,10 @@ Without the restrictions of columns, developer can add documents however they ne
 
 ## Understand NoSQL and SQL
 
-Let's get to the basics. What's the specific purpose of a database? **"Storing Data"** right?. Now in this context, let's understand what are the differences between SQL & NoSQL database and how they store data.
+Countless wars ⚔️ have been faught over debating SQL vs NoSQL and answer still stays the same, **"It depends"**.  
+Let's get to the basics. **What's the dedicated purpose of a database?** 🤔
+
+**"Storing Data"** right?. Now in this context, let's understand what are the differences between SQL & NoSQL database and how they store data.
 
 ## SQL
 
@@ -80,7 +96,7 @@ Let's get to the basics. What's the specific purpose of a database? **"Storing D
 | 122        | Delhi    | India   | 212345  |
 | 123        | Hubli    | India   | 564635  |
 
-Few things to notice in this example:
+🧐 Few things to notice in this example:
 
 1. The two tables are interconnected with the `FOREIGN KEY` in `address` column. This key can be used as id to reference address table.
 2. SQL follows a certain structure, hence the column `work_number` is required whether we need it (for a particular row) or not (look at the null value for second and third row).
@@ -128,23 +144,38 @@ Few things to notice in this example:
         "country": "India",
         "pincode": "564635"
     },
-}
+    "techStack": [
+        {
+            "_id": "565",
+            "tech": "React",
+            "experience": "3 Years",
+        },
+        {
+            "_id": "867",
+            "tech": "MobX",
+            "experience": "2 Years",
+        },
+    ]
+},
 ```
 
-Few things to notice in this example:
+🧐 Few things to notice in this example:
 
-1. There is no relation between different objects in a collection. We can start adding new `key-value` pairs as we want. (On adding a new column in SQL, we have to deal with all the rows previously added which will be assigned null values for the new column).
-2. Collection don't need to contain specific number of values. We don't need `workNumber` in second and third object so we no need to save null values.  
-3. We are eventually going to need all the user info at once (including `address`) and we can easily get it in a single call by *saving them together*.
+1. There is no relation between different objects in a collection. We can start adding new `key-value` pairs as we want. (On adding a new column in SQL, we have to deal with all the rows previously added, they will be assigned null values for the new field added).
+2. Collection don't need to contain specific number of values. We don't need `workNumber` in second and third object so we don't save it at all, no null values.
+3. We are eventually going to need all the user info at once (including `address`) and we can easily get it in a single API call by *saving them together*.
+4. Having a JSON like object **allows us to store complex structure** without worrying too much. See the last record where we are storing **"techStack"** in an array of objects 😵. This this kind of flexibility comes very handy when you're trying to prototype something really quick.
 
 ## Pros and Cons
 
-MongoDB is not a replacement of Relational Database, it's an alternative. Both have their advantages and disadvantages and we must knows when to use what. Let's go through pros and cons to understand this better.
+MongoDB is not a replacement of Relational Database, **it's an alternative**. Both have their advantages and disadvantages and we must knows when to use what.
+
+This is the time where we clear that **It depends** debate. Let's go through pros and cons to understand this better.
 
 ### Pros
 
 * Data is stored a single blob of JSON object. Insertion and retrieval is easy.
-* No need to store NULL values: Every JSON object is independent.
+* No need to store `NULL` values: Every JSON object is independent.
 * Flexible Schema: Consider a scenario where you want to add one more column in Person table. Adding new data in SQL database requires some changes to be made like backfilling data, altering schemas. It means that all the already inserted values will get affected too.  
 But in case of NoSQL, new data can be easily inserted as it does not require any prior steps. The older collection doesn't know about the next JSON object so you can start adding new fields right away.
 * Built for scale: NoSQL databases properly follow Brewers CAP theorem (Consistency, Availability, and Partition tolerance).

@@ -188,5 +188,5 @@ But in case of NoSQL, new data can be easily inserted as it does not require any
 * JOINS are harder to perform. If you want matching data from two different collection then you have to manually merge and retreive the data. Whereas SQl (because of relationship between tables) provide inbuilt support for JOINS.
 * SQL is an aged technology, it means that it is trusted, has been used in lot of scenarios and it has a huge community support. You will most probably find a solution if you get stuck somewhere whereas NoSQL is comparatively young.
 
-That's it for this article. I hope it was helpful. In the next one, we will learn how to setup MongoDB on our machine and start using it.  
+That's it for this article and I hope it was helpful. In the next part, we will learn how to setup MongoDB on our machine and start using it. Until then, take care 👋, wear mask and happy coding. 😋  
 Shad

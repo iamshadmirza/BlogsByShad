@@ -10,11 +10,11 @@ We will start from understanding **What is MongoDB?**, **How does it work?**, **
 
 MongoDB is a database that is **based on document model**. It is a non-relational type database.  
 
-Now what is relational and non-relational databases?  
+Now what is relational and non-relational databases? 🤔  
 
-Assume RDBMS (Relational Database Management System) **like an "Excel Sheet"** with **Rows** and **Columns** to save data in the form of tables. This table will have unique ID to identify each row and where multiple fields are distributed along the column. These types of databases usually have relationships between them, **hence the name "Relational Database"**.  
+Assume RDBMS (Relational Database Management System) **like an "Excel Sheet"** with **Rows** and **Columns** to save data in the form of tables. This table will have unique ID to identify each row and where multiple fields are distributed along the column. These types of databases usually have relationships between them, **hence the name "Relational Database"** 💡.  
 
-Whereas `MongoDB` (DBMS) saves data in **JSON-like documents** inside a collection having no relationships with other documents hence they are called "Non-Relationship Database" types. **Example** of JSON like object is shown below 👇🏼:
+Whereas **MongoDB** (DBMS) saves data in **JSON-like documents** inside a collection having no relationships with other documents hence they are called "Non-Relationship Database" types. **Example** of JSON like object is shown below 👇🏼:
 
 ```json
 {
@@ -28,7 +28,7 @@ Whereas `MongoDB` (DBMS) saves data in **JSON-like documents** inside a collecti
 
 **A record in MongoDB is a document.** Now what's a document? 🤔
 
-A document is a data structure composed of field and value pairs. A MongoDB document is similar to `JSON object` *(see above example)* but uses a variant called `BSON (Binary JSON)` that accomodates more data types. These documents are inserted seperately which are unaware of other documents. (Non-Relational type, remember?)
+A document is a data structure composed of field and value pairs. A MongoDB document is similar to **JSON object** *(see above example)* but uses a variant called **BSON (Binary JSON)** that accomodates more data types. These documents are inserted seperately which are unaware of other documents. (Non-Relational type, remember?)
 
 It means that **records are not restricted to have the same number of columns** (which is a must in RDBMS).
 
@@ -54,11 +54,11 @@ What it means in current example is that we would have to add a `workNumber` col
 
 Without the restrictions of columns, developer can add documents however they need without worrying that a little change will break everything 🤩.
 
-`MongoDB` allows you to structure data in a way that is **efficient for computers to process** and **easily readable for humans** providing a natural way of storing and processing data accross the application.  
+**MongoDB** allows you to structure data in a way that is **efficient for computers to process** and **easily readable for humans** providing a natural way of storing and processing data accross the application.  
 
-**`MongoDB` is a distributed database**, which means it provides three fundamental features which developers have to implement themselves otherwise. That's why it is so loved by the developers community. Those 3 features are:  
+**MongoDB is a distributed database**, which means it provides three fundamental features which developers have to implement themselves otherwise. That's why it is so loved by the developers community. Those 3 features are:  
 
-* **Fault tolerance:** This allows `MongoDB` to have multiple copies of data, so if somehow one server fails, you will have the other one to serve the data. Single server failure doesn't affect the application as you always have multiple copies in which you can rely on. It uses a single master architecture for data consistency, with secondary databases which maintain copies of the primary database.
+* **Fault tolerance:** This allows **MongoDB** to have multiple copies of data, so if somehow one server fails, you will have the other one to serve the data. Single server failure doesn't affect the application as you always have multiple copies in which you can rely on. It uses a single master architecture for data consistency, with secondary databases which maintain copies of the primary database.
 * **Scalabilty:** MongoDB scales accross multiple servers to store and process data. So, you can just add more servers as the data volumes and performance grows instead of upgrading the mainframe.
 * **Data availability:** You can move data accross the globe where you have the requirement for faster processing.
 
@@ -71,12 +71,12 @@ Let's get to the basics. **What's the dedicated purpose of a database?** 🤔
 
 ## SQL
 
-* `Structure:` SQL stores data in `tables` which contains `rows` and `columns`. It is well structured and as SQL is *Relational Database*, it usually has some relations between different tables *(Primary Key, Foreign Key, etc)*.
-* `Speed:` Because of these relations and *well defined* structure, SQL avoids *data duplication* and is relatively faster for joins, queries, updates, etc. Sounds good right? But wait...
-* `Flexibility:` This also means that you need to plan the structure ahead of time and any changes to that will difficult (relations remember? tables are connected. You can't simply change one and not take care of the other side).
-* `Big Data`: Since the changes needs to be applied at various places and the data is broken into various logical tables (we will see how in a minute). It requires to perform various read operation on multiple tables to get what we want. Big Data requires data READ and WRITE queries to be fastest, hence SQL might not a better choice for that. Although you can use SQL databases for a large scale deployment because...
-* `Community`: SQL is a mature technology, it's been there since ages and there are many experienced developers who understand it very well. This means that there is great support available and you will definitely find help if you get stuck somewhere and you can easily find a lot of independent consultants who can help with the deployment of large scale SQL databases.
-* `Scalability`: In almost all situations SQL databases are `vertically scalable`. This means that you can increase the load on a single server by increasing things like RAM, CPU or SSD. It s robust and it has proven that it can handle possibily anything. It follows [ACID](https://blog.sqlauthority.com/2007/12/09/sql-server-acid-atomicity-consistency-isolation-durability/) properties (Atomicity, Consistency, Isolation and Durability).
+* **Structure:** SQL stores data in `tables` which contains `rows` and `columns`. It is well structured and as SQL is *Relational Database*, it usually has some relations between different tables *(Primary Key, Foreign Key, etc)*.
+* **Speed:** Because of these relations and *well defined* structure, SQL avoids *data duplication* and is relatively faster for joins, queries, updates, etc. Sounds good right? But wait...
+* **Flexibility:** This also means that you need to plan the structure ahead of time and any changes to that will difficult (relations remember? tables are connected. You can't simply change one and not take care of the other side).
+* **Big Data:** Since the changes needs to be applied at various places and the data is broken into various logical tables (we will see how in a minute). It requires to perform various read operation on multiple tables to get what we want. Big Data requires data READ and WRITE queries to be fastest, hence SQL might not a better choice for that. Although you can use SQL databases for a large scale deployment because...
+* **Community:** SQL is a mature technology, it's been there since ages and there are many experienced developers who understand it very well. This means that there is great support available and you will definitely find help if you get stuck somewhere and you can easily find a lot of independent consultants who can help with the deployment of large scale SQL databases.
+* **Scalability:** In almost all situations SQL databases are `vertically scalable`. This means that you can increase the load on a single server by increasing things like RAM, CPU or SSD. It s robust and it has proven that it can handle possibily anything. It follows [ACID](https://blog.sqlauthority.com/2007/12/09/sql-server-acid-atomicity-consistency-isolation-durability/) properties (Atomicity, Consistency, Isolation and Durability).
 
 ### Example
 
@@ -96,7 +96,7 @@ Let's get to the basics. **What's the dedicated purpose of a database?** 🤔
 | 122        | Delhi    | India   | 212345  |
 | 123        | Hubli    | India   | 564635  |
 
-🧐 Few things to notice in this example:
+### 🧐 Few things to notice in this example:
 
 1. The two tables are interconnected with the `FOREIGN KEY` in `address` column. This key can be used as id to reference address table.
 2. SQL follows a certain structure, hence the column `work_number` is required whether we need it (for a particular row) or not (look at the null value for second and third row).
@@ -104,12 +104,12 @@ Let's get to the basics. **What's the dedicated purpose of a database?** 🤔
 
 ## NoSQL
 
-* `Structure:` NoSQL stores data in a document based model inside JSON like objects which contains `key-value` pairs. There is no standard schema definition for NoSQL databases and the collections doesn't have relations between them. You can add chunks of data together without splitting them.
-* `Speed:` Because of this, you can insert and retrieve all the data at once. Also, NoSQL databases are specifically designed for unstructured data. A particular data entity is stored together and not partitioned. So performing read or write operations on a single data entity is faster for NoSQL databases as compared to SQL databases.
-* `Flexibility:` Dynamic schema enables MySQL databases to change as the user wants. They are not connected and hence you don't need to worry about breaking things whenever to want to add something new.
-* `Big Data`: Since the schema is flexible and READ-WRITE queries are much faster, NoSQL suits best for Big Data application. 
-* `Community`: NoSQL is comparatively new and support is not as rich as SQL but it's growing at a rapid rate. Also, only limited outside experts are available for setting up and deploying large scale NoSQL deployments.
-* `Scalability`: NoSQL databases are `horizontally scalable`. This means that more traffic can be handled by adding more servers. NoSQL database follows the [Brewers CAP theorem](https://howtodoinjava.com/hadoop/brewers-cap-theorem-in-simple-words/) (Consistency, Availability and Partition tolerance) but ACID properties have also been introduced in the recent version.
+* **Structure:** NoSQL stores data in a document based model inside JSON like objects which contains `key-value` pairs. There is no standard schema definition for NoSQL databases and the collections doesn't have relations between them. You can add chunks of data together without splitting them.
+* **Speed:** Because of this, you can insert and retrieve all the data at once. Also, NoSQL databases are specifically designed for unstructured data. A particular data entity is stored together and not partitioned. So performing read or write operations on a single data entity is faster for NoSQL databases as compared to SQL databases.
+* **Flexibility:** Dynamic schema enables MySQL databases to change as the user wants. They are not connected and hence you don't need to worry about breaking things whenever to want to add something new.
+* **Big Data:** Since the schema is flexible and READ-WRITE queries are much faster, NoSQL suits best for Big Data application. 
+* **Community:** NoSQL is comparatively new and support is not as rich as SQL but it's growing at a rapid rate. Also, only limited outside experts are available for setting up and deploying large scale NoSQL deployments.
+* **Scalability:** NoSQL databases are `horizontally scalable`. This means that more traffic can be handled by adding more servers. NoSQL database follows the [Brewers CAP theorem](https://howtodoinjava.com/hadoop/brewers-cap-theorem-in-simple-words/) (Consistency, Availability and Partition tolerance) but ACID properties have also been introduced in the recent version.
 
 ### Example
 
@@ -159,7 +159,7 @@ Let's get to the basics. **What's the dedicated purpose of a database?** 🤔
 },
 ```
 
-🧐 Few things to notice in this example:
+### 🧐 Few things to notice in this example:
 
 1. There is no relation between different objects in a collection. We can start adding new `key-value` pairs as we want. (On adding a new column in SQL, we have to deal with all the rows previously added, they will be assigned null values for the new field added).
 2. Collection don't need to contain specific number of values. We don't need `workNumber` in second and third object so we don't save it at all, no null values.
@@ -172,7 +172,7 @@ MongoDB is not a replacement of Relational Database, **it's an alternative**. Bo
 
 This is the time where we clear that **It depends** debate. Let's go through pros and cons to understand this better.
 
-### Pros
+### Pros 🥳
 
 * Data is stored a single blob of JSON object. Insertion and retrieval is easy.
 * No need to store `NULL` values: Every JSON object is independent.
@@ -181,7 +181,7 @@ But in case of NoSQL, new data can be easily inserted as it does not require any
 * Built for scale: NoSQL databases properly follow Brewers CAP theorem (Consistency, Availability, and Partition tolerance).
 * Built for aggregation: We can collect intelligent data like average salary, maximum age, etc.
 
-### Cons
+### Cons 😓
 
 * Not a good choice if you have a lot of updates to perform (for example DELETE followed by INSERT).
 * NoSQL is built for scalability, it means you can store a lot of data efficiently but it is not built for complex queries. Ofcourse you can use NoSQL for heavy transactional purpose. However, it is not the best fit for this. (MongoDB has released it's new version 4.2.0 recently which promises secure transactions so this point might get excluded in future, let's see how it goes.)

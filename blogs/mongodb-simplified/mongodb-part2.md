@@ -2,7 +2,7 @@
 
 ![cover](./MongoDB-part2.png)
 
-Hello amazing people, we are back with the MongoDB Simplified series. In the last article, we learned about MongoDB and NoSQl in general, now it's time to setup and get it running on our machine. Let's start!
+Hello amazing people, we are back with the MongoDB Simplified series. In the [last article](https://iamshadmirza.com/mongodb-simplified-part-1-what-why-and-how-ckdk9gmqv031cz2s12bqz8r1c), we learned about MongoDB and NoSQl in general, now it's time to setup and get it running on our machine. Let's start!
 
 ## Step 1: Download and install MongoDB locally
 

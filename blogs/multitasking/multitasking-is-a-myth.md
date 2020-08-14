@@ -1,5 +1,7 @@
 # Multitasking Is A Myth. Here's why
 
+![cover](./multitasking.png)
+
 When was the last time you were multitasking and felt productive but a little tensed? Always? There is a reason for it and we are just going to discuss that. But first...
 
 > All the things mentioned here are my personal views, please take the stuff which makes sense to you. I do read books and like to observe stuff which is the source of these opinions.

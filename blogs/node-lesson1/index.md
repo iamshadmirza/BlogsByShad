@@ -1,4 +1,6 @@
-# Node js Modules
+# Node js Lesson 1: Introduction and Modules
+
+![cover](./Node1.png)
 
 Hello everyone, this is the first lesson of the Nodejs course and we are going to cover the basics of Nodejs. We will also understand Modules in Nodejs and create one ourselves. Let's start.
 

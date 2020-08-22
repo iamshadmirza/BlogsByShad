@@ -1,6 +1,6 @@
 # React Native Animation using Hooks: Loading Screen
 
-![cover](https://cdn.hashnode.com/res/hashnode/image/upload/v1598075378507/223JgngEr.png?auto=compress)
+![cover](./cover.png)
 
 Hey there, I guess you decided to read this blog to learn a few things about React Native Animation and Hooks. You're in the right place.
 

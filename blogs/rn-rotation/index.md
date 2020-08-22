@@ -229,7 +229,7 @@ You can check out the [Live Demo](https://snack.expo.io/@iamshadmirza/rotation-e
 ## TLDR
 
 - We created a loading screen with an image and loading text at the center.
-- We created `useRotation` hook to animate value and provide and provide a relative degree of rotation
+- We created `useRotation` hook to animate value and provide a relative degree of rotation
 - We imported that hook and used to rotate our logo.
 
 If you liked reading this article. You might like my other article on react native animation. Do check [Learn React Native Animation by building Circular Progress Bar](https://iamshadmirza.com/learn-react-native-animation-by-building-circular-progress-bar-ck9grnp2h06ytcss1p2wrn1m2).

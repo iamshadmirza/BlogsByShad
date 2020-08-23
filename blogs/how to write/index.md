@@ -83,7 +83,7 @@ Go to Hashnode and Publish your awesome blog.
 
 - Writing 30 minutes daily is better than dedicating 4-5 hours on the weekend. You think that you will have time and you can write it in one sitting but that might not happen in most cases.
 
-- It's not mandatory to have lengthy articles. You can always post a short one. Feel free to write a TIL (Today I Learned) article, share your learning journey, and document more. Example 1, Example 2.
+- It's not mandatory to have lengthy articles. You can always post a short one. Feel free to write a TIL (Today I Learned) article, share your learning journey, and document more. [Example](https://sandeep.dev/til-you-must-send-user-agent-override-param-when-using-google-analytics-measurement-protocol)
 
 - Write what you're gonna explain first, explain that, tell the reader what you just explained. This flow is perfect for writing blogs that stick.
 
@@ -99,6 +99,6 @@ Go to Hashnode and Publish your awesome blog.
 
 - A curated list of [Awesome technical writing resource](https://github.com/BolajiAyodeji/awesome-technical-writing).
 
-If you liked the article, you might wanna connect with on [twitter](https://www.twitter.com/iamshadmirza). Thanks for reading. Take and stay safe.  Shad.
+If you liked the article, you might wanna connect with on [twitter](https://www.twitter.com/iamshadmirza). Don't forget to bookmark the blog, thanks for reading. Take care and stay safe.  Shad.
 
 *All graphics are courtesy of [unDraw](https://undraw.co)*

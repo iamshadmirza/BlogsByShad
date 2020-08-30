@@ -1,4 +1,6 @@
-# Node Lesson 2: Module Part 2
+# Node Lesson 2: Modules and Exports
+
+![cover](./nodejs-l2.png)
 
 Hey everyone, we learned what are modules and how to create one in previous. This lesson will dive deeper with the module, understand what properties it carries, and then talk about export in detail. Let's start.
 

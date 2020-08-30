@@ -1,4 +1,6 @@
-# 15 Tips to Help you Grow as a Developer
+# 15 Tips for Mental Health & to Grow as a Developer
+
+![cover](./mental-health.png)
 
 Hello everyone, I will be sharing some tips that have helped me in the past to grow as a developer and keep my stress level low. I am someone who usually tries to do a lot in a limited amount of time and often feel overwhelmed. These are the things which I have tried and found helpful.
 

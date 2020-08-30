@@ -57,7 +57,7 @@ When you're building a Nodejs application, you will have to create a lot of modu
 
 **module.exports** is an object that the current module returns when it is **"required"** in another program or module. Whenever we want something like values or functions to be available for another module to import and use, we attach that value or function with this **module.export**
 
-Example: 
+Example:
 
 Export few properties from one module:
 

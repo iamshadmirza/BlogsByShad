@@ -109,4 +109,36 @@ This file is also in the database. It was downloaded there automatically in a pr
 
 NPM does offer you to publish packages with limited access if you want to limit the usage. It is however paid and you can read more about the pricing on their [official page](https://www.npmjs.com/products).
 
+## How does Node finds the module
+
+We saw in this lesson and the previous lesson that we used `require` to require module: 
+
+```js
+const user = require('./user');
+```
+
+Here, we are providing the path of the module so it's straight forward. Node will look for the package at the specified location and import it.
+
+> **.js** is optional. If **.js** is not present, Node will look either for **user.js** or **user/index.js**.
+
+But what will happen when we don't provide the path? Example:
+
+```js
+const fs = require('fs');
+```
+
+At first, Nodejs will see if the required module is a **core module**. [Core modules](https://nodejs.org/api/modules.html#modules_core_modules) are modules that are bundled with Nodejs by default. They are present is the **/lib** directory of your system and takes precedence over everything else. Some of the core modules are fs, https, etc.
+
+If the module identifier passed to **require()** is not a core module, and does not begin with **'/', '../', or './'**, then Node.js starts at the parent directory of the current module, and adds **/node_modules**, and attempts to load the module from that location.
+
+If the package is not found in either of the places mentioned above, Node will start looking for them in global packages. If the **NODE_PATH** environment variable is set to a colon-delimited list of absolute paths, then Node.js will search those paths for modules if they are not found elsewhere.
+
+Additionally, Node.js will search in the following list of GLOBAL_FOLDERS:
+
+1. $HOME/.node_modules
+2. $HOME/.node_libraries
+3. $PREFIX/lib/node
+
+Where $HOME is the user's home directory, and $PREFIX is the Node.js configured node_prefix.
+
 That's it for today's lesson. We will continue more in Lesson 4. 

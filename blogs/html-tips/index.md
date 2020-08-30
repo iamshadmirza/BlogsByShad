@@ -56,17 +56,24 @@ paragraphs and it is problematic for people who navigate with screen-reading
 technology. Screen readers may announce the paragraph's presence, but
 not any content contained within it — because there is none.
 
-Breaking up content into paragraphs helps make a page more
-accessible. Screen-readers and other assistive technology provide
-shortcuts to let their users skip to the next or previous paragraph,
-letting them skim content like how white space lets visual users skip
-around.
-
 If extra space is desired, use CSS properties like `margin` to create the effect.
 
 ## 5. Use of Aside: `<aside>`
 
-Aside represents content that is not directly connected with the main content. Example sidebars or call-out boxes. Do not use aside to tag the parenthesized test as that is part of the main content.
+Aside was introduced with HTML5 and represents content that is not directly connected with the main content. Asides are stand-alone, non-essential as part of an article but when used correctly it can be an extra level of information for your content. Example sidebars or call-out boxes.
+
+Do not use aside to tag the parenthesized test as that is part of the main content. Don’t try to force content into an `<aside>` if it shouldn't be there.
+
+Example:
+
+```html
+<p>My family and I visited The Epcot center this summer. The weather was nice, and Epcot was amazing! I had a great summer together with my family!</p>
+
+<aside>
+    <h4>Epcot Center</h4>
+    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
+</aside>
+```
 
 Writing semantically correct HTML is the responsibility of every developer. We often miss the HTML being overwhelmed by the era of the frameworks. I hope you learned something from this article. That's it for now. Take care and stay safe.  
 [Shad](https://www.twitter.com/iamshadmirza)

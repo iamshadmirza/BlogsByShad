@@ -2,6 +2,27 @@
 
 Hey everyone, this lesson is going to be all about the node package and its structure. We will understand what the  `package.json` file actually is and it's characteristics. We will learn what are those mighty properties inside `package.json` denotes and why they are important. Let's start.
 
+- [Nodejs Lesson 4: NPM Package Structure](#nodejs-lesson-4-npm-package-structure)
+  - [What is `package.json`](#what-is-packagejson)
+  - [Properties of `package.json`](#properties-of-packagejson)
+    - [1. name](#1-name)
+    - [2. version](#2-version)
+    - [3. description](#3-description)
+    - [4. main](#4-main)
+    - [5. script](#5-script)
+    - [6. config](#6-config)
+    - [7. keyword](#7-keyword)
+    - [8. author and contributors](#8-author-and-contributors)
+    - [9. dependencies](#9-dependencies)
+    - [10. devDependencies](#10-devdependencies)
+    - [11. peerDependencies](#11-peerdependencies)
+    - [12. license](#12-license)
+    - [13. repository](#13-repository)
+    - [14. homepage](#14-homepage)
+    - [15. bugs](#15-bugs)
+  - [How to generate `package.json`](#how-to-generate-packagejson)
+  - [Summary](#summary)
+
 ## What is `package.json`
 
 This file is one stop for you to know all the information about the package you're currently dealing with. It's a JSON file with a bunch of properties and each property tells us something about the package.

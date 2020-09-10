@@ -1,5 +1,7 @@
 # Node Lesson 5: Global Modules
 
+![cover](nodejs-l5.png)
+
 Hello everyone, we will learn about **global modules** in this lesson. We will talk about what are they, how they work, and why we need them. Let's start.
 
 ## What are global modules

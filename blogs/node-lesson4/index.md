@@ -1,5 +1,7 @@
 # Nodejs Lesson 4: NPM Package Structure
 
+![cover](./nodejs-l4.png)
+
 Hey everyone, this lesson is going to be all about the node package and its structure. We will understand what the  `package.json` file actually is and its characteristics. We will learn what does those mighty properties inside `package.json` denotes and why they are important. Let's start.
 
 ## What is `package.json`

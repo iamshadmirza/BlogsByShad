@@ -1,27 +1,6 @@
 # Nodejs Lesson 4: NPM Package Structure
 
-Hey everyone, this lesson is going to be all about the node package and its structure. We will understand what the  `package.json` file actually is and it's characteristics. We will learn what are those mighty properties inside `package.json` denotes and why they are important. Let's start.
-
-- [Nodejs Lesson 4: NPM Package Structure](#nodejs-lesson-4-npm-package-structure)
-  - [What is `package.json`](#what-is-packagejson)
-  - [Properties of `package.json`](#properties-of-packagejson)
-    - [1. name](#1-name)
-    - [2. version](#2-version)
-    - [3. description](#3-description)
-    - [4. main](#4-main)
-    - [5. script](#5-script)
-    - [6. config](#6-config)
-    - [7. keyword](#7-keyword)
-    - [8. author and contributors](#8-author-and-contributors)
-    - [9. dependencies](#9-dependencies)
-    - [10. devDependencies](#10-devdependencies)
-    - [11. peerDependencies](#11-peerdependencies)
-    - [12. license](#12-license)
-    - [13. repository](#13-repository)
-    - [14. homepage](#14-homepage)
-    - [15. bugs](#15-bugs)
-  - [How to generate `package.json`](#how-to-generate-packagejson)
-  - [Summary](#summary)
+Hey everyone, this lesson is going to be all about the node package and its structure. We will understand what the  `package.json` file actually is and its characteristics. We will learn what does those mighty properties inside `package.json` denotes and why they are important. Let's start.
 
 ## What is `package.json`
 
@@ -31,7 +10,7 @@ This JSON file is present at the root of the package and holds metadata about th
 
 ## Properties of `package.json`
 
-Let's go through the most common properties that you're most likely to see in most of the projects.
+Let's go through the common properties that you're most likely to see in the nodejs projects.
 
 ### 1. name
 
@@ -46,7 +25,7 @@ There are some rules regarding naming your npm package:
 - New packages must not have uppercase letters in the name.
 - The name ends up being part of a URL, an argument on the command line, and a folder name. Therefore, the name can’t contain any non-URL-safe characters.
 
-You should preferably choose a shorter, easy to recall the name as the user will find it easier to use your package.
+You should preferably choose a shorter, easy to recall name so that the user find it easier to use your package.
 
 ### 2. version
 
@@ -66,7 +45,7 @@ Just a string that helps people discover the package. Add a short description of
 
 ### 4. main
 
-This field specifies the primary entry point of the module. Your package's main module’s exports object will be returned whenever a user require your package by `require("package_name")`
+This field specifies the primary entry point of the module. Your package's main module’s exports object will be returned whenever a user require your package by `require("package-name")`
 
 ### 5. script
 
@@ -125,7 +104,7 @@ Some packages are not directly needed by the end-user but they help the develope
 
 ### 11. peerDependencies
 
-This field is used to state the compatibility of our package with some particular version of the package mentioned. It will show a warning during `npm install` if the peer dependencies don't meet the requirement mentioned inside this field.
+This field is used to state the compatibility of our package with some particular version of the package that it might need. It will show a warning during `npm install` if the peer dependencies don't meet the requirement mentioned inside this field.
 
 ### 12. license
 
@@ -137,7 +116,7 @@ This contains the usage of information about your packages. It helps the user to
 }
 ```
 
-If your package your more than one license, you can follow this syntax:
+If your package uses more than one license, you can follow this syntax:
 
 ```json
 { "license": "(MIT OR Apache-2.0)" }
@@ -163,7 +142,7 @@ This points to the location where your code is present. It's an object with key-
 
 ### 14. homepage
 
-This contains url to the project homepage. It helps the user to find you.
+This contains url to the project homepage. It helps the user to find you on the internet.
 
 ```json
 "homepage": "https://github.com/owner/project#readme"

@@ -71,9 +71,70 @@ Here, `%s` is acting like a placeholder which is then replaced by **"Sochace"** 
 
 #### 3. util.promisify
 
+It takes a function following the common error-first callback style and returns a version that returns promises. By error=first callback styles, we mean the function which takes `(err, value) => {}` as last argument. Example:
+
+```js
+// suppose we have a function like this:
+const util = require('util');
+const fs = require('fs');
+
+fs.readdir('./path-to-folder', (err, files) => {
+  console.log(files);
+});
+
+// it can be changes into promise as
+
+const readDirectory = util.promisify(fs.readdir);
+
+// then we can use it like a promise, either if .then() approach or async approach
+
+readDirectory('./path-to-folder')
+  .then(files => {
+    // do something
+  })
+  .catch(error => {
+    // log error
+  });
+```
+
 #### 4. util.callbackify
 
+It takes an async function (or a function that returns a Promise) and returns a function following the error-first callback style. Example:
+
+```js
+const util = require('util');
+
+async function fn() {
+  return 'hello world';
+}
+const callbackFunction = util.callbackify(fn);
+
+callbackFunction((err, string) => {
+  if (err) {
+    // log error
+  };
+  // do something
+  console.log(string);
+});
+
+```
+
 #### 5. util.types
+
+This an be used to check type of different object. Let's see how:
+
+You can use `util.types.isAsyncFunction` to check if the passed function is async or not:
+
+```js
+util.types.isAsyncFunction(function foo() {});  // Returns false
+util.types.isAsyncFunction(async function foo() {});  // Returns true
+```
+
+Similarly, to check if the passed argument is a date object, we can do this:
+
+```js
+util.types.isDate(new Date());  // Returns true
+```
 
 #### 6. util.getSystemErrorName(err)
 
@@ -89,6 +150,8 @@ fs.access('file/that/does/not/exist', (err) => {
 });
 ```
 
-Learn more about them in the [official docs](https://nodejs.org/api/util.html).
+`util.types` provides a lot of helpful type check function. You can take a look at the [official documentation](https://nodejs.org/api/util.html#util_util_types).
+
+> Learn more about them in the [official docs](https://nodejs.org/api/util.html).
 
 ## Inheritance

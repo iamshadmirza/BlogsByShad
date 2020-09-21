@@ -87,7 +87,7 @@ readDirectory('./path-to-folder')
 
 #### 4. util.callbackify
 
-It takes an async function (or a function that returns a Promise) and returns a function following the error-first callback style. Example:
+It is basically opposite of what we doing in *util.promisify* function. It takes an async function (or a function that returns a Promise) and returns a function following the error-first callback style. Example:
 
 ```js
 const util = require('util');
@@ -124,6 +124,8 @@ Similarly, to check if the passed argument is a date object, we can do this:
 util.types.isDate(new Date());  // Returns true
 ```
 
+`util.types` provides a lot of helpful type check function. You can take a look at the [official documentation](https://nodejs.org/api/util.html#util_util_types).
+
 #### 6. util.getSystemErrorName(err)
 
 This functions return error string for numeric error code in Node.js.  Example:
@@ -137,8 +139,6 @@ fs.access('file/that/does/not/exist', (err) => {
     // print ENOENT
 });
 ```
-
-`util.types` provides a lot of helpful type check function. You can take a look at the [official documentation](https://nodejs.org/api/util.html#util_util_types).
 
 > Learn more about them in the [official docs](https://nodejs.org/api/util.html).
 

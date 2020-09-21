@@ -1,15 +1,3 @@
----
-description: talk about frequenty used module in nodejs application development. we will talk about and how to acheive inheritance.
-
-- util
-  - what is util why it is used
-  - how it is used, what are placeholders
-  - what are the helper function it provides that we can generally use
-- inheritance
-  - talk about that javascript is a functional but we can make it behave like OOP and acheive inheritance
-  - talk about how we can acheive inheritance 
-  - take help from FFF and give an example on how part
----
 # Nodejs Lesson 6: Util and Inheritance
 
 Hello everyone, today we are going to learn about **util** module, a frequently used nodejs core module. We will learn about what it is, why it is useful and how to use it in nodejs applicatio development. We will also learn about inheritance in Nodejs JavaScript ecosystem. Let's start.
@@ -155,3 +143,82 @@ fs.access('file/that/does/not/exist', (err) => {
 > Learn more about them in the [official docs](https://nodejs.org/api/util.html).
 
 ## Inheritance
+
+Inheritance is a concept is object oriented proramming where to define a class based on what they are, example: human. This class then contains functionalities that can be **inherited** or borrowed by child class, example: male and female.
+
+These **male** and **female** classes will have functionality specific to themselves where as all the featured functionality will go under **human** class.
+
+> It is class based programming paradigm in which everything revolves around classes and its properties. Class is something which defines the core properties and functions. We will read more about this later.
+
+Let's take another example:
+
+Suppose we want to create two different classes **Rabbit** and **Cat**. **Rabbit** have functionality to walk, eat, drink and jump. While **Cat** has functionality to walk, eat, drink and meow. You can notice that we have lot of things in common.
+
+Recall from above where we said **define a class based on what they are**. This means that we can create a class and call it **Animal**. This will contain all the shared functionalities.
+
+```js
+// add the shared functionality in Animal class
+
+class Animal {
+  constructor (_name){
+    this.name = _name; // initialize name of variable
+  }
+  walk() {
+    console.log(this.name, ' is walking');
+  }
+  eat() {
+    console.log(this.name, ' is eating');
+  }
+  drink() {
+    console.log(this.name, ' is drinking');
+  }
+}
+
+// inherit these functionality in child class Rabbit and Cat
+
+class Rabbit extends Animal {
+  constructor() {
+    super('rabbit'); // initialize parent class Animal and set name
+  }
+  jump() {
+    console.log('rabbit is jumping');
+  }
+}
+
+class Cat extends Animal {
+  constructor() {
+    super('cat'); // initialize parent class Animal and set name
+  }
+  meow() {
+    console.log('cat is meowing');
+  }
+}
+```
+
+Don't get confused with the class and extends keywords. Assume **class** like an entity that binds functionalities together and **extends** is a keyword used to **extend** functionality of current class to parent class. We are inheriting all properties of parent class we extend to. **constructor** is something that is used to initialise variables.
+
+Now we call use this method likes this:
+
+```js
+const cat = new Cat();
+
+const rabbit = new Rabbit();
+
+cat.eat();
+
+cat.meow();
+
+rabbit.jump();
+
+rabbit.drink();
+
+// prints
+// cat  is eating
+// cat is meowing
+// rabbit is jumping
+// rabbit  is drinking
+```
+
+Although JavaScript is a functional language, we can do object oriented programming with the help of class. Inheritance makes it possible to reuse methods without duplicating them and manage our project in a little better way. Don't worry if you haven't got everything yet, we will learn later about this in details.
+
+That's it for now, see you in the next lesson.

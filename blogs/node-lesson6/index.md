@@ -1,5 +1,7 @@
 # Nodejs Lesson 6: Util and Inheritance
 
+![cover](./nodejs-l6.png)
+
 Hello everyone, today we are going to learn about the **util** module, a frequently used node.js core module. We will learn about what it is, why it is useful, and how to use it in node.js application development. We will also learn about inheritance in the Node.js JavaScript ecosystem. Let's start.
 
 ## Util Module

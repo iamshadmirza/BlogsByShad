@@ -1,4 +1,4 @@
-# Nodejs Lesson 7: Console
+# Nodejs Lesson 7: Console Module
 
 ![cover](./nodejs-l7.png)
 

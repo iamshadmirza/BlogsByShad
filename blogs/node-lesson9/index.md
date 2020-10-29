@@ -1,33 +1,36 @@
 # Nodejs Lesson 9: Events, Event Emitter, and Memory Leaks
 
-Hello everyone, today we are going to talk about events, what exactly are they. They will move on to understand what are EventEmitters and how to use them. We will also learn about memory leaks and learn about ways of dealing with it.
+Hello everyone, today we are going to talk about events, what exactly are they. Then we will move on to understand what are EventEmitters and how to use them. We will also learn about memory leaks and learn about ways of dealing with it.
 
 ## What are Events
 
-Whenever something happens, we say that it's an event. For example, if a file is opened, we call it an event or if a file is read we call it an event.  
-Nodejs comes with a bundled module **"Events"**, which can be used to create or listen for events. We can use this module to emit events and listen to them. These can be used to perform different actions based on the name and payload of any event that occurred. You can require this module simplify by:
+Whenever something happens in the Nodejs world, we call in an event. Let me give you an example for clarity. When a user opens a file, we say that an event has occurred. So the opening of the file is an event. Similarly, if a file is read by an operation, it will be said to be another event.  
+
+Nodejs comes with a bundled module **"Events"**, which can be used to create or watch for events. Creating events is called an emitting event and watching for this emitted event is referred to as listening to events. We can use this module to emit events and listen to them. It can also be used to perform different actions based on the name and payload of any occurred event. You can require this module simplify by:
 
 ```js
 const events = require('events);
 ```
 
-This events module gives us **EventEmitter** which helps us which bunch of operations like emitting events, listening events and capturing event data, etc. Let's learn more about EventEmitters.
+This **events** module gives us **EventEmitter** which grants us a bunch of operations like emitting events, listening events and capturing event data, etc. Let's learn more about EventEmitters in the section below.
 
-## EventEmitter
+## What are EventEmitters and why we use them
 
-EventEmitter is an object provided by the events module. It binds a function which is used to handle events. We can emit events in any part of the application and have a function setup that listens to it
+EventEmitter is an object provided by the events module. It binds a function with an event. This bound function is then used to handle the event and perform actions accordingly. We can emit events in any part of the application and have a function setup that listens to it.
 
-Example: Suppose you have an application where you want to notify the admins whenever a new user signs up. You can fire an event whenever a user joins and have an event handler set up that sends a notification when this event occurs. You will have to bind this handler to an event listener which will get invoked as soon the new user event is emitted.
+Example: Suppose you have an application where you want to notify the admins of the website whenever a new user signs up. You can fire an event whenever a user joins and have an event handler set up that sends a notification the moment this event occurs. You will have to bind this handler to an event listener which will get invoked as soon the new user event is emitted.
 
-Let's talk about how we can create such an event handler.
+Let's talk about how we can create such an event handler in the next section.
 
-## How to setup EventEmitter
+## How to Setup EventEmitter
 
-### Step 1: Emit Events
+Setting an EventEmitter requires four steps. First, we will emit an event with a unique name. Then, we will set up that watches for this event. The third step will be to set up a callback to capture data sent by the event. This comes very handy when we want to pass some user info along with the event. At last, we will set up a handler for error management. Let's talk about this is details.
 
-First, we will require EventEmitter and instantiate it. This will provide us with a bunch of methods.
+### Step 1: Emitting Events
 
-We can use `EventEmitter.emit()` method to emit events. It takes the event name as the first argument and then passes some other data in the next argument. 
+First, we will require **EventEmitter** and instantiate it. This will provide us with a bunch of methods. 
+
+We can use `EventEmitter.emit()` method to emit events. It takes the event name as the first argument and arguments after that can be used to pass data along with it.
 
 ```js
 const EventEmitter = require('events').EventEmitter;
@@ -39,7 +42,7 @@ ee.emit("Boop", "An event has occured");
 
 ### Step 2: Listen for Events
 
-Then we can either add an event listener or use the `on` method to listen to these events.
+Next, we want to listen to the event we just created. There are two methods for doing so. We can either add an event listener or use the `on` method provided by **EventEmitter** instance to listen to the event.
 
 ```js
 const EventEmitter = require('events').EventEmitter;
@@ -61,7 +64,7 @@ ee.emit("Boop", "An event has occured");
 
 ### Step 3: Capture Event Data
 
-Any payload passed while emitting the event will be received as the first argument of the callback passed with `EventEmitter.on()`. Remember the example we discussed above? This is how we can pass the user information and it will notify who joined with name and email property.
+As we read in step 1, the second argument of the `emit()` method can be used to pass data. We call this data as payload. Any payload passed while emitting the event will be received as the first argument of the callback passed with `EventEmitter.on()`. Remember the example we discussed above? This is how we can pass the user information with name and email property and notify who joined.
 
 ```js
 const EventEmitter = require('events').EventEmitter;
@@ -76,13 +79,13 @@ ee.on('New User', function (data){
 ee.emit("New User", { username: "Shad", email: "something@example.com"});
 ```
 
-Don't forget to call `removeLister()` when you're done with the event to avoid memory leak when you're using `addListener()`.
+> Note: Don't forget to call `removeListener()` when you're done with the event to avoid memory leak whenever you're using `addListener()`.
 
 ### Step 4: Handle Errors
 
-There is a certain scenario where an error might occur. One such case is when you emit an event that has no handler. This will make EventEmitter generate an exclusion that must be handled or the process will fail altogether. 
+There are certain scenarios where an error might occur. One such case is when you emit an event that has no handler. This will make EventEmitter generate an exclusion that must be handled or the process will fail entirely. We don't want this to happen.
 
-Luckily, we can add an event handler for error before emitting any events and it will take care of all the errors. Let's see how:
+Luckily, we can add an event handler for errors specifically before emitting any events and it will take care of all the error exclusions that might occur. Let's see how:
 
 ```js
 ee.on('error', function (){

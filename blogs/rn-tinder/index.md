@@ -1,14 +1,18 @@
 # React Native Animation using Hooks: Tinder Cards
 
-Hello everyone, We are back with some React Native Animation, and this time we are building Tinder Cards using Hooks. We will build a deck of cards featuring cute animals where you can swipe left or right. And finally, we will decouple the whole logic into a reusable hook. Let's start 🚀
+![cover](./RN%20Animation%20_%20Tinder.png)
+
+Hello everyone, We are back with some React Native Animation, and this time we are building **Tinder Cards using Hooks**. We will build a deck of cards featuring cute animals where you can swipe left or right. And finally, we will decouple the whole logic into a reusable hook. Let's start 🚀
 
 ## Concept
 
-Let's understand an overview of how the animation will happen. We will have an array of cards to render from which we will render two cards at a time. The top will record gesture which will move left or right based on user's swipe. We will one card below which will pop upfront when the top card is swiped. There will be a threshold distance horizontally. If the swipe is below the threshold, the card will get back in its initial position. If not, the card will be thrown out of the screen.
+Let's understand an overview of how the animation will happen. We will have an array of cards to render from which we will render two cards at a time. The top card will record gestures and move left or right based on the user's swipe. We will have one card below which will pop up to the front when the top card is swiped.   
+There will be a certain horizontal distance which we will call **SWIPE_THRESHOLD**. If the swipe is below the threshold, the card will get back in its initial position. If not, the card will be thrown out of the screen.
 
-Next, we will have three animation values: `animation`, `opacity`, and `scale`. `animation` will store the XY position of the card and will be updated as the user is swiping.  
-Then there is `opacity`, this will be `1` initially and will turn to `0` once the card is out of view.  
-At last, `scale` will contain the `scale` property for the second card. It will be `0.9` initially will be updated to `1` once it's on top. This will give us pop to front effect. 
+Next, we will have three animated values: `animation`, `opacity`, and `scale`.   
+`animation` will store the XY position of the card and will be updated as the user is swiping.  
+Then there is `opacity`, it will be `1` initially and then turn to `0` once the card is out of view.  
+At last, `scale` will contain the `scale` property for the **second** card. It will be `0.9` initially, then updated to `1` once it's on top. This will give us a popup effect. 
 
 I hope you are with me so far. We will follow these 6 steps:
 
@@ -105,7 +109,7 @@ export default App;
 
 ## Step 2. Render Cards with Absolute Positioning
 
-Now, let's render the cards on-screen and add some nice styles.
+Now, let's render the cards on-screen and add some nice styles. We will take two cards at a time from the `data` array. These cards will be positioned `absolute` so that the first card completely covers the second and it's no longer visible.
 
 ```js
 function App () {
@@ -117,7 +121,6 @@ function App () {
            .map((item, index, items) => {
              return (
                <Animated.View
-                 {...panHandlers}
                  style={[styles.card]}
                  key={item.id}>
                  <View style ={styles.imageContainer}>
@@ -190,11 +193,11 @@ const styles = StyleSheet.create({
 export default App;
 ```
 
-It's time for swiping gesture animation in the next section.
+It's time for adding swipe gesture animation in the next section.
 
 ## Step 3. Setup PanResponder to Record Gesture
 
-If you have been following the series, you might have an idea of how to setup PanResponder. I'll directly explain the logic. Feel free to follow this article if you have any confusion.
+If you have been following the series, you might have an idea of how to setup PanResponder. I'll directly explain the logic. Feel free to follow [previous article](https://iamshadmirza.com/react-native-animation-using-hooks-floating-heads) if you have any confusion.
 
 ```js
 const _panResponder = useRef(
@@ -241,11 +244,11 @@ const _panResponder = useRef(
   ).current;
 ```
 
-As we talked about in the previous article, `onPanResponderMove` can be used to make difference in the horizontal or vertical direction and set it's value to position the card. `animation.setValue({ x: gesture.dx, y: gesture.dy })` will take `dx` and `dry` and set it to `x` and `y` of the card.
+As we talked about in the previous article, `onPanResponderMove` can be used to get the gesture difference in the horizontal or vertical direction and set it's value to position the card. `animation.setValue({ x: gesture.dx, y: gesture.dy })` will take `dx` and `dry` and set it to `x` and `y` of the card.
 
-Now, what will happen once the user leaves the card. There can be two cases:
+Now, what will happen once the user lifts the finger while swiping. There can be two cases:
 
-It's either the card is the past threshold or not. If the `dx` is greater than the threshold, we will take the swipe velocity `vx` and make the card go in the same direction with decay in speed. Thus card will keep moving out of the screen until the speed is decayed to 0 and will finally unmount. `clamp` module will see if the velocity is between 4 and 5 and apply floor function so that it always has needed speed to slide.
+**It's either the card is the past threshold or not.** If the `dx` is greater than the threshold, we will take the swipe velocity `vx` and make the card go in the same direction with decay in speed. Thus card will keep moving out of the screen until the speed is decayed to 0 and will finally unmount. `clamp` module will see if the velocity is between 4 and 5 and apply floor function so that it always has needed speed to slide.
 
 While the top card is sliding out of the screen, we will also animate the scale property to 1 giving the next card pop up to the front effect. These two animations will run in parallel.
 
@@ -278,7 +281,11 @@ const transitionNext = function () {
  };
 ```
 
-Two things are happening in parallel here. One is changing the opacity of the top card to 0 so that it disappears at some point while sliding out of the screen. The other is scaling the next card back to 1 with a spring animation. This is what will give us that pop-up effect.
+Two things are happening in parallel here. One is changing the opacity of the top card to 0 so that it disappears at some point while sliding out of the screen. This is how it looks:
+
+![demo](./demo.gif)
+
+The other is scaling the next card back to 1 with a spring animation. This is what will give us that pop-up effect.
 
 Finally, once this parallel animation is complete. We will slice the top card from the array. This will make the 2nd card top and 3rd one its next card. Our transition is complete but wait, what about those `animation`, `opacity`, and `scale` properties 🤔. Those 3 variables still contain the updated value. We need to reset them somehow.
 
@@ -520,4 +527,6 @@ function App() {
 }
 ```
 
-Other things remain the same. You can also directly return styles and apply them. Both ways are just fine. 
+Other things remain the same. You can also directly return styles and apply them. Both ways are just fine. Let's see a live demo:
+
+%[https://snack.expo.io/@iamshadmirza/tinder-cards]

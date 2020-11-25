@@ -126,8 +126,8 @@ const host = 'localhost';
 
 const server = http.createServer(function (req, res) {
     const parsedURL = url.parse(req.url, true);
-    if (urlParsed.pathname == '/echo' && urlParsed.query.message) {
-        res.end(urlParsed.query.message);
+    if (parsedURL.pathname == '/echo' && parsedURL.query.message) {
+        res.end(parsedURL.query.message);
     } else {
         res.end("Page not found");
     }
@@ -164,9 +164,9 @@ const host = 'localhost';
 
 const server = http.createServer(function (req, res) {
     const parsedURL = url.parse(req.url, true);
-    if (urlParsed.pathname == '/echo' && urlParsed.query.message) {
+    if (parsedURL.pathname == '/echo' && parsedURL.query.message) {
         res.statusCode = 200; // when request is successful
-        res.end(urlParsed.query.message);
+        res.end(parsedURL.query.message);
     } else {
         res.statusCode = 404; // when request is failed due to wrong url
         res.end("Page not found");
@@ -194,10 +194,10 @@ const host = 'localhost';
 
 const server = http.createServer(function (req, res) {
     const parsedURL = url.parse(req.url, true);
-    if (urlParsed.pathname == '/echo' && urlParsed.query.message) {
+    if (parsedURL.pathname == '/echo' && parsedURL.query.message) {
         res.statusCode = 200;
         res.setHeader('Cache-control', 'no-cache');
-        res.end(urlParsed.query.message);
+        res.end(parsedURL.query.message);
     } else {
         res.statusCode = 404;
         res.end("Page not found");

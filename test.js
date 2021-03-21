@@ -1,36 +1,23 @@
-const http = require('http');
-const port = 1337;
-const host = 'localhost';
+// console.log('Before timeout');
 
-const server = http.createServer(function (req, res) {
-    const url = req.url;
-    if (url === '/text') {
-        res.end("Hello from Server");
-        return;
-    }
+// setTimeout(function () {
+//     console.log('Set timeout over');
+// }, 0);
 
-    if (url === '/json') {
-        res.setHeader("Content-Type", "application/json");
-        res.writeHead(200);
-        res.end(`{"message": "Hello from Server"}`);
-        return;
-    }
+// setImmediate(function () {
+//     console.log('Run Immediate call');
+// });
 
-    if (url === '/html') {
-        res.setHeader("Content-Type", "text/html");
-        res.writeHead(200);
-        res.end(`<html><body><h1>Hello from Server</h1></body></html>`);
-        return;
-    }
+// setTimeout(function () {
+//     console.log('Another timeout over');
+// }, 0);
 
-    if (url === '/csv') {
-        res.setHeader("Content-Type", "text/csv");
-        res.writeHead(200);
-        res.end(`name,email\n1,John Doe,john@example.com`);
-        return;
-    }
-});
+// console.log('After set immediate');
 
-server.listen(port, host, function () {
-    console.log('Web server is running on port 1337');
-});
+const interval = setInterval(() => {
+    console.log('tik');
+}, 1000);
+
+setTimeout(() => {
+    clearInterval(interval);
+}, 4000);

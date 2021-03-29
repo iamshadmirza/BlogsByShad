@@ -1,6 +1,6 @@
 # A Definite Guide to React Native Testing Library
 
-This guide will walk you through react-native testing using **React Native Testing Library**. We will cover why we would want to use this library, the benefits, how to write tests, and all sorts of stuff while building an exciting game app. Let's start.
+This guide will walk you through React Native testing using **React Native Testing Library**. We will cover why we would want to use this library, the benefits, how to write tests, and all sorts of stuff while building an exciting game app. Let's start.
 
 - [A Definite Guide to React Native Testing Library](#a-definite-guide-to-react-native-testing-library)
   - [What is React Native Testing Library and Why We Love It](#what-is-react-native-testing-library-and-why-we-love-it)
@@ -22,7 +22,7 @@ Tests are the best way to ensure the app's reliability. But let's be honest, tes
 
 The usual way of testing components is tightly coupled with the components' implementation details, making them harder to maintain in the long run. Querying elements using CSS class selectors or ids tends to fail as soon as you refactor or update the components.
 
-Our tests should provide us confidence as well as they should be easy to maintain. RNTL helps with that by providing a nice wrapper around `react-test-renderer`. It encourages the practice to write tests by keeping user interaction in mind.
+Our tests should provide us confidence as well as they should be easy to maintain. That's where the React Native Testing Library (RNTL) shines. It provides a nice wrapper around `react-test-renderer,` exposing utility functions to query elements without bothering about the component's implementation details. It encourages the practice to write tests by keeping user interaction in mind.
 
 **React Native Testing Library (RNTL)** exposes API to query elements by texts, labels, placeholder, role, etc., instead of querying by classes, ids. It mimics the user's interaction by firing events instead of us updating the state manually. This way of writing tests closely resembles how the user will interact and makes the whole testing process much more effortless.
 
@@ -60,7 +60,7 @@ Let's build a **Word Warrior Game** which gives a bunch of words in random order
 
 The final app looks like this:
 
-![app demo](demomin.gif)
+![app demo](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/rntl/demomin.gif)
 
 > You can skip this part and [jump straight to testing.](#install-react-native-testing-library)
 
@@ -251,13 +251,6 @@ Perfect! Our app is ready now. Let's move on to part 2 and add some tests.
 ## Install React Native Testing Library
 
 Open a Terminal and run this command:
-Using yarn
-
-```sh
-yarn add --dev @testing-library/react-native
-```
-
-Using npm
 
 ```sh
 npm install --save-dev @testing-library/react-native
@@ -265,23 +258,15 @@ npm install --save-dev @testing-library/react-native
 
 This library has a `peerDependencies` listing for `react-test-renderer` and, of course, react. Make sure to install them too!
 
-To use additional React Native-specific jest matchers from the `@testing-library/jest-native` package, add it to your project:
-
-Using yarn
-
-```sh
-yarn add --dev @testing-library/jest-native
-```
-
-Using npm
+We will also use additional React Native-specific jest matchers from the `@testing-library/jest-native` package. Let's add them too:
 
 ```sh
 npm install --save-dev @testing-library/jest-native
 ```
 
-Then automatically add it to your jest tests by using setupFilesAfterEnv option in your Jest configuration (it's usually located either in package.json under the "jest" key or in a jest.config.js file):
+Then add it to your jest tests by using `setupFilesAfterEnv` option in your Jest configuration (it's usually located either in package.json under the "jest" key or in a jest.config.js file):
 
-```JSON
+```js
 {
   "preset": "react-native",
   "setupFilesAfterEnv": ["@testing-library/jest-native/extend-expect"]
@@ -306,7 +291,7 @@ Install `jest-expo` add this to your package.json
 },
 ```
 
-> You can check the [official documentation(https://callstack.github.io/react-native-testing-library/docs/getting-started/#installation) for a more updated installation guide.
+> You can check the [official documentation](https://callstack.github.io/react-native-testing-library/docs/getting-started/#installation) for a more updated installation guide.
 
 ## Create Test Plan
 
@@ -449,7 +434,7 @@ Here, we got the text's failure message, which will work even when the styles or
 ```js
 test('Should clear error message when button is clicked again', () => {
     //check if error appears
-    const { getByText } = render(ThemeWrapper(<Main text="One Two Three Four Five" />));
+    const { getByText, queryByText } = render(ThemeWrapper(<Main text="One Two Three Four Five" />));
     const submitButton = getByText('Submit');
     fireEvent.press(submitButton);
     const failureMessage = getByText('Wrong answer 😢');
@@ -457,11 +442,11 @@ test('Should clear error message when button is clicked again', () => {
     //check if error message dissapears
     const button = getByText('One');
     fireEvent.press(button);
-    expect(() => getByText('Wrong answer 😢')).toThrow("Unable to find an element with text: Wrong answer 😢");
+    expect(queryByText('Wrong answer 😢')).toBeNull;
 });
 ```
 
-We can use callback inside `expect` coupled with `toThrow` assertion to check when the element doesn't exist on the screen. Let's add the last test.
+We can use callback inside `expect` coupled with `toBeNull` assertion to check if the element doesn't exist on the screen. Let's add the last test.
 
 ```js
 test('Should show win message when correct answer is submitted', () => {
@@ -493,7 +478,7 @@ test('Should show win message when correct answer is submitted', () => {
 
 Once done, run the tests using `yarn test` and see if the tests are passing.
 
-![passing tests](passingtests.png)
+![passing tests](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/rntl/passingtests.png)
 
 We can also perform some additional tasks by using `beforeEach()` and `afterEach()` hooks. These additional tasks usually involve preparing a test environment before each test and clean up after each test. Apart from these two, we have `beforeAll()` and `afterAll()` hooks that run before and after the test suite.
 
@@ -519,11 +504,11 @@ It's fairly easy to generate report and see how much test coverage you have. To 
 
 And we are done 🎉. Now you'll see a coverage report in the terminal every time you run the test.
 
-![test coverage on terminal](coverageshell.png)
+![test coverage on terminal](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/rntl/coverageshell.png)
 
 You will also notice a [`coverage`](https://github.com/iamshadmirza/rntl-demo/tree/main/coverage) folder created containing all the generated test reports. You can see these reports on the browser like this:
 
-![test coverage on browser](coveragehtml.png)
+![test coverage on browser](https://raw.githubusercontent.com/iamshadmirza/BlogsByShad/master/blogs/rntl/coveragehtml.png)
 
 ## Takeaways
 

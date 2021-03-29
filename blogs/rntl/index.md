@@ -1,9 +1,9 @@
 # A Definite Guide to React Native Testing Library
 
-Hey everyone, this guide will teach you all about React Native Testing Library. We will cover why we would want to use this library, the benefits, how to write tests, and all sorts of stuff using an excellent game app. Let's start.
+This guide will walk you through react-native testing using **React Native Testing Library**. We will cover why we would want to use this library, the benefits, how to write tests, and all sorts of stuff while building an exciting game app. Let's start.
 
 - [A Definite Guide to React Native Testing Library](#a-definite-guide-to-react-native-testing-library)
-  - [What is RNTL and Why We Love It](#what-is-rntl-and-why-we-love-it)
+  - [What is React Native Testing Library and Why We Love It](#what-is-react-native-testing-library-and-why-we-love-it)
   - [Hello World: My First Test](#hello-world-my-first-test)
   - [Let's Code: Create Word Warrior Game App](#lets-code-create-word-warrior-game-app)
     - [Step 1: Add boilerplate](#step-1-add-boilerplate)
@@ -13,29 +13,24 @@ Hey everyone, this guide will teach you all about React Native Testing Library. 
     - [If you're using expo](#if-youre-using-expo)
   - [Create Test Plan](#create-test-plan)
   - [Write Tests](#write-tests)
-  - [More on Testing](#more-on-testing)
-    - [Snapshot testing](#snapshot-testing)
-    - [Mocking functions, fetch calls, external libraries](#mocking-functions-fetch-calls-external-libraries)
-    - [Handling async calls with `waitFor.`](#handling-async-calls-with-waitfor)
   - [Test Coverage](#test-coverage)
-  - [Test Coverage](#test-coverage-1)
   - [Takeaways](#takeaways)
 
-## What is RNTL and Why We Love It
+## What is React Native Testing Library and Why We Love It
 
-Tests are the best way to ensure the app's reliability. But let's be honest, testing is not easy to begin, and maintaining tests is even more troublesome. 
+Tests are the best way to ensure the app's reliability. But let's be honest, testing is not easy to begin, and maintaining tests is even more troublesome.
 
-All the popular testing libraries like Enzyme, Jest, and Mocha are good. But they are tightly coupled with the components' implementation details, making them harder to maintain in the long run. CSS class selector or id's query elements tend to fail once you refactor or update the components.
+The usual way of testing components is tightly coupled with the components' implementation details, making them harder to maintain in the long run. Querying elements using CSS class selectors or ids tends to fail as soon as you refactor or update the components.
 
-Our tests should provide us confidence as well as they should be easy to maintain. RNTL helps with that by providing a nice wrapper around jest. It encourages the practice to write tests by keeping user interaction in mind.
+Our tests should provide us confidence as well as they should be easy to maintain. RNTL helps with that by providing a nice wrapper around `react-test-renderer`. It encourages the practice to write tests by keeping user interaction in mind.
 
-**React Native Testing Library (RNTL)** exposes API to query elements by texts, labels, etc., instead of querying by classes, ids. It mimics the user's interaction by firing events instead of us updating the state manually. This way of writing tests closely resembles how the user will interact and makes the whole testing much more effortless. 
+**React Native Testing Library (RNTL)** exposes API to query elements by texts, labels, placeholder, role, etc., instead of querying by classes, ids. It mimics the user's interaction by firing events instead of us updating the state manually. This way of writing tests closely resembles how the user will interact and makes the whole testing process much more effortless.
 
-Even if the internal implementation, like classes, id changes over time, you can be sure that your test will work just fine. Let's learn the basics first, and then we will move to a more advanced section.
+Even if the internal implementation, like classes, id changes over time, you can be sure that your test will work just fine. Let's learn the basics first.
 
 ## Hello World: My First Test
 
-Let's write a basic test to get an idea of how it works. Writing tests consists of a block of `test()` functions that performs some assertions to predict the outcome.
+Let's write a small test to get an idea of how this whole thing works. Writing tests consists of a block of `test()` functions that performs some assertions to predict the outcome.
 
 ```js
 test('Should add 2 number', () => {
@@ -51,9 +46,9 @@ test('Should add 2 number', () => {
 });
 ```
 
-You can use this `test` keyword interchangeably with `it.` We usually start with adding `test. Todo ()` with a description as the initial list of tests we will cover. We can also use `test.skip` to skip specific tests from running in the test suite.
+You can use this `test` keyword interchangeably with `it`. We usually start with adding `test.todo()` with a description as the initial list of tests we will cover. Then we go ahead and add the actual code as a callback in the second argument. We can also use `test.skip()` to skip specific tests in the test suite.
 
-We always name test files with `.test.js` or `.spec.js` suffix and add them inside a `__tests__` folder. This convention tells the test runner to look for files containing tests.
+You might be wondering how does a test runner find the files containing tests. We name test files with `.test.js` or `.spec.js` suffix for this reason. We can also choose to put them inside a `__tests__` folder, but it's usually a good practice to keep the test alongside the component file.
 
 Now that we have some idea about testing. Let's move on to writing tests for a React Native app.
 
@@ -104,11 +99,11 @@ export default function Main({ text }) {
 }
 ```
 
-We will use `text` to generate an array of random words. Then show those as questions and allow users to select/unselect them.
+We will use the `text` prop to pass sentences and generate an array of random words. Then show those as questions and allow users to select/unselect them.
 
 ### Step 2: Rendor UI
 
-We are going to randomize words from the text and render the `questions` array. We will also initialize the `result` and `answers array.
+We will randomize words from the `text` prop and render the `questions` array. We will also initialize the `result` and `answers` array.
 
 ```js
 import React, { useState } from 'react'
@@ -142,7 +137,7 @@ export default function Main({ text }) {
                         <Stack direction="horizontal" accessibilityLabel="questions" verticalSpace="xsmall" cropEndSpace>
                             {question.length > 0
                                 ? question.map((item, index) => (
-                                    <Button key={index} outline round onPress={() => selectWord(item)}>{item}</Button>
+                                    <Button key={index} outline round onPress={() => {}}>{item}</Button>
                                 ))
                                 : <Text>Click submit to check result</Text>
                             }
@@ -158,7 +153,7 @@ export default function Main({ text }) {
                         <Stack direction="horizontal" accessibilityLabel="answers" verticalSpace="xsmall" cropEndSpace>
                             {answer.length > 0
                                 ? answer.map((item, index) => (
-                                    <Button key={index} outline round onPress={() => unselectWord(item)}>{item}</Button>
+                                    <Button key={index} outline round onPress={() => {}}>{item}</Button>
                                 ))
                                 : <Text>Select some words to show here</Text>
                             }
@@ -178,7 +173,7 @@ export default function Main({ text }) {
                 }
             </Stack>
             <Card space="xsmall">
-                <Button onPress={checkResult}>Submit</Button>
+                <Button onPress={() => {}}>Submit</Button>
             </Card>
         </ScrollView>
     );
@@ -251,7 +246,7 @@ export default function App() {
 }
 ```
 
-Perfect! Our app is ready now. Let's move on to Part 2.
+Perfect! Our app is ready now. Let's move on to part 2 and add some tests.
 
 ## Install React Native Testing Library
 
@@ -268,7 +263,7 @@ Using npm
 npm install --save-dev @testing-library/react-native
 ```
 
-This library has a peerDependencies listing for `react-test-renderer` and, of course, react. Make sure to install them too!
+This library has a `peerDependencies` listing for `react-test-renderer` and, of course, react. Make sure to install them too!
 
 To use additional React Native-specific jest matchers from the `@testing-library/jest-native` package, add it to your project:
 
@@ -311,13 +306,13 @@ Install `jest-expo` add this to your package.json
 },
 ```
 
-> Spoiler alert! We are entering into test-driven development now.
+> You can check the [official documentation(https://callstack.github.io/react-native-testing-library/docs/getting-started/#installation) for a more updated installation guide.
 
 ## Create Test Plan
 
-Now we will write a list of what areas we want to test. Think about how the user is going to interact with the app. Then test that function.
+Now we will write a list of areas we want to test. Think about how the user is going to interact with the app. Then test that functionality.
 
-For our app, we want the random words to be visible initially. We want the user to be able to select and unselect words. We have to make sure words in questions pop into the answer section when we click them. We also have to check if the Submit button is working fine and showing the result correctly.
+For our app, we want the random words to be visible initially. We want the user to be able to select and unselect words. We have to make sure words in questions pop into the answer section when we press them. We also have to check if the Submit button is working fine and showing the result correctly.
 
 Based on these specs, our tests can look like:
 
@@ -341,10 +336,10 @@ We now have a plan on what tests to write. Let's go to the next section and writ
 
 ## Write Tests
 
-Let's understand what happens when you write a unit test for React Native component. The steps are which takes place:
+Let's understand what happens when you write a unit test for React Native component. The steps which take place are:
 
 - Render the component
-- Query element of the rendered component
+- Query element from the rendered component
 - Add assertions
 
 Let's write our first unit test by keeping the above three points in mind.
@@ -357,7 +352,7 @@ import { ThemeProvider, theme } from 'react-native-design-system';
 import Main from '../Main';
 
 // theme provider for components
-const useTheme = (children) => {
+const ThemeWrapper = (children) => {
     return (
         <ThemeProvider value={theme}>
             {children}
@@ -367,7 +362,7 @@ const useTheme = (children) => {
 
 test('Should render passed text as words', () => {
     // render the component
-    const { getByA11yLabel } = render(useTheme(<Main text="One Two Three Four Five" />));
+    const { getByA11yLabel } = render(ThemeWrapper(<Main text="One Two Three Four Five" />));
     // query elements 
     const questions = getByA11yLabel('questions');
     const oneButton = within(questions).getByText('One');
@@ -379,17 +374,17 @@ test('Should render passed text as words', () => {
 Let's see what's happening here:
 
 - We imported a bunch of methods from `@testing-library/react-native.
-- We changed `test.todo()` to `test()` and added a callback function
-- This function rendered the `Main.js` screen and returned some methods to query elements.
-- We get the question container using `getByA11yLabel()`
-- We check if the word **"One"** is defined inside questions using `within.`
+- We changed `test.todo()` to `test()` and added a callback function.
+- render function rendered the `Main.js` screen and returned a collection of utility functions to query elements.
+- We got the question container using `getByA11yLabel()`
+- We checked if the word **"One"** is defined inside questions using `within.`
 
-We will follow similar steps with all the test cases. Let's add the second one. (I'll add comments for better understanding)
+We will follow similar steps with all the test cases. Let's add the second one. (Follow comments for better understanding)
 
 ```js
 test('Should be able to select word', () => {
     // render component
-    const { getByText, getByA11yLabel } = render(useTheme(<Main text="One Two Three Four Five" />));
+    const { getByText, getByA11yLabel } = render(ThemeWrapper(<Main text="One Two Three Four Five" />));
     // query element
     const button = getByText('One');
     // fireEvent just like a user would do
@@ -401,19 +396,19 @@ test('Should be able to select word', () => {
 });
 ```
 
-`@testing-library/react-native` also gives us this `fireEvent` module which helps us mimic user's behavious. We can use it to:
+`@testing-library/react-native` also gives us this `fireEvent` module which helps us mimic user's behaviour. We can use it to:
 
 - click a button by `fireEvent.press(button);`. 
 - write some texts by `fireEvent.changeText(input, 'I typed something');`
 - scroll to any position by `fireEvent.scroll(getByTestId('flat-list'), { nativeEvent: {
     contentOffset: { y: 200 }}});`
 
-Let's look at the third one:
+Let's look at the third test:
 
 ```js
 test('Should be able to unselect word', () => {
     // render component
-    const { getByText, getByA11yLabel } = render(useTheme(<Main text="One Two Three Four Five" />));
+    const { getByText, getByA11yLabel } = render(ThemeWrapper(<Main text="One Two Three Four Five" />));
     // query element
     const button = getByText('One');
     //select word
@@ -431,15 +426,15 @@ test('Should be able to unselect word', () => {
 });
 ```
 
-Sometimes, we can't simply test if the element is defined and visible on the screen. We have to be very specific where the element is rendered. 
+Sometimes, we can't simply test if the element is defined and visible on the screen. We have to be very specific about where the element is going to render. 
 
-Specifically, in cases like this where we pop words from one container to another. `within` comes very handy in these situations and encourages better code practice. i.e., we added `accessibilityLabel` to the container, which we would have missed otherwise.
+Specifically, `within` comes very handy in these situations where we pop words from one container to another. It also encourages accessibility practices. For example, we added `accessibilityLabel` to each container, which we would have missed otherwise.
 
 Let's move on to the next test.
 
 ```js
 test('Should show error when wrong answer is submitted', () => {
-    const { getByText } = render(useTheme(<Main text="One Two Three Four Five" />));
+    const { getByText } = render(ThemeWrapper(<Main text="One Two Three Four Five" />));
     const button = getByText('One');
     fireEvent.press(button);
     const submitButton = getByText('Submit');
@@ -454,7 +449,7 @@ Here, we got the text's failure message, which will work even when the styles or
 ```js
 test('Should clear error message when button is clicked again', () => {
     //check if error appears
-    const { getByText } = render(useTheme(<Main text="One Two Three Four Five" />));
+    const { getByText } = render(ThemeWrapper(<Main text="One Two Three Four Five" />));
     const submitButton = getByText('Submit');
     fireEvent.press(submitButton);
     const failureMessage = getByText('Wrong answer 😢');
@@ -466,11 +461,11 @@ test('Should clear error message when button is clicked again', () => {
 });
 ```
 
-We can use callback inside `expect` coupled with `toThrow` assertion to check if the element doesn't exist on the screen. Let's add the last test.
+We can use callback inside `expect` coupled with `toThrow` assertion to check when the element doesn't exist on the screen. Let's add the last test.
 
 ```js
 test('Should show win message when correct answer is submitted', () => {
-    const { getByText } = render(useTheme(<Main text="One Two Three Four Five" />));
+    const { getByText } = render(ThemeWrapper(<Main text="One Two Three Four Five" />));
 
     const buttonOne = getByText('One');
     fireEvent.press(buttonOne);
@@ -496,127 +491,17 @@ test('Should show win message when correct answer is submitted', () => {
 });
 ```
 
-It's good practice to clean up the rendered output after each test. RNTL provide us two hooks i.e. `beforeEach()` & `afterEach()` that let us run any command before and after each test. We can use afterEach for cleanup purposes and pass the `cleanup` module we import from `@testing-library/react-native earlier.
-
-```js
-import React from 'react';
-import { render, fireEvent, within, cleanup } from '@testing-library/react-native';
-import { ThemeProvider, theme } from 'react-native-design-system';
-import Main from '../Main';
-
-afterEach(cleanup);
-```
-
 Once done, run the tests using `yarn test` and see if the tests are passing.
 
 ![passing tests](passingtests.png)
+
+We can also perform some additional tasks by using `beforeEach()` and `afterEach()` hooks. These additional tasks usually involve preparing a test environment before each test and clean up after each test. Apart from these two, we have `beforeAll()` and `afterAll()` hooks that run before and after the test suite.
 
 We successfully tested our mini-game app and looked at some ways to query data and assert values. You can follow [this guide](https://testing-library.com/docs/queries/about/) to get familiar with other querying methods.
 
 > You can find project code on this [GitHub Repo](https://github.com/iamshadmirza/rntl-demo)
 
-These were some of the basic cases of unit testing in React Native. Let's look at some other type.
-
-
-## More on Testing
-
-There is more to testing than simply rendering and asserting values. Sometimes, you have to mock function calls or wait for some promise to resolve before checking the output. Let's look at some of these scenarios:
-
-- Snapshot testing
-- Mocking functions, fetch calls, external libraries
-- Handling async calls with `waitFor.`
-
-### Snapshot testing
-
-Snapshot testing ensures that UI stays consistent. We will be using `react-test-renderer` to render React Native component into pure javascript objects. This object will then be saved as snapshot and compared every time the test runs.
-
-```js
-import React from 'react';
-import { create } from 'react-test-renderer';
-import Main from '../Main';
-import { ThemeProvider, theme } from 'react-native-design-system';
-
-const useTheme = (children) => {
-    return (
-        <ThemeProvider value={theme}>
-            {children}
-        </ThemeProvider>
-    );
-}
-
-const tree = create(useTheme(<Main text="One" />));
-
-test('snapshot', () => {
-    expect(tree).toMatchSnapshot();
-});
-```
-
-Once the UI breaks, the test will start failing. You can then use `yarn test -u` to update the screenshot with the latest UI.
-
-> We passed one word to get consistent UI on every render. Since the game generates a random sequence of words every time, it will fail to give multiple words.
-
-### Mocking functions, fetch calls, external libraries
-
-The idea is to use `jest.fn()` to mock external library calls or fetch calls. We don't want to hit API and get actual data every time the test suit runs. We will mock the function implementation and use the promise to return the data that we want. Promise will be returned instantly.
-
-```js
-// add mock function for fetch
-
-global.fetch = jest.fn({
-    json: () => Promise.resolve({ data: 'some data' }),
-  });
-```
-
-The above will mock the implementation of fetch calls and return `{ data: 'some data'}` when `response.json()`
-
-Then we can check if the fetch was called or not by:
-
-```js
-expect(global.fetch).toHaveBeenCalledWith(
-    'api-route',
-    {
-      method: 'GET',
-      headers: {'Content-Type': 'application/json'},
-    },
-)
-```
-
-Similarly, we can mock external libraries. Let's take an example of `@react-native-community/async-storage.`
-
-```js
-import AsyncStorage from '@react-native-community/async-storage'
-
-jest.mock('@react-native-community/async-storage', () => ({ setItem: jest.fn() }));
-
-test('should set async storage', () => {
-  expect(AsyncStorage.setItem).toHaveBeenCalledTimes(1);
-});
-```
-
-When we call `AsyncStorage.setItem`, it will call the mocks function instead of the actual one. We can use all sorts of assertions on the mocks function instance.
-
-### Handling async calls with `waitFor.`
-
-Some calls are asynchronous, and we have to wait for some time till the UI renders and we can assert some values. One example could be navigation in React Native. You click the button to navigate to a different screen. It takes a while before you can check if navigation happened or not. `waitFor` is used in such scenarios. Let's take an example of `react-navigation.`
-
-```js
-import React from 'react';
-import { fireEvent, render, waitFor } from '@testing-library/react-native';
-import { useNavigation } from '@react-navigation/native';
-
-jest.mock('@react-navigation/native', () => {
-  return {
-    createNavigatorFactory: jest.fn(),
-    useNavigation: jest.fn(),
-  }
-});
-
-test('Should navigate', () => {
-    const mockNavigate = jest.fn();
-    await waitFor(() => expect(mockNavigate).toHaveBeenCalledTimes(1));
-    expect(mockNavigate).toHaveBeenCalledWith('Home');
-})
-```
+These were some of the basic cases of unit testing in React Native. When following test-driven development, it's a good practice to start with failing tests. It makes sure we avoid false positives.
 
 ## Test Coverage
 
@@ -636,30 +521,16 @@ And we are done 🎉. Now you'll see a coverage report in the terminal every tim
 
 ![test coverage on terminal](coverageshell.png)
 
-You will also notice a `coverage` folder created that contains all the generated test reports. You can see these reports on the browser like this:
-
-![test coverage on browser](coveragehtml.png)
-
-## Test Coverage
-
-It's fairly easy to generate report and see how much test coverage you have. To do so, just go to `package.json` and add this:
-
-```json
-"jest": {
-    "preset": "jest-expo",
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-native/extend-expect"
-    ],
-    "collectCoverage": true // add this property inside jest
-},
-```
-
-And we are done 🎉. Now you'll see a coverage report in the terminal every time you run the test.
-
-![test coverage on terminal](coverageshell.png)
-
-You will also notice a `coverage` folder created that contains all the generated test reports. You can see these reports on the browser like this:
+You will also notice a [`coverage`](https://github.com/iamshadmirza/rntl-demo/tree/main/coverage) folder created containing all the generated test reports. You can see these reports on the browser like this:
 
 ![test coverage on browser](coveragehtml.png)
 
 ## Takeaways
+
+- The usual way of testing is to render the component, find an element from the rendered screen, and add assertions.
+- We can use `.test.js` or `.spec.js` as a suffix for test files. Adding files to the `__tests__` folder also does the same job.
+- It's a good practice to keep the test file alongside the component file.
+- Always test by keeping the user interaction in mind. Don't couple the test with implementation details whenever possible. Using `getByText` and `getByA11yLabel` is preferred over using testIDs since testID can also become a part of implementation detail.
+- You can plan tests using `test.todo()` and skip specific test using `test.skip()`
+- We can use code blocks like `beforeEach()`, `afterEach()`, `beforeAll()`, and `afterAll()` to run before/after each or all tests and do some specific tasks like preparing tests environment and cleanup.
+- Use the `collectCoverage` flag in package.json to know more information about test coverage.

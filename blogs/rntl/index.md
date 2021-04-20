@@ -484,7 +484,7 @@ We can also perform some additional tasks by using `beforeEach()` and `afterEach
 
 We successfully tested our mini-game app and looked at some ways to query data and assert values. You can follow [this guide](https://testing-library.com/docs/queries/about/) to get familiar with other querying methods.
 
-> You can find project code on this [GitHub Repo](https://github.com/iamshadmirza/rntl-demo)
+> You can find project code on this [GitHub Repo](https://github.com/iamshadmirza/rntl-demo/tree/testing-basics)
 
 These were some of the basic cases of unit testing in React Native. When following test-driven development, it's a good practice to start with failing tests. It makes sure we avoid false positives.
 
